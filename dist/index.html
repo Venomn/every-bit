@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="一本可以玩的计算机历史书。从 Linus 童年接触的 VIC-20 出发，敲下第一行程序，一点一点理解 every bit。">
+  <title>Every Bit · 可以玩的计算机小史</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="topbar">
+    <a class="brand" href="#cover" aria-label="Every Bit 首页"><span class="brand-icon" aria-hidden="true">e<span>↗</span></span><span>every bit<span class="brand-dot">.</span></span></a>
+    <span class="brand-description">一本可以玩的计算机小史</span>
+    <nav aria-label="主导航"><a href="#journey">时光目录 <span aria-hidden="true">↗</span></a><button id="font-toggle" class="text-button" aria-label="切换大字阅读" aria-pressed="false">Aa</button><button id="notebook-button" class="notebook-button">探索手记 <span id="header-progress">0/6</span></button></nav>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer"><a class="footer-brand" href="#cover">EVERY BIT.</a><span>好奇心，是最好的开机键。</span><span>互动样章 · 第 01 章</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="notebook" aria-labelledby="notebook-title"><div class="dialog-header"><span class="eyebrow">FIELD NOTES / 探索手记</span><button data-close-dialog aria-label="关闭手记" class="close-button">×</button></div><h2 id="notebook-title">每一个小发现，<br>都值得记下来。</h2><div id="notebook-content"></div><p class="small muted" id="storage-note">手记和磁带保存在当前浏览器中，不会跨设备同步。</p></dialog>
+</body>
+</html>
