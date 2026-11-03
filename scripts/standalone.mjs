@@ -1,8 +1,8 @@
 import {readFile, writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 const read = name => readFile(new URL(`../dist/${name}`,import.meta.url),'utf8');
-const [html,css,icon,engine,book,app] = await Promise.all(['index.html','style.css','icon.svg','engine.mjs','book.mjs','app.js'].map(read));
-const script = [engine,book,app].join('\n').replace(/^import .+ from ['"].+['"];\n/gm,'').replace(/^export /gm,'');
+const [html,css,icon,worlds,engine,book,labs,app] = await Promise.all(['index.html','style.css','icon.svg','worlds.mjs','engine.mjs','book.mjs','labs.mjs','app.js'].map(read));
+const script = [worlds,engine,book,labs,app].join('\n').replace(/^import .+ from ['"].+['"];\n/gm,'').replace(/^export /gm,'');
 const result = html
   .replace('<link rel="stylesheet" href="style.css">',`<style>${css}</style>`)
   .replace('  <script type="module" src="app.js"></script>\n','')
