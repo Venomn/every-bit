@@ -33,4 +33,38 @@ All 23 lesson pages were checked at 390 px for document overflow; representative
 
 ## Limits
 
-These are local automated checks and actual desktop-browser checks, not a claim that GitHub CI ran these tests. Native iOS/Android devices, screen-reader announcements, actual child usability sessions, and all browser engines remain untested. Models intentionally omit real hardware and networking; refer to each lesson's expandable notes.
+These are local automated checks and actual desktop-browser checks, not a claim that GitHub CI ran these tests. Native iOS/Android devices, screen-reader announcements, actual child usability sessions, and all browser engines remain untested. The later-chapter models intentionally omit real hardware and networking; the VIC-20 now executes real machine emulation as recorded below.
+
+
+# Real VIC-20 acceptance · 2026-11-03
+
+## Execution and output boundaries
+
+The old `BasicMachine` interpreter and app command/step/output functions were removed. Chapters 0, 1, 2, 5 and `#computer` mount one shared `VICDesk`/`VIC20` runtime. The cover remains a clearly decorative static computer. Bits and pixel grids remain explanatory models; the pixel grid now hands an editable generated program to the same emulator. Later-era models intentionally remain separate teaching models.
+
+- Canvas: the VIC framebuffer, with the chip's palette.
+- Accessible text: a read-only screen-RAM mirror (normal 22×23 layout, graphics approximated).
+- Direct input and code notebook: the ROM keyboard buffer, followed by real ROM tokenization/execution.
+- Code retrieved from the computer, session restore, PRG export/import and machine works: validated linked BASIC bytes from the same RAM.
+- Notebook drafts: explicitly separate unsent source; never presented as already executing.
+- Audio: actual VIC oscillator samples. Physical keyboard, touch controls and the expanded keyboard feed the same key matrix.
+
+## Automated results
+
+34 tests pass on Node.js 25.8.0 plus standalone byte consistency. The emulator tests boot both RAM configurations and execute original ROMs, not a mocked CPU. They cover FOR/NEXT, arrays, DATA/READ, IF/GOSUB, INPUT, physical GET, real error messages, line replacement/deletion, POKE screen/color changes, audio waveform variation, SYS executing user 6502 instructions, infinite loops/STOP/CONT, byte-exact PRG save/reboot/load, corrupt/wrong-memory PRG rejection before writes, every starter, old tape migration, independent unsent drafts, pixel bytes reaching character RAM, storage quota failure and stale-tab writes. ROM hashes and zero WASM host imports are asserted.
+
+## Actual browser checks
+
+- At the free computer desk, wrote a new FOR/NEXT summation in the editor and ran it. The actual screen displayed `MY ANSWER: 55`.
+- Saved the running machine's program to the work box, powered off, opened that work, entered RUN, and observed the same result.
+- Reloaded and observed the saved program restored with a READY prompt and the separate editor still present.
+- Ran the star game, pressed the on-screen D key, and observed the star move one screen-RAM column. STOP interrupted it; retrieving code returned the stored BASIC.
+- Downloaded the actual BASIC PRG, then selected the downloaded `.prg` with the browser file chooser. The import reported successful RAM loading.
+- Navigated from the pixel editor through “让老电脑画出来” to the code notebook and sent the generated program into the emulator.
+- Inspected desktop and 390×844 layouts visually; the phone document width equaled its 390 px viewport. Text input, game keys and notebook remained available without horizontal page overflow. No console error was observed in the tested flow.
+
+- Opened the generated standalone HTML, stopped its HTTP server, powered on the emulator and entered `PRINT 2^3`; the ROM displayed `8` without a server or external asset fetch.
+
+## Remaining product limits
+
+No actual child usability session or native iOS/Android acceptance has been performed. Desktop-browser audio signal generation is tested, but perceived speaker volume/timbre has not been independently listened to. The work box saves BASIC programs, not running CPU/variable snapshots. Disk, cassette hardware, cartridge import, arbitrary PRG machine-code images, joystick hardware and perfect commercial-game compatibility are outside this release. The local checks do not alone prove public deployment or GitHub CI success; those are verified separately after publication.

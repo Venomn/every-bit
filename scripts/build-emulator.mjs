@@ -1,0 +1,13 @@
+import {spawnSync} from 'node:child_process';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const clang=process.env.WASI_CLANG;
+if(!clang)throw new Error('Set WASI_CLANG to the official wasi-sdk clang executable (built with wasi-sdk 34).');
+const functions=['rom_ptr','transfer_ptr','init_machine','exec_us','key_down','key_up','release_keys','joystick','peek','poke_ram','cpu_pc','memory_view','render_frame','audio_ptr','audio_count','audio_clear','type_character','load_prg'];
+const args=['-O2','-fno-ident','-fvisibility=hidden','-nostartfiles','-Wl,--no-entry','-Wl,--strip-all','-Wl,--export-memory','-Wl,--initial-memory=4194304','-Wl,--max-memory=4194304','-Wl,-z,stack-size=262144',...functions.map(n=>'-Wl,--export='+n),'emulator/core.c','-o','emulator/vic20.wasm'];
+const result=spawnSync(clang,args,{cwd:root,stdio:'inherit'});if(result.status)process.exit(result.status);
+const bytes=readFileSync(root+'emulator/vic20.wasm');
+const module=new WebAssembly.Module(bytes);if(WebAssembly.Module.imports(module).length)throw new Error('Core unexpectedly needs host imports');
+writeFileSync(root+'dist/vic20-wasm.mjs',`// Generated from emulator/core.c + pinned floooh/chips. See emulator/NOTICE.md.\nexport const VIC20_WASM = '${bytes.toString('base64')}';\n`);
+console.log(`Built ${bytes.length} bytes, zero host imports.`);

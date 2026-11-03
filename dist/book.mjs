@@ -21,7 +21,7 @@ export const lessons = [
     paragraphs: ['试着输入 PRINT "HELLO"，再按 RETURN（今天键盘上的 Enter）。PRINT 在这里表示“显示”，引号把你想说的话包起来。', 'HELLO 出现了！试着把它换成自己的英文名字。再试 PRINT 2+3：没有引号时，电脑会先计算，再显示结果。', '少打一个引号可能得到 SYNTAX ERROR。这只是说“我没看懂这句话的写法”。改好，再试一次就行。'],
     task: '输入一条 PRINT 命令，让屏幕显示文字或算式的结果。',
     takeaway: '你给出清楚的指令，电脑就照着执行。报错也是一种线索。',
-    deeper: 'BASIC 是编程语言。这台机器内置的解释器负责读懂命令。此处为教学模拟，支持 PRINT、简单算式、数字变量、带行号的程序、GOTO、RUN、STOP、LIST、NEW，以及本书用到的 SAVE、LOAD。它不运行 VIC-20 ROM，也不模拟 6502 CPU；完整 BASIC 和游戏软件尚不支持。',
+    deeper: 'BASIC 是编程语言。这台机器内置的解释器负责读懂命令。这里实际运行 VIC-20 原版 BASIC / KERNAL ROM，并模拟 6502 CPU、VIA 与 VIC 芯片。你可以写完整的 BASIC V2 程序、操作内存、画图和发声。程序可以从空白写起；下面的灵感卡只是起点。',
     source: ['manual']
   },
   {
@@ -30,7 +30,7 @@ export const lessons = [
     paragraphs: ['先输入 10 PRINT "HELLO"。再输入 20 GOTO 10。10 和 20 是行号；GOTO 10 的意思是“回到第 10 行”。', '输入 RUN。显示一次 HELLO，回到第 10 行，再显示一次……电脑会一直重复这两步，直到你按下 RUN/STOP。', '试着重新输入 10 PRINT "I CAN CODE"，再 RUN。相同的行号会替换旧内容。用 LIST 能查看已经存进内存的程序。'],
     task: '运行一段带 GOTO 的循环程序，再用 RUN/STOP 把它停下来。',
     takeaway: '程序是存好的指令；循环让机器重复做一件事。',
-    deeper: '这段两行程序是本书的练习，并非声称是 Linus 当年输入的原文。教学模式放慢了执行速度，并在 80 步后暂停，方便观察；真实机器不会因为重复了 80 步就自动停下。',
+    deeper: '这段两行程序是本书的练习，并非声称是 Linus 当年输入的原文。电脑按模拟的原机速度运行，没有 80 步限制。RUN/STOP 对应真机停止键；“暂停”则把模拟时间冻结，按“继续”能原地恢复。',
     source: ['linus','manual']
   },
   {
@@ -48,16 +48,16 @@ export const lessons = [
     paragraphs: ['在这张放大的画布里，一个点只用一个 bit：1 表示点亮，0 表示熄灭。每一排八个点，刚好是一个字节。', '点一点方格，画一张笑脸、一艘飞船，或者一个只有你认识的朋友。右边的数字会跟着变化：它们就是这幅黑白图案的另一种写法。', '八排就是八个字节。把这些字节按照同样的规则读回来，图案就能再次出现。颜色、动画和更大的图片，需要更多约定和空间。'],
     task: '点亮至少 8 个格子，再选中一行，观察它的 0 和 1。',
     takeaway: '图像可以变成数字；每次改动一个点，也就在改变一个 bit。',
-    deeper: '这是 1-bit 单色字形编辑器，帮助理解字符图案。它没有写入真实 VIC-20 的字符内存。64 个点需要 64 bit，即 8 byte；这仅计算原始点阵，不包括颜色、尺寸等信息。',
+    deeper: '这是 1-bit 单色字形编辑器，帮助理解字符图案。点“让老电脑画出来”，会把 8 个字节变成可编辑的 BASIC 程序；送入电脑后，用 POKE 写入真正模拟的字符内存。64 个点需要 64 bit，即 8 byte；这仅计算原始点阵，不包括颜色、尺寸等信息。',
     source: ['manual']
   },
   {
-    short: '把程序装进磁带', title: '关机以后，\n它还会记得吗？', kicker: '06 / 内存与保存', duration: '5 分钟',
+    short: '把程序保存下来', title: '关机以后，\n它还会记得吗？', kicker: '06 / 内存与保存', duration: '5 分钟',
     intro: '你已经有了一段自己的程序。但如果拔掉电源，刚才记在内存里的东西，会怎么样？',
-    paragraphs: ['机器运行时，把程序放在 RAM（内存）里。普通 RAM 需要电力维持内容；关机后，程序就会丢失。', '当年的一种办法，是用专用磁带机把程序录到磁带上。下次开机，再把它读回来。等待磁带转动，也是那个年代使用电脑的一部分。', '试一次完整的旅程：准备程序 → SAVE "HELLO" → 关机 → 开机 → LOAD "HELLO"。然后 LIST 或 RUN，看看老朋友是不是回来了。'],
-    task: '把程序存到磁带，关机再开机，然后把它读回内存。',
+    paragraphs: ['机器运行时，把程序放在 RAM（内存）里。普通 RAM 需要电力维持内容；关机后，程序就会丢失。', '当年的一种办法，是用专用磁带机把程序录到磁带上。下次开机，再把它读回来。等待磁带转动，也是那个年代使用电脑的一部分。', '试一次完整的旅程：写好并运行程序 → 存下电脑里的程序 → 关机 → 在作品盒里打开它 → RUN。看看老朋友是不是回来了。'],
+    task: '把电脑里的程序存进作品盒，关机，再打开它并 RUN。',
     takeaway: '内存负责正在做的事；外部存储帮你跨过一次关机。',
-    deeper: '这里的虚拟磁带保存到当前浏览器，只保留一份录制的程序；再次保存会替换它。为方便体验，省略了真机磁带的音频编码和漫长读写，也不生成真实磁带镜像。浏览器刷新会恢复阅读状态；只有明确按“关机”才清空模拟电脑的程序内存。',
+    deeper: '当年可以把程序录在磁带上。这里的作品盒是现代保存工具，读写真实 BASIC PRG 文件，没有连接磁带机，不模拟磁带声音与等待。作品保存在当前浏览器，也能下载为 .prg 或 .bas。刷新会恢复程序与草稿，但不会恢复正在运行时的变量、按键或游戏位置。',
     source: ['manual']
   }
 ];
@@ -85,7 +85,7 @@ const more = [
 for(const [lab,chapter,short,title,intro,task,takeaway,deeper,source] of more) lessons.push({lab,chapter,short,title,intro,task,takeaway,deeper,source,duration:'3–6 分钟',paragraphs:[],kicker:''});
 lessons.slice(0,6).forEach(l=>l.chapter=0);
 export const eras = [
-  {year:'1980s · 初',title:'外祖父的电脑',machine:'Commodore VIC-20',start:0,end:6,icon:'▤',text:'开机、敲命令、拆开字节。把第一段程序存进磁带。'},
+  {year:'1980s · 初',title:'外祖父的电脑',machine:'Commodore VIC-20',start:0,end:6,icon:'▤',text:'开机、敲命令、拆开字节。把第一段程序保存下来。'},
   {year:'1980s · 后',title:'一台电脑，做几件事',machine:'Sinclair QL 的时代',start:6,end:10,icon:'▥',text:'让任务轮流跑，寻找内存地址，教机器人绕路，给像素添颜色。'},
   {year:'1991',title:'我也想写一个系统',machine:'386 PC · Linux 的起点',start:10,end:14,icon:'▣',text:'拨动 CPU 时钟，接通驱动，在文件夹里散步，分享一个修正。'},
   {year:'1990s',title:'电脑走出房间',machine:'调制解调器 · 互联网 · Web',start:14,end:18,icon:'⌁',text:'比特变成信号。小包穿过网络，超链接打开新页面。'},
