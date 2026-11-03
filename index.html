@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="一本可以玩的计算机历史书。从 Linus 童年接触的 VIC-20 出发，敲下第一行程序，一点一点理解 every bit。">
+  <title>Every Bit · 可以玩的计算机小史</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%23263f35%22%2F%3E%3Cpath%20d%3D%22M17%2020h30v8H25v5h22v8H25v5h22v8H17z%22%20fill%3D%22%23dbe88c%22%2F%3E%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>:root{--paper:#f5f2e9;--paper-light:#fcfaf5;--ink:#263d33;--muted:#6c7467;--line:#dcded2;--orange:#ce603e;--lime:#dce6a0;--white:#fffefa;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--serif:"Songti SC","Noto Serif CJK SC",STSong,Georgia,serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.6}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{color:inherit;cursor:pointer}a{color:inherit;text-decoration:none}button:disabled{cursor:not-allowed;opacity:.42}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:4px}button{border:0}h1,h2,h3,p{margin:0}a,button{touch-action:manipulation}::selection{background:var(--lime)}.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{font-size:11px;font-weight:650;letter-spacing:1.5px;line-height:1.5;color:var(--muted)}.skip-link{position:fixed;left:20px;top:-60px;background:var(--ink);color:white;padding:10px 20px;z-index:200}.skip-link:focus{top:8px}.topbar{height:84px;padding:0 clamp(22px,4.5vw,72px);display:flex;align-items:center;gap:28px;border-bottom:1px solid var(--line);background:var(--paper);position:relative;z-index:20}.brand{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:29px;font-weight:750;letter-spacing:-1.6px;line-height:1}.brand-dot{color:var(--orange)}.brand-icon{display:flex;position:relative;width:33px;height:34px;align-items:center;justify-content:center;background:var(--ink);color:var(--lime);border-radius:7px;font-family:var(--mono);font-size:26px;letter-spacing:-4px;padding-right:6px}.brand-icon span{position:absolute;font-size:13px;right:5px;top:3px}.brand-description{font-size:12px;color:var(--muted);border-left:1px solid #c9cec2;padding-left:25px;letter-spacing:1px}.topbar nav{margin-left:auto;display:flex;align-items:center;gap:26px;font-size:12px}.topbar nav a span{margin-left:7px}.text-button{background:transparent;padding:10px 4px;font-size:13px}.notebook-button{background:transparent;border:1px solid #bdc5b5;padding:8px 13px;border-radius:5px;font-size:12px}.notebook-button span{font-family:var(--mono);margin-left:10px;color:var(--muted)}.site-footer{max-width:1400px;margin:auto;display:flex;gap:24px;justify-content:space-between;align-items:center;padding:28px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.footer-brand{font-family:var(--mono);letter-spacing:2px;font-weight:bold;color:var(--ink)}#main:focus{outline:none}.button{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:14px 23px;border:1px solid transparent;border-radius:4px;font-size:13px;font-weight:600;line-height:1.5;transition:transform .15s,background .15s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--ink);color:var(--paper-light)}.button.primary:hover{background:#3b5948}.button.secondary{background:var(--paper-light);border-color:#ccd1c1}.small-button{font-size:11px;padding:9px 12px;gap:10px;min-height:38px}.plain-link{display:inline-flex;gap:10px;align-items:center;font-size:13px;border-bottom:1px solid #9ba693;padding:6px 0}.back-link{display:inline-block;font-size:12px;color:var(--muted);padding:8px 0}.cover-page{max-width:1400px;margin:auto}.cover-hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;min-height:710px;padding:56px 60px 65px}.edition{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;display:flex;align-items:center;gap:10px;margin-bottom:25px}.mini-star{font-size:25px;color:var(--orange)}.cover-copy h1{font-family:var(--serif);font-size:clamp(40px,4.7vw,66px);letter-spacing:-2px;font-weight:900;line-height:1.35}.marked{position:relative;z-index:1;white-space:nowrap}.marked:after{content:"";position:absolute;bottom:3px;left:2px;right:-5px;height:18px;z-index:-1;background:var(--lime);transform:rotate(-2deg);border-radius:50% 20% 20% 20%}.orange-dot{color:var(--orange)}.hero-description{font-size:15px;color:#68705f;line-height:1.9;margin-top:24px}.cover-actions{display:flex;gap:26px;align-items:center;margin-top:30px}.cover-meta{display:flex;gap:13px;font-size:10px;color:#77806e;margin-top:23px;align-items:center}.cover-meta span+span:before{content:"·";margin-right:13px}.hero-art{position:relative;padding:62px 0 0}.hero-art:before{content:"";position:absolute;inset:50px -20px 26px -20px;z-index:-1;border-radius:48% 52% 46% 42%;background:#e8ebdc}.orbit-label{position:absolute;left:1%;top:4px;transform:rotate(-10deg);font-family:var(--mono);font-size:13px;line-height:1.1;color:var(--orange);z-index:2}.orbit-label strong{font-size:36px;font-weight:400;letter-spacing:-3px}.art-cross{position:absolute;color:var(--orange);font-family:Georgia,serif}.cross-one{right:7%;top:5px;font-size:58px;transform:rotate(8deg)}.cross-two{left:0;bottom:100px;font-size:44px;color:var(--ink)}.machine-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.8px;margin-top:28px;border-top:1px solid #bfc7b6;padding-top:15px}.machine-caption b{font-family:var(--mono);font-size:10px;font-weight:500}.computer-scene{position:relative;max-width:550px;margin:auto;padding:0 14px}.monitor{position:relative;background:linear-gradient(135deg,#e7e3d6,#d0ccbf);border:1px solid #bcb9ac;border-radius:22px 22px 15px 15px;box-shadow:5px 10px 0 #b9b8aa,10px 22px 30px #263d3317;max-width:430px;margin:0 auto;z-index:2;padding:19px 18px 8px}.monitor-bezel{display:flex;gap:15px;align-items:stretch;background:#b7b7aa;border:1px solid #9a9d8f;border-radius:13px;padding:10px;box-shadow:inset 3px 3px 6px #5a625142}.crt-border{border:14px solid #1f2926;background:#202a27;border-radius:30px/20px;overflow:hidden;box-shadow:inset 2px 2px 9px #0009;flex:1;min-width:0;position:relative;transition:background .3s,border-color .3s}.crt-screen{position:relative;min-height:245px;background:#1e2926;overflow:hidden;border-radius:12px/20px;padding:12px 5px;color:#4052a2;font-family:var(--mono);line-height:1.12;font-size:12px;letter-spacing:-.6px}.crt-border.is-on{border-color:#76c9c8;background:#76c9c8}.is-on .crt-screen{background:#e6ecdf;box-shadow:inset 0 0 15px #78b1a322}.crt-screen:after{content:"";position:absolute;pointer-events:none;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 2px,#123b2a07 3px);border-radius:inherit}.crt-screen pre{font:inherit;white-space:pre;margin:0 auto;min-height:0;width:22ch;max-width:100%;overflow:hidden}.cursor{display:block;width:22ch;margin:auto;animation:cursor-blink 1.3s steps(1) infinite}.crt-border:not(.is-on) pre,.crt-border:not(.is-on) .cursor{visibility:hidden}.off-message{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#a8b7a2;font-family:inherit;font-size:12px}.is-on .off-message{display:none}.monitor-side{flex:0 0 28px;display:flex;align-items:center;flex-direction:column;gap:15px}.tv-dial{width:28px;height:28px;border-radius:50%;background:linear-gradient(100deg,#9d9f90 0 46%,#5a6054 46% 57%,#aeb1a0 57%);border:2px solid #717665;box-shadow:1px 2px 3px #0004;margin-top:7px}.small-dial{width:21px;height:21px;margin:0}.speaker-grille{height:80px;width:25px;background:repeating-linear-gradient(0deg,#808878 0 2px,transparent 2px 5px);margin-top:auto}.monitor-side span{font-family:var(--mono);font-size:4px;letter-spacing:.4px;text-align:center}.monitor-label{display:flex;justify-content:space-between;align-items:center;font-size:6px;letter-spacing:1px;padding:8px 6px 0;color:#737d6a}.monitor-label span+span{color:#6e8762}.monitor-stand{height:19px;width:150px;background:linear-gradient(90deg,#b6b6a9,#dddacc,#b6b6a9);margin:auto;box-shadow:5px 0 #a9ae9f;border-radius:0 0 6px 6px}.keyboard-body{position:relative;background:linear-gradient(#e2decf,#d1cdbc);border:1px solid #bab9a8;border-radius:10px 10px 13px 13px;padding:13px 14px 20px;box-shadow:0 8px 0 #aaa998,0 11px 0 #969d8b,3px 20px 24px #243c3321;transform:perspective(700px) rotateX(12deg);z-index:3;max-width:530px;margin:-1px auto 0}.keyboard-brand{display:flex;align-items:center;gap:5px;color:#4a5146;font-size:9px;line-height:1;margin-bottom:12px;letter-spacing:-.2px}.keyboard-brand b{font-size:12px;font-weight:700;margin-left:4px;color:#487a7d}.commodore-mark{font-family:Arial,sans-serif;font-size:16px;font-weight:900;position:relative;padding-right:7px}.commodore-mark span{position:absolute;right:0;top:2px;color:#996448;font-size:13px}.power-led{width:4px;height:4px;background:#80392f;border-radius:50%;margin-left:auto}.power-led.on{background:#ed7651;box-shadow:0 0 6px #f44c24}.keyboard-brand small{font-size:5px;letter-spacing:.7px}.key-area{display:flex;gap:9px;background:#b7b4a5;border-radius:4px;padding:4px}.key-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.key-row{display:flex;gap:3px;justify-content:center}.key{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;background:linear-gradient(130deg,#514d43,#3c3b34);box-shadow:0 2px 0 #262921;border:1px solid #57564a;border-bottom-color:#25291f;border-radius:3px;color:#f4eee0;font-family:var(--mono);font-size:7px;height:21px;padding:0 2px;line-height:1}.key.wide-key{flex:1.4;font-size:5px}.key.space-key{flex:8;max-width:65%;height:21px;margin:0 7%}.key-row:last-child{justify-content:flex-start;margin-top:1px}.key-row:last-child .key:first-child{flex:0 0 16%}.function-keys{display:flex;flex-direction:column;justify-content:space-between;width:26px;padding-bottom:24px}.function-keys span{display:flex;align-items:center;justify-content:center;background:#8e8979;border:1px solid #7c7d6a;color:#f3eee2;font-size:7px;height:20px;border-radius:3px;box-shadow:0 2px #666e5c}.scene-note{display:block;font-size:11px;color:#76826c;transform:rotate(-2deg);margin-top:29px;text-align:center;font-family:var(--serif)}.cover-computer .crt-screen{min-height:250px}.cover-computer .crt-screen pre{padding-top:17px}.invitation{display:flex;gap:48px;align-items:center;margin:0 60px;padding:38px 0;border-top:1px solid #cfd6c6;border-bottom:1px solid #cfd6c6}.invitation-number{font-family:Georgia,serif;font-size:90px;line-height:1;font-weight:400;color:#98a58b;position:relative;padding-bottom:24px}.invitation-number span{position:absolute;bottom:0;left:0;font-family:var(--mono);font-size:7px;letter-spacing:1px;white-space:nowrap}.invitation h2{font-family:var(--serif);font-size:27px;line-height:1.55;margin:10px 0}.invitation p{font-size:13px;line-height:1.9;color:var(--muted)}.round-link{display:flex;align-items:center;justify-content:center;width:58px;height:58px;background:var(--lime);border-radius:50%;margin-left:auto;font-size:27px;flex-shrink:0}.chapter-preview{padding:56px 60px}.section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:25px}.section-heading h2{font-size:23px;font-family:var(--serif)}.section-heading>span{font-size:11px;color:var(--muted)}.lesson-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 35px}.lesson-card{padding:24px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:28px 1fr 20px;gap:3px 14px;align-items:center}.lesson-card:hover h3{color:var(--orange)}.lesson-number{grid-row:span 2;align-self:start;font-family:var(--mono);font-size:10px;color:var(--orange);padding-top:4px}.lesson-card h3{font-size:14px;font-weight:550}.lesson-card>span:not(.lesson-number){font-family:var(--mono);color:var(--muted);font-size:10px}.lesson-card b{grid-row:1/3;grid-column:3;font-size:17px;font-weight:400}.next-teaser{margin:0 60px 60px;background:#e9ecdf;padding:37px 42px;position:relative}.next-teaser h2{font-family:var(--serif);font-size:27px;margin:10px 0}.next-teaser p{color:var(--muted);font-size:13px;margin-bottom:17px;max-width:750px}.journey-page{max-width:1060px;margin:0 auto;padding:38px 40px 80px}.journey-title{margin:36px 0 50px}.journey-title h1{font-family:var(--serif);font-size:54px;line-height:1.35;margin:18px 0}.journey-title p{font-size:14px;color:var(--muted);line-height:1.9}.era{display:grid;grid-template-columns:175px 1fr 55px;position:relative;gap:42px;padding:32px 0}.era-date{font-family:var(--mono);font-size:21px;position:relative;padding-right:25px;align-self:stretch;border-right:1px solid var(--line)}.timeline-dot{position:absolute;right:-5px;top:10px;width:9px;height:9px;border-radius:50%;background:#a9b2a0;box-shadow:0 0 0 7px var(--paper)}.current-era .timeline-dot{background:var(--orange)}.era-state{font-size:10px;color:var(--muted);letter-spacing:1px}.current-era .era-state{color:var(--orange)}.era h2{font-family:var(--serif);font-size:31px;margin:9px 0 2px}.era-machine{font-size:12px;color:var(--muted)}.era p{font-size:13px;color:#687361;max-width:540px;margin:16px 0 20px;line-height:1.9}.era-index{font-family:Georgia,serif;font-size:52px;color:#d1d7c7}.editor-note{margin-top:50px;border-top:1px solid var(--line);padding-top:30px}.editor-note p{font-size:13px;line-height:1.9;color:var(--muted);margin-top:14px}.reader-layout{display:grid;grid-template-columns:215px minmax(0,1fr);max-width:1600px;margin:auto;min-height:calc(100vh - 84px)}.reader-sidebar{border-right:1px solid var(--line);padding:25px 22px;display:flex;flex-direction:column;align-self:start;position:sticky;top:0;min-height:690px}.sidebar-chapter{margin:30px 0 24px}.sidebar-chapter h2{font-family:var(--serif);font-size:22px;margin:7px 0 2px}.sidebar-chapter>span:last-child{font-size:10px;color:var(--muted)}.reader-sidebar nav{display:flex;flex-direction:column;gap:5px;margin:0 -10px}.reader-sidebar nav a{display:flex;align-items:center;gap:10px;padding:12px 10px;font-size:11px;color:var(--muted);border-radius:4px}.reader-sidebar nav a>span{font-family:var(--mono);font-size:9px;min-width:17px}.reader-sidebar nav a[aria-current]{background:#e4e9da;color:var(--ink);font-weight:600}.reader-sidebar nav a b{margin-left:auto;font-size:14px}.done{color:#597c48!important}.sidebar-bottom{margin-top:48px;font-size:10px;color:var(--muted)}.sidebar-bottom a{display:flex;justify-content:space-between;margin-top:22px;padding:10px 0;border-top:1px solid var(--line);font-size:11px}.progress-track{background:#e0e4d6;height:3px;margin-top:12px;overflow:hidden}.progress-track i{display:block;height:100%;background:#6c865a;width:0;transition:width .3s}.reader-content{min-width:0;padding:27px 35px 55px}.reader-topline{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;align-items:center;margin-bottom:35px;letter-spacing:.6px}.reader-topline>span:first-child{display:flex;gap:10px;align-items:center}.reader-topline i{width:23px;height:1px;background:#aab29f}.reader-topline b{margin:0 5px;font-weight:400}.reading-spread{display:grid;grid-template-columns:minmax(245px,.85fr) minmax(410px,1.2fr);gap:35px;align-items:start}.story-column{padding-top:8px;min-width:0}.story-column h1{font-family:var(--serif);font-size:35px;line-height:1.4;letter-spacing:-1px;margin:18px 0 23px;font-weight:900}.story-intro{font-size:15px;line-height:1.95;color:#485a48;font-weight:450;margin-bottom:25px}.story-body{font-family:var(--serif);font-size:15px;line-height:2.05;color:#555f50}.story-body p+p{margin-top:18px}.story-body code{font-family:var(--mono);font-size:.8em;color:#9c4f35;background:#ebe8dd;padding:1px 3px;border-radius:2px;overflow-wrap:anywhere}.mission{display:flex;gap:13px;padding:20px 16px;background:#e8eddb;margin-top:28px;border-radius:3px}.mission-star{font-size:26px;color:#758752;line-height:1.2}.mission p{font-size:12px;line-height:1.8;margin-top:7px}.deeper{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:24px;padding:14px 0;font-size:11px}.deeper summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.deeper summary::-webkit-details-marker{display:none}.deeper summary span{font-size:16px}.deeper[open] summary span{transform:rotate(45deg)}.deeper p{font-size:12px;line-height:1.9;color:var(--muted);margin-top:13px}.sources{display:flex;flex-direction:column;gap:5px;margin-top:19px;font-size:9px;color:#75816a}.sources>span{margin-bottom:4px;letter-spacing:1px;color:#606e55}.sources a{border-bottom:1px solid transparent;width:fit-content;max-width:100%}.sources a:hover{border-color:#9da992;color:var(--ink)}.lab{background:#eeeee3;border:1px solid #dfe1d3;border-radius:8px;overflow:hidden;padding:0 20px 18px;min-width:0}.lab-heading{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid #d7ddca;margin-bottom:20px;font-size:10px;letter-spacing:.4px;align-items:center}.lab-heading span{display:flex;gap:7px;align-items:center}.lab-heading i{width:5px;height:5px;background:var(--orange);border-radius:50%}.lab-heading b{font-family:var(--mono);font-size:8px;font-weight:400;color:var(--muted)}.lab-computer .computer-scene{padding:0 5px}.lab-computer .monitor{max-width:365px;padding:13px 12px 7px;border-radius:18px 18px 12px 12px}.lab-computer .monitor-bezel{padding:7px;gap:9px;border-radius:11px}.lab-computer .crt-border{border-width:10px}.lab-computer .crt-screen{min-height:270px;font-size:10px;letter-spacing:-.4px;padding:9px 5px}.lab-computer .monitor-side{flex-basis:23px;gap:12px}.lab-computer .tv-dial{width:24px;height:24px}.lab-computer .small-dial{width:18px;height:18px}.lab-computer .speaker-grille{height:55px;width:20px}.lab-computer .keyboard-body{padding:10px 10px 15px}.lab-computer .keyboard-brand{margin-bottom:8px}.lab-computer .key{height:19px;font-size:6px}.lab-computer .key.wide-key{font-size:4px}.lab-computer .function-keys{width:23px;padding-bottom:23px}.lab-computer .function-keys span{height:18px}.lab-computer .monitor-stand{height:14px}.machine-toolbar{display:flex;gap:8px;align-items:center;margin:26px 0 18px;flex-wrap:wrap}.machine-status{font-size:8px;margin-left:auto;color:var(--muted);font-family:var(--mono)}#command-form label{font-size:10px;display:flex;justify-content:space-between;margin-bottom:7px;color:#607052;gap:8px}#command-form label span{color:#7b856f;font-size:9px}.command-line{display:flex;align-items:center;background:var(--paper-light);border:1px solid #bfcab3;border-radius:4px;overflow:hidden;min-height:45px}.command-line>span{padding:0 9px;font-family:var(--mono);font-size:22px;color:#869576}.command-line input{width:100%;min-width:0;flex:1;border:0;background:transparent;font-family:var(--mono);font-size:12px;color:var(--ink);padding:12px 0;outline-offset:-2px}.command-line input:disabled{color:#9ba38e}.command-line button{align-self:stretch;background:#dce4cb;color:#3d5333;font-family:var(--mono);font-size:10px;padding:0 11px;min-height:44px}.command-feedback{font-size:10px;color:#637253;line-height:1.8;margin:9px 0;min-height:35px;overflow-wrap:anywhere}.command-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:10px}.command-chips>span{font-size:9px;color:var(--muted);margin-right:3px}.command-chips button{font-family:var(--mono);font-size:9px;padding:6px 7px;background:transparent;border:1px solid #cbd3bf;border-radius:3px;min-height:30px}.command-chips button:hover{background:#e1e6d5}.lab-help{font-size:10px;color:#6a775c;margin-top:15px}.lab-help summary{cursor:pointer}.lab-help p{margin-top:8px;line-height:1.9;font-size:10px}.simulation-note{font-size:8px;color:#828c76;line-height:1.7;margin:15px 0 0}.sample-program{display:flex;align-items:center;gap:10px;justify-content:space-between;background:#e3e7d8;padding:14px;margin:12px 0}.sample-program .eyebrow{font-size:8px;letter-spacing:.5px}.sample-program code{display:block;font-family:var(--mono);font-size:11px;line-height:1.8;margin-top:8px}.sample-program .button{font-size:9px;padding:9px}.lesson-footer{display:flex;justify-content:space-between;gap:22px;align-items:center;margin-top:35px;padding-top:25px;border-top:1px solid var(--line)}#lesson-status{font-size:10px;color:#71855c}.lesson-footer p{font-family:var(--serif);font-size:14px;margin-top:6px;line-height:1.8}.lesson-pagination{display:flex;align-items:center;gap:18px;flex-shrink:0}.previous{font-size:21px;padding:10px}.lesson-pagination .button{font-size:11px;padding:13px 17px}.bits-intro{margin:26px 0 28px}.bits-intro h3{font-family:var(--serif);font-size:26px;margin:12px 0}.bits-intro p{font-size:12px;color:var(--muted);line-height:1.8}.bit-switches{display:flex;gap:8px;justify-content:space-between;margin:35px 0 18px}.bit-column{flex:1;min-width:0;text-align:center}.bit-column>span{display:block;font-family:var(--mono);font-size:11px;color:#768369;margin-bottom:10px}.bit-switch{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:9px 0;width:100%;height:100px;border:1px solid #c6cfb8;background:#e4e7da;border-radius:7px;box-shadow:0 3px 0 #c7cdbd}.bit-switch i{width:9px;height:9px;background:#b5bda9;border-radius:50%}.bit-switch b{font-family:var(--mono);font-weight:400;font-size:29px}.bit-switch.active{background:#dce69c;border-color:#aab874;box-shadow:0 3px 0 #9fae64}.bit-switch.active i{background:#6e8c3b;box-shadow:0 0 9px #a3bb59}.bit-sum{font-family:var(--mono);font-size:12px;padding:15px 8px;text-align:center;color:#7b835f;min-height:50px}.byte-readout{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #d5dcc8;border-bottom:1px solid #d5dcc8;padding:25px 3px;gap:7px}.byte-readout>div{display:flex;flex-direction:column;align-items:center;gap:10px}.byte-readout span{font-size:9px;color:var(--muted)}.byte-readout strong{font-family:var(--mono);font-size:25px;font-weight:400}.byte-readout>div:first-child strong{font-size:18px}.byte-readout>b{color:#a0ae8b;font-weight:400}.byte-readout .letter-result strong{color:var(--orange)}.bit-feedback{min-height:78px;font-size:12px;line-height:1.9;padding:22px 0;color:#6b7d55}.lab-bottom-actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:10px 0 22px}.lab-bottom-actions>span{font-size:10px;color:#6a7959}.margin-note{display:flex;gap:15px;align-items:center;padding:22px 0;border-top:1px solid #d5dcc8;font-size:12px;color:#6a785a;line-height:1.8}.margin-note>span{font-size:30px;color:#94a867}.pixel-studio{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(140px,1fr);gap:18px;margin-top:25px}.pixel-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:2px;align-self:start;border:7px solid #3e5042;background:#98a98d;aspect-ratio:1;border-radius:3px}.pixel{background:#dce3ce;aspect-ratio:1;border-radius:1px;padding:0;min-width:0}.pixel.lit{background:#3c5143}.pixel:hover{box-shadow:inset 0 0 0 2px var(--orange)}.pixel-data{display:flex;flex-direction:column}.pixel-data .eyebrow{font-size:8px;letter-spacing:.8px;margin-bottom:8px}.pixel-row{display:flex;gap:6px;align-items:center;padding:4px 5px;font-size:10px;background:transparent;border-radius:3px;min-height:26px}.pixel-row.selected{background:#dce6b9}.pixel-row>span{font-size:8px;color:#81916e}.pixel-row code{font-family:var(--mono);font-size:11px;color:#59714d;flex:1;letter-spacing:.1px}.pixel-row b{font-family:var(--mono);font-weight:500;font-size:9px}.pixel-explanation{font-size:11px;line-height:1.8;color:#667a52;padding:20px 0;min-height:80px}.tape-panel{display:flex;gap:18px;padding:17px 0;border-top:1px solid #d5dcc8;border-bottom:1px solid #d5dcc8;margin:17px 0;align-items:center}.cassette{flex-shrink:0;width:130px;height:85px;background:linear-gradient(#bb6a45 0 22%,#d6b58d 22% 82%,#8a523a 82%);border:3px solid #59493b;border-radius:6px;padding:0 8px;text-align:center;box-shadow:0 3px 0 #7f6550;color:#3c3d31}.cassette>span{font-size:5px;letter-spacing:1px;display:block;margin:3px 0 9px;color:#fff3dd}.tape-window{height:23px;border:2px solid #736347;border-radius:15px;background:#837352;display:flex;align-items:center;justify-content:space-between;padding:0 4px}.tape-window i{width:17px;height:17px;border:5px dashed #e2d7b5;border-radius:50%;background:#443e31}.tape-window b{font-size:10px;color:#b7a481}.cassette>strong{display:block;font-family:var(--mono);font-size:9px;font-weight:400;margin-top:4px;overflow:hidden;white-space:nowrap}.tape-copy{min-width:0}.tape-copy h3{font-size:11px;font-weight:550}.tape-copy p{font-size:9px;color:var(--muted);margin:5px 0}.tape-copy small{display:block;font-size:8px;color:var(--muted)}.tape-buttons{display:flex;gap:7px;flex-wrap:wrap}.tape-buttons .text-button{font-size:9px;padding:7px 0;text-decoration:underline;text-underline-offset:3px}.chapter-ending{padding:50px 0 10px;text-align:center}.chapter-ending h2{font-family:var(--serif);font-size:27px;line-height:1.65;margin:15px 0}.chapter-ending p{font-size:12px;color:var(--muted);max-width:600px;margin:auto}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,15px);background:var(--ink);color:var(--paper-light);padding:12px 22px;border-radius:5px;font-size:12px;box-shadow:0 8px 30px #223c3326;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60;width:max-content;max-width:calc(100vw - 32px);line-height:1.7}.toast.visible{opacity:1;transform:translate(-50%,0)}dialog{border:1px solid #cdd6c0;border-radius:9px;background:var(--paper-light);color:var(--ink);padding:30px;width:min(560px,calc(100vw - 30px));max-height:85vh;box-shadow:0 20px 100px #22382f33}dialog::backdrop{background:#263d3370;backdrop-filter:blur(4px)}.dialog-header{display:flex;justify-content:space-between;align-items:center}.close-button{background:transparent;font-size:26px;line-height:1;padding:6px;min-width:40px;min-height:40px}dialog h2{font-family:var(--serif);font-size:30px;line-height:1.5;margin:20px 0}.notebook-summary{font-size:12px;color:var(--muted);margin-bottom:15px}.notebook-list>a{display:flex;align-items:center;gap:13px;padding:15px 0;border-top:1px solid var(--line)}.note-check{font-family:var(--mono);font-size:20px;color:#b3baa8;width:23px;flex-shrink:0}.notebook-list b{font-size:12px;font-weight:550}.notebook-list p{font-size:11px;color:var(--muted);line-height:1.7;margin-top:3px}.notebook-list a>span:last-child{margin-left:auto}#storage-note{margin-top:20px;font-size:10px;line-height:1.8}.large-type .story-intro{font-size:18px}.large-type .story-body{font-size:18px}.large-type .mission p,.large-type .deeper p{font-size:14px}.large-type .hero-description{font-size:18px}.large-type .reader-sidebar nav a{font-size:12px}
+@keyframes cursor-blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+@media(min-width:1500px){.reader-content{padding:30px 48px 55px}.reading-spread{gap:50px}.story-column h1{font-size:42px}.story-intro,.story-body{font-size:16px}.lab{padding:0 28px 24px}.lab-computer .monitor{max-width:390px}.lab-computer .crt-screen{font-size:11px;min-height:291px}.key{height:24px}.cover-hero{min-height:760px}}
+@media(max-width:1180px){.topbar{padding:0 28px;gap:20px}.brand-description{display:none}.cover-hero{padding:50px 38px;gap:26px;min-height:640px}.cover-copy h1{font-size:47px}.cover-meta{flex-direction:column;align-items:flex-start;gap:3px}.cover-meta span+span:before{display:none}.hero-art{padding-top:55px}.cover-computer .crt-screen{min-height:220px;font-size:10px}.cover-computer .monitor{padding:14px 12px 7px}.cover-computer .monitor-bezel{gap:8px;padding:8px}.cover-computer .crt-border{border-width:11px}.cover-computer .key{height:19px;font-size:6px}.cover-computer .key.wide-key{font-size:4px}.invitation{margin:0 38px;gap:30px}.chapter-preview{padding:45px 38px}.next-teaser{margin:0 38px 45px}.reader-layout{grid-template-columns:180px minmax(0,1fr)}.reader-sidebar{padding:25px 16px}.sidebar-chapter h2{font-size:19px}.reader-sidebar nav a{font-size:10px;gap:7px}.reader-content{padding:27px 25px 45px}.reading-spread{grid-template-columns:minmax(215px,.85fr) minmax(360px,1.2fr);gap:25px}.story-column h1{font-size:30px}.story-intro,.story-body{font-size:14px}.lab{padding:0 14px 16px}.lab-computer .crt-screen{font-size:9px;min-height:245px}.lab-computer .monitor-side{flex-basis:20px}.lab-computer .tv-dial{width:20px;height:20px}.lab-computer .small-dial{width:16px;height:16px}.lab-computer .keyboard-body{padding:10px 7px 14px}.lab-computer .key-area{gap:5px;padding:3px}.lab-computer .key-row{gap:2px}.lab-computer .key{height:17px;font-size:5px}.lab-computer .key.wide-key{font-size:4px}.lab-computer .function-keys{width:20px;padding-bottom:20px}.lab-computer .function-keys span{height:16px;font-size:5px}.byte-readout>div:first-child strong{font-size:15px}.byte-readout strong{font-size:21px}.tape-panel{gap:10px}.cassette{width:110px}.pixel-studio{grid-template-columns:1fr;max-width:300px;margin:25px auto 0}.pixel-data{margin-top:10px}.pixel-row{padding:6px}.pixel-row code{font-size:13px;letter-spacing:3px}.machine-status{width:100%;margin-left:0;font-size:9px}.machine-toolbar{margin-bottom:12px}}
+@media(max-width:980px){.reader-layout{grid-template-columns:1fr}.reader-sidebar{position:static;border-right:0;border-bottom:1px solid var(--line);padding:15px 30px;min-height:0}.reader-sidebar>.back-link,.sidebar-chapter,.sidebar-bottom{display:none}.reader-sidebar nav{flex-direction:row;overflow-x:auto;gap:8px;margin:0;scrollbar-width:thin;padding-bottom:3px}.reader-sidebar nav a{flex-shrink:0;padding:9px 11px;font-size:10px}.reader-sidebar nav a b{display:none}.reader-content{padding:27px 30px 45px}.reading-spread{grid-template-columns:minmax(245px,.9fr) minmax(355px,1.1fr);gap:25px}.story-column h1{font-size:34px}.story-intro,.story-body{font-size:15px}.cover-copy h1{font-size:42px}.cover-hero{padding:45px 30px}.hero-description{font-size:13px}.cover-actions{gap:17px}.cover-actions .button{padding:13px 17px;font-size:12px}.cover-actions .plain-link{font-size:11px}.cover-computer .crt-screen{min-height:185px;font-size:8px}.cover-computer .monitor{padding:10px 10px 6px}.cover-computer .monitor-side{flex-basis:20px;gap:10px}.cover-computer .tv-dial{width:22px;height:22px}.cover-computer .small-dial{width:17px;height:17px}.cover-computer .speaker-grille{height:50px;width:18px}.cover-computer .keyboard-body{padding:10px 9px 15px}.cover-computer .keyboard-brand{margin-bottom:8px;font-size:7px}.cover-computer .key-area{gap:5px;padding:3px}.cover-computer .key-row{gap:2px}.cover-computer .key{height:15px;font-size:5px}.cover-computer .key.wide-key{font-size:3px}.cover-computer .key.space-key{height:15px}.cover-computer .function-keys{width:18px;padding-bottom:18px}.cover-computer .function-keys span{height:14px;font-size:5px}.machine-caption{flex-direction:column;align-items:flex-start;gap:5px}.edition{font-size:8px;letter-spacing:.6px}.orbit-label strong{font-size:29px}.lesson-grid{gap:0 22px}.lesson-card h3{font-size:12px}.lesson-card>span:not(.lesson-number){font-size:8px}}
+@media(max-width:760px){.topbar{height:70px;padding:0 20px;gap:10px}.brand{font-size:25px;gap:8px}.brand-icon{width:29px;height:30px;font-size:23px}.topbar nav{gap:14px;font-size:11px}.notebook-button{padding:7px 9px;font-size:10px}.notebook-button span{margin-left:5px}.cover-hero{grid-template-columns:1fr;padding:35px 26px 30px;gap:20px}.cover-copy h1{font-size:50px}.cover-copy h1 br:first-child{display:none}.hero-description{font-size:14px}.cover-meta{flex-direction:row;gap:12px;font-size:9px}.cover-meta span+span:before{display:inline;margin-right:12px}.cover-actions{gap:23px;margin-top:24px}.cover-actions .button{padding:14px 22px;font-size:13px}.hero-art{max-width:470px;width:100%;margin:16px auto 0;padding:40px 20px 0}.hero-art:before{inset:35px 0 0}.cover-computer .crt-screen{min-height:210px;font-size:11px}.cover-computer .key{height:18px;font-size:6px}.cover-computer .key.wide-key{font-size:4px}.cover-computer .key.space-key{height:18px}.cover-computer .function-keys{padding-bottom:23px}.cover-computer .function-keys span{height:18px}.cover-computer .monitor{padding:13px 12px 7px}.cover-computer .monitor-side{flex-basis:26px}.machine-caption{flex-direction:row;font-size:8px}.scene-note{font-size:10px;margin-top:25px}.orbit-label{top:-3px;left:4%}.cross-one{top:-5px;right:10%;font-size:44px}.cross-two{bottom:95px;font-size:35px}.invitation{margin:10px 26px 0;gap:24px;padding:30px 0}.invitation-number{font-size:60px;align-self:flex-start;margin-top:10px}.invitation-number span{font-size:5px}.invitation h2{font-size:23px}.invitation p{font-size:12px}.round-link{display:none}.chapter-preview{padding:35px 26px}.section-heading{flex-direction:column;gap:8px;margin-bottom:15px}.section-heading h2{font-size:23px}.lesson-grid{grid-template-columns:repeat(2,1fr);gap:0 20px}.lesson-card{grid-template-columns:21px 1fr 13px;gap:4px 7px;padding:22px 0}.lesson-card h3{font-size:12px}.next-teaser{margin:0 26px 35px;padding:28px 24px}.next-teaser h2{font-size:24px}.next-teaser p{font-size:12px}.site-footer{padding:24px 26px;flex-wrap:wrap;gap:12px;font-size:9px}.site-footer>span:last-child{width:100%}.reader-sidebar{padding:12px 20px}.reader-content{padding:22px 24px 38px}.reader-topline{font-size:9px;margin-bottom:27px}.reading-spread{grid-template-columns:1fr;gap:28px}.story-column h1{font-size:37px;margin:15px 0 20px}.story-intro{font-size:16px;line-height:1.9}.story-body{font-size:15px;line-height:2}.mission{margin-top:22px;padding:19px}.sources{font-size:10px}.deeper{margin-top:20px}.lab{padding:0 20px 20px;max-width:600px;width:100%;margin:auto}.lab-computer{max-width:470px;margin:auto}.lab-computer .crt-screen{font-size:11px;min-height:285px}.lab-computer .monitor{max-width:380px}.lab-computer .monitor-side{flex-basis:23px}.lab-computer .key{height:22px;font-size:7px}.lab-computer .key.wide-key{font-size:5px}.lab-computer .function-keys{width:23px;padding-bottom:27px}.lab-computer .function-keys span{height:20px}.lab-computer .key-row{gap:3px}.machine-status{margin-left:auto;width:auto;font-size:8px}.machine-toolbar{margin-top:28px}.small-button{font-size:11px;min-height:43px}.command-feedback{font-size:12px;min-height:42px}.command-line input{font-size:14px}.command-line button{font-size:10px;min-height:46px}.command-chips button{font-size:10px;min-height:36px}.lab-help,.lab-help p{font-size:11px;line-height:1.9}.simulation-note{font-size:9px}.sample-program code{font-size:12px}.sample-program .button{font-size:10px}.lesson-footer{align-items:flex-start;flex-direction:column;gap:20px}.lesson-pagination{width:100%;justify-content:flex-end}.lesson-pagination .button{font-size:12px;min-height:46px}.lesson-footer p{font-size:15px}.byte-readout>div:first-child strong{font-size:20px}.byte-readout strong{font-size:28px}.bit-switches{gap:7px}.bits-intro h3{font-size:28px}.bit-column>span{font-size:10px}.bit-switch{height:95px}.pixel-studio{grid-template-columns:minmax(0,1fr) minmax(145px,1fr);max-width:100%;gap:16px}.pixel-data{margin-top:0}.pixel-row{padding:4px;min-height:27px}.pixel-row code{font-size:11px;letter-spacing:0}.pixel-grid{border-width:5px}.pixel-explanation{font-size:12px}.tape-copy h3{font-size:12px}.tape-copy p{font-size:10px}.tape-buttons .text-button{font-size:10px;min-height:38px}.tape-copy small{font-size:9px}.tape-panel{gap:18px}.cassette{width:130px}.journey-page{padding:24px 25px 50px}.journey-title{margin:30px 0}.journey-title h1{font-size:43px}.journey-title p{font-size:13px}.journey-title p br{display:none}.era{grid-template-columns:95px 1fr;gap:22px;padding:25px 0}.era-date{font-size:14px;padding-right:12px}.era-index{display:none}.era h2{font-size:26px}.era p{font-size:12px}.era-machine{font-size:11px}.era-state{font-size:9px}.era .button{font-size:11px;padding:12px 15px}.editor-note{margin-top:30px}.chapter-ending h2{font-size:24px}}
+@media(max-width:420px){.topbar{padding:0 15px}.topbar nav{gap:12px}.topbar nav>a{font-size:10px}.notebook-button{font-size:10px;padding:6px 8px}.notebook-button span{display:none}.brand{font-size:24px}.brand-icon{width:27px;height:28px}.cover-hero{padding:30px 22px}.cover-copy h1{font-size:43px;letter-spacing:-1.5px}.hero-description{font-size:13px}.cover-meta{font-size:8px;gap:8px}.cover-meta span+span:before{margin-right:8px}.cover-actions{gap:19px}.cover-actions .plain-link{font-size:11px}.hero-art{padding:40px 6px 0}.cover-computer .crt-screen{font-size:9px;min-height:175px}.cover-computer .monitor-side{flex-basis:20px}.cover-computer .key{height:16px;font-size:5px}.cover-computer .key.wide-key{font-size:3px}.cover-computer .key.space-key{height:16px}.cover-computer .function-keys{padding-bottom:20px}.cover-computer .function-keys span{height:15px}.machine-caption{font-size:7px}.machine-caption b{font-size:8px}.invitation{margin:4px 22px 0;gap:16px}.invitation-number{font-size:49px}.invitation h2{font-size:20px}.invitation p{font-size:11px}.invitation p br{display:none}.chapter-preview{padding:30px 22px}.lesson-grid{gap:0 16px}.lesson-card{grid-template-columns:19px 1fr;gap:4px}.lesson-card>b{display:none}.lesson-card h3{font-size:12px}.lesson-card>span:not(.lesson-number){font-size:8px}.next-teaser{margin:0 22px 30px;padding:25px 20px}.next-teaser h2{font-size:22px}.reader-content{padding:23px 18px 35px}.story-column h1{font-size:34px}.lab{padding:0 14px 18px}.lab-heading{font-size:10px}.lab-heading b{font-size:7px}.lab-computer .crt-screen{font-size:9px;min-height:239px;padding:9px 4px}.lab-computer .monitor{padding:11px 9px 7px}.lab-computer .monitor-bezel{padding:6px;gap:7px}.lab-computer .monitor-side{flex-basis:18px}.lab-computer .monitor-side span{font-size:3px}.lab-computer .keyboard-body{padding:10px 7px 12px}.lab-computer .key{height:19px;font-size:5px}.lab-computer .key.wide-key{font-size:3px}.lab-computer .key-row{gap:2px}.lab-computer .function-keys{width:18px;padding-bottom:23px}.lab-computer .function-keys span{height:17px;font-size:5px}.machine-status{margin-left:0;width:100%}.sample-program{padding:11px;gap:6px}.sample-program .button{font-size:9px;padding:8px}.sample-program code{font-size:10px}.bit-switches{gap:5px}.bit-switch{height:88px}.bit-switch b{font-size:26px}.bit-switch i{width:7px;height:7px}.byte-readout>div:first-child strong{font-size:16px}.byte-readout strong{font-size:24px}.byte-readout span{font-size:8px}.pixel-studio{grid-template-columns:1fr;max-width:290px}.pixel-grid{border-width:7px}.pixel-data{margin-top:10px}.pixel-row{min-height:34px}.pixel-row code{font-size:15px;letter-spacing:3px}.tape-panel{gap:12px}.cassette{width:110px;height:82px}.tape-copy h3{font-size:10px}.tape-copy p{font-size:9px}.tape-buttons{gap:7px}.tape-buttons .text-button{font-size:9px}.tape-copy small{font-size:8px}.lab-bottom-actions>span{font-size:9px}.era{grid-template-columns:79px 1fr;gap:20px}.era-date{font-size:12px}.era h2{font-size:23px}.journey-title h1{font-size:39px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.reader-sidebar{min-width:0}
+@media(max-width:980px){.reader-layout{grid-template-columns:minmax(0,1fr)}}
+@media print{.topbar,.reader-sidebar,.lab,.lesson-pagination,.site-footer,.toast,.sources a:after{display:none}.reader-layout,.reading-spread{display:block}.reader-content{padding:0}.story-column{max-width:680px;margin:auto}.story-body,.story-intro{color:#111}body{background:#fff}.deeper{display:block}.mission{background:#f3f3f3}.lesson-footer{display:block}a{text-decoration:underline}}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="topbar">
+    <a class="brand" href="#cover" aria-label="Every Bit 首页"><span class="brand-icon" aria-hidden="true">e<span>↗</span></span><span>every bit<span class="brand-dot">.</span></span></a>
+    <span class="brand-description">一本可以玩的计算机小史</span>
+    <nav aria-label="主导航"><a href="#journey">时光目录 <span aria-hidden="true">↗</span></a><button id="font-toggle" class="text-button" aria-label="切换大字阅读" aria-pressed="false">Aa</button><button id="notebook-button" class="notebook-button">探索手记 <span id="header-progress">0/6</span></button></nav>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer"><a class="footer-brand" href="#cover">EVERY BIT.</a><span>好奇心，是最好的开机键。</span><span>互动样章 · 第 01 章</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="notebook" aria-labelledby="notebook-title"><div class="dialog-header"><span class="eyebrow">FIELD NOTES / 探索手记</span><button data-close-dialog aria-label="关闭手记" class="close-button">×</button></div><h2 id="notebook-title">每一个小发现，<br>都值得记下来。</h2><div id="notebook-content"></div><p class="small muted" id="storage-note">手记和磁带保存在当前浏览器中，不会跨设备同步。</p></dialog>
+<script>
+(()=>{
+// Deliberately small BASIC teaching interpreter. No eval, ROMs, or CPU emulation.
+const STORAGE_KEY = 'every-bit.v1';
+const LESSON_COUNT = 6;
+const toBits = value => (value & 255).toString(2).padStart(8, '0');
+const fromBits = bits => bits.reduce((n, bit) => n * 2 + Number(Boolean(bit)), 0);
+const glyphRows = pixels => Array.from({length: 8}, (_, y) => fromBits(pixels.slice(y * 8, y * 8 + 8)));
+const initialState = () => ({version: 1, completed: [], lastLesson: 0, bits: 0, pixels: Array(64).fill(0), tape: null, tapePowerCycle: false, program: {}, powered: false, largeType: false});
+function cleanProgram(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  const result = {};
+  for (const [key, line] of Object.entries(value).slice(0, 100)) {
+    if (/^\d+$/.test(key) && +key >= 0 && +key <= 63999 && typeof line === 'string' && line.length <= 80 && /^[\x20-\x7e]*$/.test(line)) result[+key] = line;
+  }
+  return result;
+}
+function restoreState(raw) {
+  const base = initialState();
+  try {
+    const s = JSON.parse(raw);
+    if (!s || s.version !== 1) return base;
+    base.completed = Array.isArray(s.completed) ? [...new Set(s.completed.filter(n => Number.isInteger(n) && n >= 0 && n < LESSON_COUNT))] : [];
+    if (Number.isInteger(s.lastLesson) && s.lastLesson >= 0 && s.lastLesson < LESSON_COUNT) base.lastLesson = s.lastLesson;
+    if (Number.isInteger(s.bits) && s.bits >= 0 && s.bits <= 255) base.bits = s.bits;
+    if (Array.isArray(s.pixels) && s.pixels.length === 64 && s.pixels.every(n => n === 0 || n === 1)) base.pixels = s.pixels;
+    base.program = cleanProgram(s.program);
+    base.powered = s.powered === true;
+    base.largeType = s.largeType === true;
+    if (s.tape && typeof s.tape === 'object' && typeof s.tape.name === 'string' && /^[A-Z0-9 -]{1,12}$/.test(s.tape.name)) base.tape = {name: s.tape.name, program: cleanProgram(s.tape.program)};
+    base.tapePowerCycle = !!base.tape && s.tapePowerCycle === true;
+  } catch { /* Broken browser storage should never prevent reading. */ }
+  return base;
+}
+
+class BasicError extends Error {}
+function tokenize(text) {
+  const tokens = [];
+  let i = 0;
+  while (i < text.length) {
+    if (/\s/.test(text[i])) {i++; continue;}
+    const rest = text.slice(i);
+    const num = rest.match(/^(?:\d+(?:\.\d*)?|\.\d+)/);
+    if (num) { tokens.push({kind: 'number', value: Number(num[0])}); i += num[0].length; continue; }
+    const name = rest.match(/^[A-Z][A-Z0-9]*/);
+    if (name) {tokens.push({kind: 'name', value: name[0]}); i += name[0].length; continue;}
+    if ('+-*/()'.includes(text[i])) {tokens.push({kind: text[i++]}); continue;}
+    throw new BasicError('SYNTAX ERROR');
+  }
+  return tokens;
+}
+function expression(text, vars = {}) {
+  const tokens = tokenize(text.toUpperCase()); let at = 0;
+  function primary() {
+    const t = tokens[at++];
+    if (!t) throw new BasicError('SYNTAX ERROR');
+    if (t.kind === '+') return primary();
+    if (t.kind === '-') return -primary();
+    if (t.kind === 'number') return t.value;
+    if (t.kind === 'name') return Object.hasOwn(vars, t.value) ? vars[t.value] : 0;
+    if (t.kind === '(') {const v = add(); if (tokens[at++]?.kind !== ')') throw new BasicError('SYNTAX ERROR'); return v;}
+    throw new BasicError('SYNTAX ERROR');
+  }
+  function multiply() {
+    let v = primary();
+    while (['*', '/'].includes(tokens[at]?.kind)) {const op = tokens[at++].kind; const b = primary(); if (op === '/' && b === 0) throw new BasicError('DIVISION BY ZERO'); v = op === '*' ? v * b : v / b;}
+    return v;
+  }
+  function add() {
+    let v = multiply();
+    while (['+', '-'].includes(tokens[at]?.kind)) {const op = tokens[at++].kind; const b = multiply(); v = op === '+' ? v + b : v - b;}
+    return v;
+  }
+  const value = add();
+  if (at !== tokens.length) throw new BasicError('SYNTAX ERROR');
+  if (!Number.isFinite(value) || Math.abs(value) > 1e38) throw new BasicError('OVERFLOW');
+  return value;
+}
+
+class BasicMachine {
+  constructor(program = {}) {this.program = cleanProgram(program); this.vars = {}; this.running = false; this.pc = 0; this.steps = 0; this.currentLine = null;}
+  list() {return Object.entries(this.program).sort((a,b) => +a[0] - +b[0]).map(([n,line]) => `${n} ${line}`);}
+  stop() {const wasRunning = this.running; this.running = false; return wasRunning;}
+  statement(text) {
+    const line = text.trim(); let match;
+    if (/^REM(?:\s|$)/.test(line) || !line) return {output: []};
+    if ((match = line.match(/^(?:PRINT\s*|\?\s*)(.*)$/))) {
+      const body = match[1].trim();
+      if (!body) return {output: [''], printed: true};
+      if (/^"[^"\r\n]*"$/.test(body)) return {output: [body.slice(1,-1)], printed: true};
+      const chr = body.match(/^CHR\$\((.*)\)$/);
+      if (chr) {const n = expression(chr[1], this.vars); if (!Number.isInteger(n) || n < 32 || n > 90) throw new BasicError('ILLEGAL QUANTITY'); return {output: [String.fromCharCode(n)], printed: true};}
+      return {output: [String(expression(body, this.vars))], printed: true};
+    }
+    if ((match = line.match(/^(?:LET\s+)?([A-Z][A-Z0-9]*)\s*=\s*(.+)$/))) {this.vars[match[1]] = expression(match[2], this.vars); return {output: []};}
+    if ((match = line.match(/^GOTO\s*(\d+)$/))) {
+      const target = +match[1];
+      if (!Object.hasOwn(this.program, target)) throw new BasicError('UNDEF\'D STATEMENT');
+      return {output: [], goto: target};
+    }
+    if (/^(END|STOP)$/.test(line)) return {output: [], end: true};
+    throw new BasicError('SYNTAX ERROR');
+  }
+  input(raw) {
+    const text = raw.trim().toUpperCase();
+    if (text.length > 80 || /[^\x20-\x7e]/.test(text)) return {output: ['?SYNTAX ERROR'], error: '请使用英文字符，最多 80 个字符。'};
+    if (!text) return {output: []};
+    if (this.running && !/^(STOP|END)$/.test(text)) return {output: [], error: '程序正在运行，先按 RUN/STOP 停下来。'};
+    const stored = text.match(/^(\d+)\s*(.*)$/);
+    if (stored) {
+      const n = +stored[1]; if (n > 63999) return {output: ['?SYNTAX ERROR'], error: '行号范围是 0–63999。'};
+      if (stored[2]) {
+        if (!Object.hasOwn(this.program,n) && Object.keys(this.program).length >= 100) return {output: ['?OUT OF MEMORY ERROR'], error: '教学模式最多保存 100 行。'};
+        this.program[n] = stored[2];
+      } else delete this.program[n];
+      return {output: [], stored: true};
+    }
+    if (text === 'LIST') return {output: this.list()};
+    if (text === 'NEW') {this.program = {}; this.vars = {}; return {output: [], cleared: true};}
+    if (text === 'RUN') {this.vars = {}; this.keys = Object.keys(this.program).map(Number).sort((a,b)=>a-b); this.pc = 0; this.steps = 0; this.currentLine = null; this.running = this.keys.length > 0; return {output: [], started: this.running, ended: !this.running};}
+    try {
+      const result = this.statement(text);
+      if (result.goto !== undefined) return {output: ['?SYNTAX ERROR'], error: '教学模式请把 GOTO 写在带行号的程序中，再 RUN。'};
+      if (result.end) this.running = false;
+      return result;
+    } catch(e) {return {output: [`?${e.message}`], error: e.message};}
+  }
+  step() {
+    if (!this.running) return {output: [], ended: true};
+    const number = this.keys[this.pc]; this.currentLine = number; this.steps++;
+    try {
+      const result = this.statement(this.program[number]);
+      this.pc = result.goto === undefined ? this.pc + 1 : this.keys.indexOf(result.goto);
+      if (result.end || this.pc >= this.keys.length) {this.running = false; result.ended = true;}
+      return {...result, line: number};
+    } catch(e) {this.running = false; return {output: [`?${e.message}`, ` IN ${number}`], error: e.message, ended: true};}
+  }
+}
+
+const sources = {
+  linus: {label: 'Linus 本人访谈 · Computing，2012', url: 'https://www.computing.co.uk/interview/2230892/linus-torvalds-interview-from-vic20-to-raspberry-pi'},
+  childhood: {label: 'Linus 本人访谈 · Linux Journal，1999', url: 'https://www.linuxjournal.com/article/3655'},
+  manual: {label: 'Commodore VIC-20 原版用户手册', url: 'https://museo.inf.uva.es/img/Computadores/VIC-20/Mas/ManualUsuario.pdf'},
+  later: {label: 'Linus 本人回忆 QL 与 386 · Ars Technica', url: 'https://arstechnica.com/information-technology/2015/08/how-linux-was-born-as-told-by-linus-torvalds-himself/'},
+  web: {label: '万维网的诞生 · CERN', url: 'https://home.cern/science/computing/the-birth-of-the-web'}
+};
+const lessons = [
+  {
+    short: '坐到电脑前', title: '电脑藏在键盘里。', kicker: '01 / 第一次见面', duration: '3 分钟',
+    intro: '时间来到 1980 年代初。芬兰，赫尔辛基。年少的 Linus 接触到外祖父的一台家用电脑：Commodore VIC-20。',
+    paragraphs: ['仔细看，它没有今天的笔记本屏幕。米色的壳子里装着键盘，也装着电脑的主要电路。接上家里的电视，电视就成了它的屏幕。', 'Linus 的外祖父是一位统计学教授，会把 BASIC 程序写在纸上，再让他帮忙输入。Linus 后来回忆，自己也读说明书、输入示例，慢慢试着改动它们。', '现在，把椅子拉近一点。开机后，你会看见 READY.——“准备好了”。闪烁的小方块在等着你的第一句话。'],
+    task: '按下电脑旁的开机键，找到屏幕上的 READY.',
+    takeaway: '键盘下面也是电脑；电视负责把结果显示出来。',
+    deeper: '这张书桌是根据当年的机器设计制作的情境插画，并非 Linus 家中房间的史实复原。关于接触电脑的年龄，他在不同时期的访谈中有约 10–12 岁的回忆，所以这里使用“1980 年代初”。',
+    source: ['linus','childhood','manual']
+  },
+  {
+    short: '让它说声你好', title: '你的第一句话，\n它听懂了。', kicker: '02 / 第一个指令', duration: '4 分钟',
+    intro: '屏幕上没有图标。要让这台电脑做事，你可以直接告诉它该做什么。它认识一种叫 BASIC 的语言。',
+    paragraphs: ['试着输入 PRINT "HELLO"，再按 RETURN（今天键盘上的 Enter）。PRINT 在这里表示“显示”，引号把你想说的话包起来。', 'HELLO 出现了！试着把它换成自己的英文名字。再试 PRINT 2+3：没有引号时，电脑会先计算，再显示结果。', '少打一个引号可能得到 SYNTAX ERROR。这只是说“我没看懂这句话的写法”。改好，再试一次就行。'],
+    task: '输入一条 PRINT 命令，让屏幕显示文字或算式的结果。',
+    takeaway: '你给出清楚的指令，电脑就照着执行。报错也是一种线索。',
+    deeper: 'BASIC 是编程语言。这台机器内置的解释器负责读懂命令。此处为教学模拟，支持 PRINT、简单算式、数字变量、带行号的程序、GOTO、RUN、STOP、LIST、NEW，以及本书用到的 SAVE、LOAD。它不运行 VIC-20 ROM，也不模拟 6502 CPU；完整 BASIC 和游戏软件尚不支持。',
+    source: ['manual']
+  },
+  {
+    short: '两行代码的魔法', title: '只写两行，\n它就停不下来了。', kicker: '03 / 程序与循环', duration: '5 分钟',
+    intro: '直接输入命令，电脑会立刻做。给命令加上行号，它会先把命令记住，等你说 RUN 再一起执行。',
+    paragraphs: ['先输入 10 PRINT "HELLO"。再输入 20 GOTO 10。10 和 20 是行号；GOTO 10 的意思是“回到第 10 行”。', '输入 RUN。显示一次 HELLO，回到第 10 行，再显示一次……电脑会一直重复这两步，直到你按下 RUN/STOP。', '试着重新输入 10 PRINT "I CAN CODE"，再 RUN。相同的行号会替换旧内容。用 LIST 能查看已经存进内存的程序。'],
+    task: '运行一段带 GOTO 的循环程序，再用 RUN/STOP 把它停下来。',
+    takeaway: '程序是存好的指令；循环让机器重复做一件事。',
+    deeper: '这段两行程序是本书的练习，并非声称是 Linus 当年输入的原文。教学模式放慢了执行速度，并在 80 步后暂停，方便观察；真实机器不会因为重复了 80 步就自动停下。',
+    source: ['linus','manual']
+  },
+  {
+    short: '拆开一个字节', title: '一个 A 的背后，\n有八个小开关。', kicker: '04 / EVERY BIT', duration: '5 分钟',
+    intro: '屏幕上的字母很好认，电路却不会像我们一样读字母。人们先给字符编上号码，再用 0 和 1 表示这些号码。',
+    paragraphs: ['一个 bit（比特）只有两种状态：0 或 1。把八个 bit 排在一起，就得到一个 byte（字节）。', '下面的每个开关都有自己的分量。最右边是 1，往左依次是 2、4、8……把亮着的分量加起来，就是这个字节表示的无符号整数。', '在 VIC-20 使用的 PETSCII 编码中，大写 A 的号码是 65。试着打开 64 和 1 两个开关，你就亲手拼出了它。'],
+    task: '拨动八个开关，让总数变成 65，找到字母 A。',
+    takeaway: '8 个 bit 能组成 256 种状态；同一组 bit 的含义取决于怎样解释。',
+    deeper: '这里演示 PETSCII 的大写英文字母范围（65–90）。字符编码、屏幕内存里的屏幕码、字符的像素图案并不是同一件事；例如字母 A 的 PETSCII 码是 65，VIC-20 的大写字符集屏幕码则是 1。中文和表情常需要多个字节，我们会在后面的时代继续探索。',
+    source: ['manual']
+  },
+  {
+    short: '画一个像素朋友', title: '小小的方格，\n装得下你的想象。', kicker: '05 / 从数字到图像', duration: '5 分钟',
+    intro: '靠近旧电视看一看：那些字母和图案也可以拆成一个个小点。VIC-20 常见的一个字符图案，就是 8 × 8 个点。',
+    paragraphs: ['在这张放大的画布里，一个点只用一个 bit：1 表示点亮，0 表示熄灭。每一排八个点，刚好是一个字节。', '点一点方格，画一张笑脸、一艘飞船，或者一个只有你认识的朋友。右边的数字会跟着变化：它们就是这幅黑白图案的另一种写法。', '八排就是八个字节。把这些字节按照同样的规则读回来，图案就能再次出现。颜色、动画和更大的图片，需要更多约定和空间。'],
+    task: '点亮至少 8 个格子，再选中一行，观察它的 0 和 1。',
+    takeaway: '图像可以变成数字；每次改动一个点，也就在改变一个 bit。',
+    deeper: '这是 1-bit 单色字形编辑器，帮助理解字符图案。它没有写入真实 VIC-20 的字符内存。64 个点需要 64 bit，即 8 byte；这仅计算原始点阵，不包括颜色、尺寸等信息。',
+    source: ['manual']
+  },
+  {
+    short: '把程序装进磁带', title: '关机以后，\n它还会记得吗？', kicker: '06 / 内存与保存', duration: '5 分钟',
+    intro: '你已经有了一段自己的程序。但如果拔掉电源，刚才记在内存里的东西，会怎么样？',
+    paragraphs: ['机器运行时，把程序放在 RAM（内存）里。普通 RAM 需要电力维持内容；关机后，程序就会丢失。', '当年的一种办法，是用专用磁带机把程序录到磁带上。下次开机，再把它读回来。等待磁带转动，也是那个年代使用电脑的一部分。', '试一次完整的旅程：准备程序 → SAVE "HELLO" → 关机 → 开机 → LOAD "HELLO"。然后 LIST 或 RUN，看看老朋友是不是回来了。'],
+    task: '把程序存到磁带，关机再开机，然后把它读回内存。',
+    takeaway: '内存负责正在做的事；外部存储帮你跨过一次关机。',
+    deeper: '这里的虚拟磁带保存到当前浏览器，只保留一份录制的程序；再次保存会替换它。为方便体验，省略了真机磁带的音频编码和漫长读写，也不生成真实磁带镜像。浏览器刷新会恢复阅读状态；只有明确按“关机”才清空模拟电脑的程序内存。',
+    source: ['manual']
+  }
+];
+const eras = [
+  {year: '1980s · 初', title: '外祖父的电脑', machine: 'Commodore VIC-20', text: '接上电视，敲下第一行 BASIC。发现命令、循环、比特、像素与磁带。', state: '样章已可体验', now: true},
+  {year: '1980s · 后', title: '一台电脑，做几件事', machine: 'Sinclair QL 与更大的世界', text: '跟着 Linus 后来使用过的 QL，探索更丰富的程序、内存，以及“同时运行”背后的轮流工作。'},
+  {year: '1991', title: '我也想写一个系统', machine: '386 PC · Linux 的起点', text: '从屏幕、键盘和磁盘出发，发现操作系统怎样管理一台机器。把一次小实验慢慢变成自己的系统。'},
+  {year: '1990s', title: '电脑走出房间', machine: '调制解调器 · 互联网 · Web', text: '拨号连接远方，分享程序，再沿着一个超链接探索另一页。分清互联网与万维网。'},
+  {year: '2000s → 今天', title: '电脑变得无处不在', machine: '口袋里的电脑与云端', text: '从触摸屏到远处的服务器，追踪一张图片、一条消息走过的路，再回头找到熟悉的每一个 bit。'}
+];
+
+
+const $ = (s, root = document) => root.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let storageOK = true;
+let state;
+try {state = restoreState(localStorage.getItem(STORAGE_KEY));} catch {state = restoreState(null); storageOK = false;}
+let machine = new BasicMachine(state.program);
+let screen = [];
+let timer = null;
+let loopVisited = false;
+let selectedRow = 0;
+let rowSelected = false;
+let current = -1;
+let toastTimer;
+let lastFocused;
+const boot = ['**** CBM BASIC V2 ****', '', ' 3583 BYTES FREE', '', 'READY.'];
+if (state.powered) screen = [...boot];
+function save() {
+  state.program = {...machine.program};
+  try {localStorage.setItem(STORAGE_KEY, JSON.stringify(state));} catch {storageOK = false;}
+  $('#storage-note').textContent = storageOK ? '手记和磁带保存在当前浏览器中，不会跨设备同步。' : '当前浏览器无法保存。离开或刷新后，手记和磁带可能丢失。';
+}
+function toast(message) {
+  clearTimeout(toastTimer); $('#toast').textContent = message; $('#toast').classList.add('visible');
+  toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 5000);
+}
+function complete(index) {
+  if (state.completed.includes(index)) return;
+  state.completed.push(index); save(); updateProgress();
+  toast(`发现 ${index + 1}/6：${lessons[index].takeaway}`);
+}
+function updateProgress() {
+  $('#header-progress').textContent = `${state.completed.length}/6`;
+  document.querySelectorAll('[data-lesson-marker]').forEach(el => {const i = +el.dataset.lessonMarker; el.textContent = state.completed.includes(i) ? '✓' : String(i+1).padStart(2,'0'); el.classList.toggle('done',state.completed.includes(i));});
+  const foot = $('#lesson-status');
+  if (foot && current >= 0) foot.textContent = state.completed.includes(current) ? '✓ 这个发现，已收入手记' : '慢慢试，发现就在你的指尖。';
+  const fill = $('#progress-fill'); if(fill) fill.style.width = `${state.completed.length/6*100}%`;
+}
+
+function keyboard(interactive = false) {
+  const rows = [['1','2','3','4','5','6','7','8','9','0','+','-','DEL'],['Q','W','E','R','T','Y','U','I','O','P','@','*'],['A','S','D','F','G','H','J','K','L',':',';','RETURN'],['SHIFT','Z','X','C','V','B','N','M',',','.','/','"'],['RUN/STOP','SPACE']];
+  return `<div class="keyboard-body"><div class="keyboard-brand"><span class="commodore-mark">C<span>═</span></span> commodore <b>VIC-20</b><i class="power-led ${state.powered?'on':''}"></i><small>POWER</small></div><div class="key-area"><div class="key-main">${rows.map(row=>`<div class="key-row">${row.map(key=>interactive ? `<button type="button" data-key="${esc(key)}" class="key ${key==='SPACE'?'space-key':''} ${key.length>1?'wide-key':''}" aria-label="${key==='SPACE'?'空格':key==='DEL'?'删除':key}">${key==='SPACE'?'':esc(key)}</button>` : `<span class="key ${key==='SPACE'?'space-key':''} ${key.length>1?'wide-key':''}">${key==='SPACE'?'':esc(key)}</span>`).join('')}</div>`).join('')}</div><div class="function-keys" aria-hidden="true"><span>f 1</span><span>f 3</span><span>f 5</span><span>f 7</span></div></div></div>`;
+}
+function computer({interactive = false, cover = false} = {}) {
+  return `<div class="computer-scene ${cover?'cover-computer':''}"><div class="monitor"><div class="monitor-bezel"><div class="crt-border ${cover||state.powered?'is-on':''}"><div class="crt-screen"><pre ${interactive?'id="screen-output"':''} aria-label="模拟电脑屏幕">${esc((cover?boot:screen).join('\n'))}</pre><span class="cursor" aria-hidden="true">▊</span><div class="off-message">等你开机</div></div></div><div class="monitor-side" aria-hidden="true"><div class="tv-dial"></div><div class="tv-dial small-dial"></div><div class="speaker-grille"></div><span>COLOUR<br>TELEVISION</span></div></div><div class="monitor-label"><span>一台家用电视</span><span>●</span></div></div><div class="monitor-stand"></div>${keyboard(interactive)}${cover?'<span class="scene-note">一切，从一个闪烁的光标开始。</span>':''}</div>`;
+}
+function cover() {
+  return `<div class="cover-page"><section class="cover-hero"><div class="cover-copy"><div class="edition"><span class="mini-star">✳</span> TIME TRAVEL, ONE BIT AT A TIME</div><h1>回到电脑<br>等你<span class="marked">发号施令</span><br>的年代<span class="orange-dot">。</span></h1><p class="hero-description">坐到小时候的 Linus 接触过的电脑前。<br>敲下第一行程序，让好奇心带你出发。</p><div class="cover-actions"><a class="button primary" href="#read/${state.completed.length?state.lastLesson:0}">${state.completed.length?'继续我的探索':'翻开第一章'} <span>↗</span></a><a class="plain-link" href="#journey">看看时光目录 <span>↓</span></a></div><div class="cover-meta"><span>给好奇的孩子，也给曾经的孩子</span><span>阅读 + 亲手试一试</span></div></div><div class="hero-art"><div class="orbit-label">HELLO,<br><strong>1980s.</strong></div><span class="art-cross cross-one">✳</span><span class="art-cross cross-two">+</span>${computer({cover:true})}<div class="machine-caption"><span>第一站 / 芬兰 · 赫尔辛基</span><b>COMMODORE VIC-20</b></div></div></section><section class="invitation"><div class="invitation-number">01<span>THE BEGINNING</span></div><div><span class="eyebrow">第一章 · 外祖父的电脑</span><h2>那时，“玩电脑”也可以是<br>亲手写出一个可以玩的东西。</h2><p>读说明书，把程序敲进去，改掉一个数字，看看会发生什么。<br>我们也从这里开始，一点一点理解屏幕背后的世界。</p></div><a href="#read/0" class="round-link" aria-label="进入第一章">↗</a></section><section class="chapter-preview"><div class="section-heading"><h2>这一章，你会亲手发现</h2><span>6 个小实验 / 随时可以停下来</span></div><div class="lesson-grid">${lessons.map((l,i)=>`<a class="lesson-card" href="#read/${i}"><span data-lesson-marker="${i}" class="lesson-number">${String(i+1).padStart(2,'0')}</span><h3>${l.short}</h3><span>${['开机 · READY.','BASIC · PRINT','程序 · GOTO','比特 · 01000001','像素 · 8 × 8','存储 · SAVE'][i]}</span><b aria-hidden="true">↗</b></a>`).join('')}</div></section><section class="next-teaser"><span class="eyebrow">一本跟着时代长大的书</span><h2>下一台电脑，会带来什么新可能？</h2><p>从 VIC-20 到 QL，再到 386、Linux 与网络。每走进一个时代，就动手理解那个时代的新问题。</p><a class="plain-link" href="#journey">展开全书的写作路线 ↗</a></section></div>`;
+}
+function journey() {
+  return `<section class="journey-page"><a class="back-link" href="#cover">← 回到封面</a><div class="journey-title"><span class="eyebrow">THE JOURNEY / 时光目录</span><h1>和电脑一起，<br>慢慢长大。</h1><p>沿着真实机器和人的好奇心前进。每一站，住进一个年代，<br>弄懂一个新问题，再带着自己的作品出发。</p></div><div class="timeline">${eras.map((e,i)=>`<article class="era ${e.now?'current-era':''}"><div class="era-date">${e.year}<span class="timeline-dot"></span></div><div class="era-content"><span class="era-state">${e.now?'● 样章已可体验':'后续章节 · 写作规划'}</span><h2>${e.title}</h2><span class="era-machine">${e.machine}</span><p>${e.text}</p>${e.now?'<a class="button primary" href="#read/0">坐到这台电脑前 ↗</a>':''}</div><span class="era-index" aria-hidden="true">0${i+1}</span></article>`).join('')}</div><div class="editor-note"><span class="eyebrow">写给同行的大人</span><p>这本书从 Linus 的童年电脑切入，也会在遇到具体问题时回望更早的历史：数数为什么需要机器、打孔卡怎样保存指令、晶体管怎样让电脑变小。历史、故事和实验会相互照应。</p><p>当前完成的是第一章的互动样章。后续章节按这条路线展开；年代场景与教学模型会明确区分，人物经历保留资料出处。</p><div class="sources"><span>这条路线的史料依据</span>${["linus","later","web"].map(key=>`<a href="${sources[key].url}" target="_blank" rel="noopener noreferrer">${sources[key].label} ↗</a>`).join('')}</div></div></section>`;
+}
+function sidebar() {
+  return `<aside class="reader-sidebar"><a class="back-link" href="#cover">← 回到封面</a><div class="sidebar-chapter"><span class="eyebrow">CHAPTER 01</span><h2>外祖父的电脑</h2><span>1980 年代初 / VIC-20</span></div><nav aria-label="本章小节">${lessons.map((l,i)=>`<a href="#read/${i}" ${current===i?'aria-current="step"':''}><span data-lesson-marker="${i}">${String(i+1).padStart(2,'0')}</span>${l.short}${current===i?'<b>→</b>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><span>一点一点，认识每一个 bit。</span><div class="progress-track"><i id="progress-fill"></i></div><a href="#journey">后面的时代 <span>↗</span></a></div></aside>`;
+}
+function labHeader(label, name) {return `<div class="lab-heading"><span><i></i> ${label}</span><b>${name}</b></div>`;}
+function terminalLab() {
+  return `${labHeader('年代实验室','COMMODORE VIC-20')}<div class="lab-computer">${computer({interactive:true})}</div><div class="machine-toolbar"><button class="button small-button ${state.powered?'secondary':'primary'}" id="power-button" data-action="power">${state.powered?'关机（清空内存）':'● 按下开机键'}</button><button class="button small-button secondary" data-action="stop" id="stop-button" ${machine.running?'':'disabled'}>■ RUN/STOP</button><span class="machine-status" id="machine-status">${state.powered?'READY · 等待指令':'POWER OFF'}</span></div><form id="command-form"><label for="command">输入 BASIC 指令 <span>按 Enter / RETURN 执行</span></label><div class="command-line"><span aria-hidden="true">›</span><input id="command" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" maxlength="80" placeholder='PRINT "HELLO"' ${state.powered?'':'disabled'} aria-describedby="command-feedback"><button type="submit" ${state.powered?'':'disabled'}>RETURN ↵</button></div></form><p id="command-feedback" class="command-feedback" role="status">${state.powered?'光标准备好了，试着和它说句话。':'先开机，再敲下第一行命令。'}</p>${current===2?'<div class="sample-program"><div><span class="eyebrow">把这段程序送进电脑</span><code>10 PRINT "HELLO"<br>20 GOTO 10</code></div><button class="button small-button secondary" data-action="insert-loop">填入两行程序 ↗</button></div>':''}${current===5?tapeLab():''}<div class="command-chips"><span>试一试</span><button data-command='PRINT "HELLO"'>PRINT "HELLO"</button><button data-command="PRINT 2+3">PRINT 2+3</button><button data-command="LIST">LIST</button><button data-command="RUN">RUN</button></div><details class="lab-help"><summary>可以输入哪些命令？</summary><p>支持 PRINT "文字"、PRINT 2+3*4、PRINT CHR$(65)、LET A=5、PRINT A、带行号的指令、GOTO、RUN、STOP、LIST、NEW、SAVE "HELLO"、LOAD "HELLO"。输入行号本身会删除那一行。</p><p>这是放慢速度的 BASIC 教学模拟。请用英文字符；暂不支持完整 BASIC、游戏载入、硬件 POKE 或中文显示。</p></details><p class="simulation-note">情境插画与 BASIC 教学模拟 · 非完整硬件仿真</p>`;
+}
+function tapeLab() {
+  return `<div class="tape-panel"><div class="cassette" aria-hidden="true"><span>EVERY BIT · DATA</span><div class="tape-window"><i></i><b>╱╲╱╲</b><i></i></div><strong>${esc(state.tape?.name || 'BLANK TAPE')}</strong></div><div class="tape-copy"><h3>你的第一盘程序磁带</h3><p id="tape-status">${state.tape?`已录制 ${esc(state.tape.name)} · ${Object.keys(state.tape.program).length} 行程序`:'磁带还是空白的。'}</p><div class="tape-buttons"><button class="text-button" data-action="prepare-tape">① 准备程序</button><button class="text-button" data-action="save-tape">② SAVE</button><button class="text-button" data-action="load-tape">③ LOAD</button></div><small>保存后记得关机、开机，再 LOAD。</small></div></div>`;
+}
+function bitsLab() {
+  return `${labHeader('拆开看看','ONE BYTE / 8 BITS')}<div class="bits-intro"><span class="eyebrow">把这些开关拨到 65</span><h3>点一下，就是一个 bit。</h3><p>亮着的开关贡献自己的分量，熄灭的贡献 0。</p></div><div class="bit-switches">${Array.from({length:8},(_,i)=>{const weight=128>>i;const on=!!(state.bits&weight);return `<div class="bit-column"><span>${weight}</span><button data-bit="${i}" aria-label="分量 ${weight} 的比特" aria-pressed="${on}" class="bit-switch ${on?'active':''}"><i></i><b>${on?1:0}</b></button></div>`;}).join('')}</div><div class="bit-sum" id="bit-sum"></div><div class="byte-readout"><div><span>二进制</span><strong id="binary-readout"></strong></div><b>→</b><div><span>数字</span><strong id="decimal-readout"></strong></div><b>→</b><div class="letter-result"><span>PETSCII 大写字母</span><strong id="letter-readout"></strong></div></div><div class="bit-feedback" role="status" id="bit-feedback"></div><div class="lab-bottom-actions"><button class="button small-button secondary" data-action="reset-bits">全部归零</button><span>目标提示：64 + 1</span></div><div class="margin-note"><span>✳</span><p>数字本身没有“字母”的意思。<br>是大家约定的编码，让 65 和 A 对上了号。</p></div>`;
+}
+function pixelLab() {
+  return `${labHeader('拆开看看','8 × 8 PIXEL STUDIO')}<div class="bits-intro"><span class="eyebrow">画一个属于你的像素朋友</span><h3>每个小方格，都算数。</h3><p>点亮或熄灭一个点，再选一行看看它的数字。</p></div><div class="pixel-studio"><div class="pixel-grid" role="group" aria-label="8乘8像素画布">${state.pixels.map((v,i)=>`<button data-pixel="${i}" aria-label="第 ${Math.floor(i/8)+1} 行第 ${i%8+1} 列" aria-pressed="${!!v}" class="pixel ${v?'lit':''}"></button>`).join('')}</div><div class="pixel-data"><span class="eyebrow">每一行 = 1 BYTE</span>${glyphRows(state.pixels).map((n,i)=>`<button data-row="${i}" class="pixel-row ${selectedRow===i?'selected':''}" aria-pressed="${selectedRow===i}"><span>${i+1}</span><code>${toBits(n)}</code><b>${n}</b></button>`).join('')}</div></div><div id="pixel-explanation" class="pixel-explanation" role="status"></div><div class="lab-bottom-actions"><button class="button small-button secondary" data-action="clear-pixels">清空画布</button><span>64 个点 = 64 bit = 8 byte</span></div><p class="simulation-note">单色字形教学模型 · 不包含颜色或文件头的空间</p>`;
+}
+function reader() {
+  const l = lessons[current];
+  return `<div class="reader-layout">${sidebar()}<article class="reader-content"><div class="reader-topline"><span>1980s <i></i> 芬兰 · 赫尔辛基</span><span>第 ${current+1} / 6 节 <b>·</b> 约 ${l.duration}</span></div><div class="reading-spread"><div class="story-column"><span class="eyebrow">${l.kicker}</span><h1>${l.title.replace('\n','<br>')}</h1><p class="story-intro">${l.intro}</p><div class="story-body">${l.paragraphs.map(p=>`<p>${esc(p).replace(/(PRINT &quot;HELLO&quot;|PRINT 2\+3|10 PRINT &quot;HELLO&quot;|20 GOTO 10|GOTO 10|SAVE &quot;HELLO&quot;|LOAD &quot;HELLO&quot;|RUN\/STOP|SYNTAX ERROR|READY\.|RETURN|PRINT|RUN|LIST)/g,'<code>$1</code>')}</p>`).join('')}</div><div class="mission"><span class="mission-star">✳</span><div><span class="eyebrow">轮到你了</span><p>${l.task}</p></div></div><details class="deeper"><summary>再往里面看一点 <span>+</span></summary><p>${l.deeper}</p></details><div class="sources"><span>史料与延伸阅读</span>${l.source.map(s=>`<a href="${sources[s].url}" target="_blank" rel="noopener noreferrer">${sources[s].label} ↗</a>`).join('')}</div></div><section class="lab" aria-label="${l.short}互动实验">${current===3?bitsLab():current===4?pixelLab():terminalLab()}</section></div><div class="lesson-footer"><div><span id="lesson-status"></span><p>${l.takeaway}</p></div><div class="lesson-pagination">${current>0?`<a class="previous" href="#read/${current-1}" aria-label="上一节">←</a>`:''}<a class="button primary" href="${current<5?`#read/${current+1}`:'#journey'}">${current<5?'下一小节':'看看下一个时代'} →</a></div></div>${current===5?'<div class="chapter-ending"><span class="eyebrow">这一站的最后一句</span><h2>你没有等电脑告诉你怎么玩。<br>你开始告诉电脑，可以怎么玩。</h2><p>下一站，我们将遇到 Linus 后来用过的 Sinclair QL，继续探索机器里面的新可能。</p></div>':''}</article></div>`;
+}
+function route() {
+  if (machine.running) {halt(false); toast('离开这一页时，程序已暂停。回到电脑前可再次 RUN。');}
+  const hash = location.hash || '#cover';
+  const match = hash.match(/^#read\/([0-5])$/);
+  current = match ? +match[1] : -1;
+  if (current >= 0) {state.lastLesson = current; save();}
+  $('#main').innerHTML = current>=0?reader():hash==='#journey'?journey():cover();
+  document.body.classList.toggle('reading',current>=0);
+  document.body.classList.toggle('large-type',state.largeType);
+  document.title = current>=0?`${lessons[current].short} · Every Bit`:'Every Bit · 可以玩的计算机小史';
+  updateProgress(); updateScreen(); if(current===3) updateBits(); if(current===4) updatePixels();
+  window.scrollTo({top:0,behavior:'instant'});
+  $('#main').focus({preventScroll:true});
+}
+function updateScreen() {
+  const pre = $('#screen-output'); if(pre) pre.textContent = screen.slice(-22).join('\n');
+  const screenBorder = $('.lab .crt-border'); if(screenBorder) screenBorder.classList.toggle('is-on',state.powered);
+  const led = $('.lab .power-led'); if(led) led.classList.toggle('on',state.powered);
+  const cmd = $('#command'); if(cmd) cmd.disabled=!state.powered||machine.running;
+  const submit = $('#command-form button'); if(submit) submit.disabled=!state.powered||machine.running;
+  const stop = $('#stop-button'); if(stop) stop.disabled=!machine.running;
+  const power = $('#power-button'); if(power) {power.textContent=state.powered?'关机（清空内存）':'● 按下开机键'; power.classList.toggle('primary',!state.powered);power.classList.toggle('secondary',state.powered);}
+  const status = $('#machine-status'); if(status) status.textContent = !state.powered?'POWER OFF':machine.running?`RUNNING · 第 ${machine.currentLine ?? '…'} 行`:'READY · 等待指令';
+}
+function write(lines) {
+  for(const line of lines) {
+    if(!line) {screen.push('');continue;}
+    for(let i=0;i<line.length;i+=22) screen.push(line.slice(i,i+22));
+  }
+  screen=screen.slice(-22); updateScreen();
+}
+function feedback(message) {const el=$('#command-feedback');if(el)el.textContent=message;}
+function power() {
+  if(state.powered) {
+    halt(false); state.powered=false; machine=new BasicMachine();screen=[]; state.tapePowerCycle=!!state.tape;
+    feedback('电源关了，程序内存清空了。磁带上的副本还在。');
+  } else {state.powered=true;screen=[...boot];feedback('READY. 它在等你的第一句话。');complete(0);}
+  save();updateScreen();
+}
+function halt(user=true) {
+  clearInterval(timer);timer=null;
+  const running=machine.stop();
+  if(running) {write(['BREAK','READY.']);if(user&&loopVisited)complete(2);}
+  loopVisited=false; updateScreen();save();
+  if(user)feedback('停下来了。改掉第 10 行的文字，再 RUN 试试。');
+}
+function startRun() {
+  clearInterval(timer);loopVisited=false;
+  timer=setInterval(()=>{
+    const result=machine.step();
+    if(result.goto!==undefined&&machine.steps>2) loopVisited=true;
+    write(result.output);
+    if(result.error) feedback(`程序停在这里：${result.error}。用 LIST 看看，再修改对应行。`);
+    if(result.ended) {clearInterval(timer);timer=null;write(['READY.']);save();}
+    else if(machine.steps>=80) {halt(false);feedback('教学模式已在 80 步后暂停。可以修改程序，或再次 RUN。');}
+    updateScreen();
+  },180);
+  updateScreen();
+}
+function command(raw) {
+  if(!state.powered) {feedback('先按开机键。');return;}
+  if(machine.running) {feedback('先用 RUN/STOP 停下程序。');return;}
+  const text=raw.trim().toUpperCase();if(!text)return;
+  write([text]);
+  const tape=text.match(/^(SAVE|LOAD)\s+"([A-Z0-9 -]{1,12})"$/);
+  if(tape) {
+    if(tape[1]==='SAVE') {
+      if(!Object.keys(machine.program).length) {write(['?NO PROGRAM','READY.']);feedback('内存里还没有程序。先输入带行号的程序，或点“准备程序”。');return;}
+      state.tape={name:tape[2],program:{...machine.program}};state.tapePowerCycle=false;
+      write(['SAVING '+tape[2],'READY.']);feedback('存好了！按“关机”，再开机，然后 LOAD "'+tape[2]+'"。');
+    } else {
+      if(!state.tape||state.tape.name!==tape[2]) {write(['?FILE NOT FOUND','READY.']);feedback('这盘磁带没有这个名字的程序。先 SAVE，或者检查文件名。');return;}
+      machine=new BasicMachine(state.tape.program);write(['LOADING '+tape[2],'READY.']);
+      feedback('程序回到内存了！输入 LIST 查看，或 RUN 运行。');
+      if(state.tapePowerCycle){complete(5);state.tapePowerCycle=false;}
+    }
+    save(); const panel=$('.tape-panel');if(panel)panel.outerHTML=tapeLab();updateScreen();return;
+  }
+  const result=machine.input(text);write(result.output);
+  if(result.printed&&!result.error) {complete(1);feedback('它回应你了！改改引号里的文字，或者让它算一道题。');}
+  else if(result.error) feedback(`没关系，再试一次。${result.error==='SYNTAX ERROR'?'检查拼写、英文引号和括号。':result.error}`);
+  else if(result.stored) feedback('已记住这一行。输入 LIST 查看，输入 RUN 运行。');
+  else if(result.cleared) feedback('程序已清空。你可以重新输入一段程序。');
+  else feedback(result.started?'程序开始运行了，随时可以按 RUN/STOP。':'READY. 可以继续输入。');
+  if(result.started)startRun();else if(!result.stored)write(['READY.']);
+  save();updateScreen();
+}
+function insertLoop() {
+  if(!state.powered)power();
+  halt(false);command('10 PRINT "HELLO"');command('20 GOTO 10');
+  feedback('两行程序已经放进内存。输入 RUN，然后按 RUN/STOP 停下来。');
+}
+function updateBits() {
+  const bits=toBits(state.bits);
+  document.querySelectorAll('[data-bit]').forEach(el=>{const on=bits[+el.dataset.bit]==='1';el.classList.toggle('active',on);el.setAttribute('aria-pressed',String(on));$('b',el).textContent=on?'1':'0';});
+  $('#binary-readout').textContent=bits;$('#decimal-readout').textContent=state.bits;
+  $('#letter-readout').textContent=state.bits>=65&&state.bits<=90?String.fromCharCode(state.bits):'—';
+  const terms=Array.from({length:8},(_,i)=>128>>i).filter(n=>state.bits&n);
+  $('#bit-sum').textContent=`${terms.length?terms.join(' + '):'没有亮着的开关'} = ${state.bits}`;
+  $('#bit-feedback').textContent=state.bits===65?'你找到 A 了！01000001 → 65 → A。':state.bits>=65&&state.bits<=90?`你找到了 ${String.fromCharCode(state.bits)}。再试试 A 的号码 65。`:'这里先显示 65–90 对应的大写字母。其他数值也有各自的编码含义。';
+}
+function updatePixels() {
+  const rows=glyphRows(state.pixels);
+  document.querySelectorAll('[data-pixel]').forEach(el=>{const v=!!state.pixels[+el.dataset.pixel];el.classList.toggle('lit',v);el.setAttribute('aria-pressed',String(v));});
+  document.querySelectorAll('[data-row]').forEach(el=>{const row=+el.dataset.row;el.classList.toggle('selected',row===selectedRow);el.setAttribute('aria-pressed',String(row===selectedRow));$('code',el).textContent=toBits(rows[row]);$('b',el).textContent=rows[row];});
+  $('#pixel-explanation').textContent=`第 ${selectedRow+1} 行：${toBits(rows[selectedRow])} → ${rows[selectedRow]}。全画布已点亮 ${state.pixels.reduce((a,b)=>a+b,0)} 个点。`;
+  if(rowSelected&&state.pixels.reduce((a,b)=>a+b,0)>=8)complete(4);
+}
+function notebook() {
+  lastFocused=document.activeElement;
+  $('#notebook-content').innerHTML=`<p class="notebook-summary">${state.completed.length===6?'这一章的 6 个发现，你都亲手试过了！':`已经收集 ${state.completed.length} / 6 个小发现。`}</p><div class="notebook-list">${lessons.map((l,i)=>`<a href="#read/${i}" data-notebook-link><span class="note-check ${state.completed.includes(i)?'done':''}">${state.completed.includes(i)?'✓':'○'}</span><div><b>${l.short}</b><p>${state.completed.includes(i)?l.takeaway:'去这一页，亲手试一试。'}</p></div><span>↗</span></a>`).join('')}</div>`;
+  save();$('#notebook').showModal();
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button,a');if(!t)return;
+  if(t.classList.contains('skip-link')) {e.preventDefault();$('#main').focus();$('#main').scrollIntoView();return;}
+  if(t.id==='notebook-button')notebook();
+  if(t.matches('[data-close-dialog],[data-notebook-link]'))$('#notebook').close();
+  if(t.id==='font-toggle') {state.largeType=!state.largeType;document.body.classList.toggle('large-type',state.largeType);t.setAttribute('aria-pressed',String(state.largeType));save();}
+  if(t.dataset.command) {if(!state.powered) {feedback('先按开机键，就可以输入指令了。');return;}const input=$('#command');input.value=t.dataset.command;input.focus();}
+  if(t.dataset.key) {
+    if(!state.powered||machine.running){feedback(!state.powered?'先按开机键。':'先按 RUN/STOP 停下来。');if(t.dataset.key==='RUN/STOP')halt();return;}
+    const input=$('#command');const key=t.dataset.key;
+    if(key==='RETURN') {command(input.value);input.value='';}
+    else if(key==='RUN/STOP')halt();
+    else if(key==='SHIFT') {feedback('教学键盘直接使用大写字母；引号有单独的按键。');}
+    else if(key==='DEL')input.value=input.value.slice(0,-1);
+    else if(input.value.length<80)input.value+=key==='SPACE'?' ':key;
+  }
+  if(t.hasAttribute('data-bit')) {state.bits^=128>>+t.dataset.bit;save();updateBits();if(state.bits===65)complete(3);}
+  if(t.hasAttribute('data-pixel')) {const i=+t.dataset.pixel;state.pixels[i]=1-state.pixels[i];selectedRow=Math.floor(i/8);save();updatePixels();}
+  if(t.hasAttribute('data-row')) {selectedRow=+t.dataset.row;rowSelected=true;updatePixels();}
+  switch(t.dataset.action) {
+    case 'power':power();break;
+    case 'stop':halt();break;
+    case 'insert-loop':insertLoop();break;
+    case 'reset-bits':state.bits=0;save();updateBits();break;
+    case 'clear-pixels':state.pixels.fill(0);save();updatePixels();break;
+    case 'prepare-tape':if(!state.powered)power();halt(false);if(Object.keys(machine.program).length){feedback('内存已有程序，直接 SAVE 就能保存。');}else{command('10 PRINT "HELLO"');command('20 PRINT "I AM BACK"');feedback('两行程序准备好了，点 SAVE 存入磁带。');}break;
+    case 'save-tape':command('SAVE "HELLO"');break;
+    case 'load-tape':command(`LOAD "${state.tape?.name||'HELLO'}"`);break;
+  }
+});
+document.addEventListener('submit',e=>{if(e.target.id==='command-form'){e.preventDefault();const input=$('#command');command(input.value);input.value='';}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&machine.running){e.preventDefault();halt();}});
+$('#notebook').addEventListener('close',()=>lastFocused?.isConnected&&lastFocused.focus());
+$('#notebook').addEventListener('click',e=>{if(e.target===$('#notebook')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});
+window.addEventListener('hashchange',route);
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&machine.running){halt(false);feedback('切换到后台时，教学程序已暂停。输入 RUN 可以重来。');}});
+window.addEventListener('pagehide',()=>{halt(false);save();});
+$('#font-toggle').setAttribute('aria-pressed',String(state.largeType));
+route();save();
+
+})();
+</script>
+</body>
+</html>
