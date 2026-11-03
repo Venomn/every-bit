@@ -51,8 +51,8 @@ test('line and program bounds are explicit', () => {
   m.input('99');assert.equal(m.input('100 PRINT 1').stored,true);
 });
 test('storage restores known versions, validates values, and makes isolated tape copies', () => {
-  assert.equal(restoreState('{broken').version,1);
-  assert.deepEqual(restoreState('{"version":2,"completed":[0,1]}').completed,[]);
+  assert.equal(restoreState('{broken').version,2);
+  assert.deepEqual(restoreState('{"version":99,"completed":[0,1]}').completed,[]);
   const restored=restoreState(JSON.stringify({version:1,completed:[0,0,5,6,-1,'2'],bits:256,pixels:[1],program:{10:'PRINT 1',70000:'PRINT 2'},powered:true,tape:{name:'HELLO',program:{10:'PRINT 1'}}}));
   assert.deepEqual(restored.completed,[0,5]);assert.equal(restored.bits,0);assert.equal(restored.pixels.length,64);
   assert.deepEqual(restored.program,{10:'PRINT 1'});assert.equal(restored.powered,true);

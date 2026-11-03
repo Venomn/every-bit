@@ -1,5 +1,8 @@
 import {BasicMachine, STORAGE_KEY, restoreState, toBits, glyphRows} from './engine.mjs';
 import {lessons, eras, sources} from './book.mjs';
+import {replayLab, cleanLabAction, LAB_ACTION_LIMIT} from './worlds.mjs';
+import {renderLab} from './labs.mjs';
+const totalLessons = lessons.length;
 
 const $ = (s, root = document) => root.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -29,14 +32,14 @@ function toast(message) {
 function complete(index) {
   if (state.completed.includes(index)) return;
   state.completed.push(index); save(); updateProgress();
-  toast(`发现 ${index + 1}/6：${lessons[index].takeaway}`);
+  toast(`发现 ${index + 1}/${totalLessons}：${lessons[index].takeaway}`);
 }
 function updateProgress() {
-  $('#header-progress').textContent = `${state.completed.length}/6`;
+  $('#header-progress').textContent = `${state.completed.length}/${totalLessons}`;
   document.querySelectorAll('[data-lesson-marker]').forEach(el => {const i = +el.dataset.lessonMarker; el.textContent = state.completed.includes(i) ? '✓' : String(i+1).padStart(2,'0'); el.classList.toggle('done',state.completed.includes(i));});
   const foot = $('#lesson-status');
   if (foot && current >= 0) foot.textContent = state.completed.includes(current) ? '✓ 这个发现，已收入手记' : '慢慢试，发现就在你的指尖。';
-  const fill = $('#progress-fill'); if(fill) fill.style.width = `${state.completed.length/6*100}%`;
+  const fill = $('#progress-fill'); if(fill) fill.style.width = `${state.completed.length/totalLessons*100}%`;
 }
 
 function keyboard(interactive = false) {
@@ -47,14 +50,17 @@ function computer({interactive = false, cover = false} = {}) {
   return `<div class="computer-scene ${cover?'cover-computer':''}"><div class="monitor"><div class="monitor-bezel"><div class="crt-border ${cover||state.powered?'is-on':''}"><div class="crt-screen"><pre ${interactive?'id="screen-output"':''} aria-label="模拟电脑屏幕">${esc((cover?boot:screen).join('\n'))}</pre><span class="cursor" aria-hidden="true">▊</span><div class="off-message">等你开机</div></div></div><div class="monitor-side" aria-hidden="true"><div class="tv-dial"></div><div class="tv-dial small-dial"></div><div class="speaker-grille"></div><span>COLOUR<br>TELEVISION</span></div></div><div class="monitor-label"><span>一台家用电视</span><span>●</span></div></div><div class="monitor-stand"></div>${keyboard(interactive)}${cover?'<span class="scene-note">一切，从一个闪烁的光标开始。</span>':''}</div>`;
 }
 function cover() {
-  return `<div class="cover-page"><section class="cover-hero"><div class="cover-copy"><div class="edition"><span class="mini-star">✳</span> TIME TRAVEL, ONE BIT AT A TIME</div><h1>回到电脑<br>等你<span class="marked">发号施令</span><br>的年代<span class="orange-dot">。</span></h1><p class="hero-description">坐到小时候的 Linus 接触过的电脑前。<br>敲下第一行程序，让好奇心带你出发。</p><div class="cover-actions"><a class="button primary" href="#read/${state.completed.length?state.lastLesson:0}">${state.completed.length?'继续我的探索':'翻开第一章'} <span>↗</span></a><a class="plain-link" href="#journey">看看时光目录 <span>↓</span></a></div><div class="cover-meta"><span>给好奇的孩子，也给曾经的孩子</span><span>阅读 + 亲手试一试</span></div></div><div class="hero-art"><div class="orbit-label">HELLO,<br><strong>1980s.</strong></div><span class="art-cross cross-one">✳</span><span class="art-cross cross-two">+</span>${computer({cover:true})}<div class="machine-caption"><span>第一站 / 芬兰 · 赫尔辛基</span><b>COMMODORE VIC-20</b></div></div></section><section class="invitation"><div class="invitation-number">01<span>THE BEGINNING</span></div><div><span class="eyebrow">第一章 · 外祖父的电脑</span><h2>那时，“玩电脑”也可以是<br>亲手写出一个可以玩的东西。</h2><p>读说明书，把程序敲进去，改掉一个数字，看看会发生什么。<br>我们也从这里开始，一点一点理解屏幕背后的世界。</p></div><a href="#read/0" class="round-link" aria-label="进入第一章">↗</a></section><section class="chapter-preview"><div class="section-heading"><h2>这一章，你会亲手发现</h2><span>6 个小实验 / 随时可以停下来</span></div><div class="lesson-grid">${lessons.map((l,i)=>`<a class="lesson-card" href="#read/${i}"><span data-lesson-marker="${i}" class="lesson-number">${String(i+1).padStart(2,'0')}</span><h3>${l.short}</h3><span>${['开机 · READY.','BASIC · PRINT','程序 · GOTO','比特 · 01000001','像素 · 8 × 8','存储 · SAVE'][i]}</span><b aria-hidden="true">↗</b></a>`).join('')}</div></section><section class="next-teaser"><span class="eyebrow">一本跟着时代长大的书</span><h2>下一台电脑，会带来什么新可能？</h2><p>从 VIC-20 到 QL，再到 386、Linux 与网络。每走进一个时代，就动手理解那个时代的新问题。</p><a class="plain-link" href="#journey">展开全书的写作路线 ↗</a></section></div>`;
+  return `<div class="cover-page"><section class="cover-hero"><div class="cover-copy"><div class="edition"><span class="mini-star">✳</span> TIME TRAVEL, ONE BIT AT A TIME</div><h1>回到电脑<br>等你<span class="marked">发号施令</span><br>的年代<span class="orange-dot">。</span></h1><p class="hero-description">坐到小时候的 Linus 接触过的电脑前。<br>敲下第一行程序，让好奇心带你出发。</p><div class="cover-actions"><a class="button primary" href="#read/${state.completed.length?state.lastLesson:0}">${state.completed.length?'继续我的探索':'翻开第一章'} <span>↗</span></a><a class="plain-link" href="#journey">看看时光目录 <span>↓</span></a></div><div class="cover-meta"><span>给好奇的孩子，也给曾经的孩子</span><span>阅读 + 亲手试一试</span></div></div><div class="hero-art"><div class="orbit-label">HELLO,<br><strong>1980s.</strong></div><span class="art-cross cross-one">✳</span><span class="art-cross cross-two">+</span>${computer({cover:true})}<div class="machine-caption"><span>第一站 / 芬兰 · 赫尔辛基</span><b>COMMODORE VIC-20</b></div></div></section><section class="invitation"><div class="invitation-number">01<span>THE BEGINNING</span></div><div><span class="eyebrow">第一章 · 外祖父的电脑</span><h2>那时，“玩电脑”也可以是<br>亲手写出一个可以玩的东西。</h2><p>读说明书，把程序敲进去，改掉一个数字，看看会发生什么。<br>我们也从这里开始，一点一点理解屏幕背后的世界。</p></div><a href="#read/0" class="round-link" aria-label="进入第一章">↗</a></section><section class="chapter-preview"><div class="section-heading"><h2>五个时代，23 次亲手发现</h2><span>不用先读懂。点一下，就开始。</span></div><div class="era-cards">${eras.map((e,i)=>`<a class="era-card" href="#read/${e.start}"><span class="era-card-icon">${e.icon}</span><span class="eyebrow">0${i+1} / ${e.year}</span><h3>${e.title}</h3><p>${e.machine}</p><b>${state.completed.filter(n=>n>=e.start&&n<e.end).length}/${e.end-e.start} 个发现 ↗</b></a>`).join('')}</div></section><section class="next-teaser"><span class="eyebrow">从 HELLO 到你好</span><h2>机器变了。好奇心一直在。</h2><p>拨时钟、接线路、送数据包。走到今天，再回头认出熟悉的每一个 bit。</p><a class="plain-link" href="#journey">展开全书时光目录 ↗</a></section></div>`;
 }
 function journey() {
-  return `<section class="journey-page"><a class="back-link" href="#cover">← 回到封面</a><div class="journey-title"><span class="eyebrow">THE JOURNEY / 时光目录</span><h1>和电脑一起，<br>慢慢长大。</h1><p>沿着真实机器和人的好奇心前进。每一站，住进一个年代，<br>弄懂一个新问题，再带着自己的作品出发。</p></div><div class="timeline">${eras.map((e,i)=>`<article class="era ${e.now?'current-era':''}"><div class="era-date">${e.year}<span class="timeline-dot"></span></div><div class="era-content"><span class="era-state">${e.now?'● 样章已可体验':'后续章节 · 写作规划'}</span><h2>${e.title}</h2><span class="era-machine">${e.machine}</span><p>${e.text}</p>${e.now?'<a class="button primary" href="#read/0">坐到这台电脑前 ↗</a>':''}</div><span class="era-index" aria-hidden="true">0${i+1}</span></article>`).join('')}</div><div class="editor-note"><span class="eyebrow">写给同行的大人</span><p>这本书从 Linus 的童年电脑切入，也会在遇到具体问题时回望更早的历史：数数为什么需要机器、打孔卡怎样保存指令、晶体管怎样让电脑变小。历史、故事和实验会相互照应。</p><p>当前完成的是第一章的互动样章。后续章节按这条路线展开；年代场景与教学模型会明确区分，人物经历保留资料出处。</p><div class="sources"><span>这条路线的史料依据</span>${["linus","later","web"].map(key=>`<a href="${sources[key].url}" target="_blank" rel="noopener noreferrer">${sources[key].label} ↗</a>`).join('')}</div></div></section>`;
+  return `<section class="journey-page"><a class="back-link" href="#cover">← 回到封面</a><div class="journey-title"><span class="eyebrow">THE JOURNEY / 时光目录</span><h1>和电脑一起，<br>慢慢长大。</h1><p>5 个时代 · 23 个实验。每次玩一小节，也可以随时跳到好奇的地方。</p></div><div class="timeline">${eras.map((e,i)=>`<article class="era current-era"><div class="era-date">${e.year}<span class="timeline-dot"></span></div><div class="era-content"><span class="era-state">已发现 ${state.completed.filter(n=>n>=e.start&&n<e.end).length} / ${e.end-e.start}</span><h2>${e.title}</h2><span class="era-machine">${e.machine}</span><p>${e.text}</p><div class="era-lessons">${lessons.slice(e.start,e.end).map((l,j)=>`<a href="#read/${e.start+j}"><span>${state.completed.includes(e.start+j)?'✓':'○'}</span>${l.short} ↗</a>`).join('')}</div></div><span class="era-index" aria-hidden="true">0${i+1}</span></article>`).join('')}</div><div class="editor-note"><details><summary>给同行的大人 · 历史、故事与模型</summary><p>前几站以 Linus 本人的机器经历为线索；从互联网到今天，镜头转向更广的计算机世界。年代是叙事背景，不表示各个概念都在那时首次发明。每页展开项说明史料出处与模型边界。</p><p>情境插画、练习程序与小游戏均为本书创作，不声称复原人物原话或家中布置。所有实验在当前浏览器内运行；“分享”“联网”“云端”都是教学模拟。</p><div class="sources">${Object.values(sources).map(s=>`<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.label} ↗</a>`).join('')}</div></details></div><a href="#ending" class="plain-link">去最后一页 · 看看我的旅程 ↗</a></section>`;
 }
+
 function sidebar() {
-  return `<aside class="reader-sidebar"><a class="back-link" href="#cover">← 回到封面</a><div class="sidebar-chapter"><span class="eyebrow">CHAPTER 01</span><h2>外祖父的电脑</h2><span>1980 年代初 / VIC-20</span></div><nav aria-label="本章小节">${lessons.map((l,i)=>`<a href="#read/${i}" ${current===i?'aria-current="step"':''}><span data-lesson-marker="${i}">${String(i+1).padStart(2,'0')}</span>${l.short}${current===i?'<b>→</b>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><span>一点一点，认识每一个 bit。</span><div class="progress-track"><i id="progress-fill"></i></div><a href="#journey">后面的时代 <span>↗</span></a></div></aside>`;
+  const chapter=lessons[current].chapter, era=eras[chapter];
+  return `<aside class="reader-sidebar"><a class="back-link" href="#journey">← 时光目录</a><div class="sidebar-chapter"><span class="eyebrow">CHAPTER 0${chapter+1}</span><h2>${era.title}</h2><span>${era.year} / ${era.machine}</span></div><nav aria-label="本章小节">${lessons.slice(era.start,era.end).map((l,j)=>{const i=era.start+j;return `<a href="#read/${i}" ${current===i?'aria-current="step"':''}><span data-lesson-marker="${i}">${String(i+1).padStart(2,'0')}</span>${l.short}${current===i?'<b>→</b>':''}</a>`;}).join('')}</nav><div class="sidebar-bottom"><span>一点一点，认识每一个 bit。</span><div class="progress-track"><i id="progress-fill"></i></div><div class="era-dots">${eras.map((e,i)=>`<a href="#read/${e.start}" aria-label="第 ${i+1} 章 ${e.title}" ${chapter===i?'aria-current="true"':''}>0${i+1}</a>`).join('')}</div></div></aside>`;
 }
+
 function labHeader(label, name) {return `<div class="lab-heading"><span><i></i> ${label}</span><b>${name}</b></div>`;}
 function terminalLab() {
   return `${labHeader('年代实验室','COMMODORE VIC-20')}<div class="lab-computer">${computer({interactive:true})}</div><div class="machine-toolbar"><button class="button small-button ${state.powered?'secondary':'primary'}" id="power-button" data-action="power">${state.powered?'关机（清空内存）':'● 按下开机键'}</button><button class="button small-button secondary" data-action="stop" id="stop-button" ${machine.running?'':'disabled'}>■ RUN/STOP</button><span class="machine-status" id="machine-status">${state.powered?'READY · 等待指令':'POWER OFF'}</span></div><form id="command-form"><label for="command">输入 BASIC 指令 <span>按 Enter / RETURN 执行</span></label><div class="command-line"><span aria-hidden="true">›</span><input id="command" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" maxlength="80" placeholder='PRINT "HELLO"' ${state.powered?'':'disabled'} aria-describedby="command-feedback"><button type="submit" ${state.powered?'':'disabled'}>RETURN ↵</button></div></form><p id="command-feedback" class="command-feedback" role="status">${state.powered?'光标准备好了，试着和它说句话。':'先开机，再敲下第一行命令。'}</p>${current===2?'<div class="sample-program"><div><span class="eyebrow">把这段程序送进电脑</span><code>10 PRINT "HELLO"<br>20 GOTO 10</code></div><button class="button small-button secondary" data-action="insert-loop">填入两行程序 ↗</button></div>':''}${current===5?tapeLab():''}<div class="command-chips"><span>试一试</span><button data-command='PRINT "HELLO"'>PRINT "HELLO"</button><button data-command="PRINT 2+3">PRINT 2+3</button><button data-command="LIST">LIST</button><button data-command="RUN">RUN</button></div><details class="lab-help"><summary>可以输入哪些命令？</summary><p>支持 PRINT "文字"、PRINT 2+3*4、PRINT CHR$(65)、LET A=5、PRINT A、带行号的指令、GOTO、RUN、STOP、LIST、NEW、SAVE "HELLO"、LOAD "HELLO"。输入行号本身会删除那一行。</p><p>这是放慢速度的 BASIC 教学模拟。请用英文字符；暂不支持完整 BASIC、游戏载入、硬件 POKE 或中文显示。</p></details><p class="simulation-note">情境插画与 BASIC 教学模拟 · 非完整硬件仿真</p>`;
@@ -69,16 +75,36 @@ function pixelLab() {
   return `${labHeader('拆开看看','8 × 8 PIXEL STUDIO')}<div class="bits-intro"><span class="eyebrow">画一个属于你的像素朋友</span><h3>每个小方格，都算数。</h3><p>点亮或熄灭一个点，再选一行看看它的数字。</p></div><div class="pixel-studio"><div class="pixel-grid" role="group" aria-label="8乘8像素画布">${state.pixels.map((v,i)=>`<button data-pixel="${i}" aria-label="第 ${Math.floor(i/8)+1} 行第 ${i%8+1} 列" aria-pressed="${!!v}" class="pixel ${v?'lit':''}"></button>`).join('')}</div><div class="pixel-data"><span class="eyebrow">每一行 = 1 BYTE</span>${glyphRows(state.pixels).map((n,i)=>`<button data-row="${i}" class="pixel-row ${selectedRow===i?'selected':''}" aria-pressed="${selectedRow===i}"><span>${i+1}</span><code>${toBits(n)}</code><b>${n}</b></button>`).join('')}</div></div><div id="pixel-explanation" class="pixel-explanation" role="status"></div><div class="lab-bottom-actions"><button class="button small-button secondary" data-action="clear-pixels">清空画布</button><span>64 个点 = 64 bit = 8 byte</span></div><p class="simulation-note">单色字形教学模型 · 不包含颜色或文件头的空间</p>`;
 }
 function reader() {
-  const l = lessons[current];
-  return `<div class="reader-layout">${sidebar()}<article class="reader-content"><div class="reader-topline"><span>1980s <i></i> 芬兰 · 赫尔辛基</span><span>第 ${current+1} / 6 节 <b>·</b> 约 ${l.duration}</span></div><div class="reading-spread"><div class="story-column"><span class="eyebrow">${l.kicker}</span><h1>${l.title.replace('\n','<br>')}</h1><p class="story-intro">${l.intro}</p><div class="story-body">${l.paragraphs.map(p=>`<p>${esc(p).replace(/(PRINT &quot;HELLO&quot;|PRINT 2\+3|10 PRINT &quot;HELLO&quot;|20 GOTO 10|GOTO 10|SAVE &quot;HELLO&quot;|LOAD &quot;HELLO&quot;|RUN\/STOP|SYNTAX ERROR|READY\.|RETURN|PRINT|RUN|LIST)/g,'<code>$1</code>')}</p>`).join('')}</div><div class="mission"><span class="mission-star">✳</span><div><span class="eyebrow">轮到你了</span><p>${l.task}</p></div></div><details class="deeper"><summary>再往里面看一点 <span>+</span></summary><p>${l.deeper}</p></details><div class="sources"><span>史料与延伸阅读</span>${l.source.map(s=>`<a href="${sources[s].url}" target="_blank" rel="noopener noreferrer">${sources[s].label} ↗</a>`).join('')}</div></div><section class="lab" aria-label="${l.short}互动实验">${current===3?bitsLab():current===4?pixelLab():terminalLab()}</section></div><div class="lesson-footer"><div><span id="lesson-status"></span><p>${l.takeaway}</p></div><div class="lesson-pagination">${current>0?`<a class="previous" href="#read/${current-1}" aria-label="上一节">←</a>`:''}<a class="button primary" href="${current<5?`#read/${current+1}`:'#journey'}">${current<5?'下一小节':'看看下一个时代'} →</a></div></div>${current===5?'<div class="chapter-ending"><span class="eyebrow">这一站的最后一句</span><h2>你没有等电脑告诉你怎么玩。<br>你开始告诉电脑，可以怎么玩。</h2><p>下一站，我们将遇到 Linus 后来用过的 Sinclair QL，继续探索机器里面的新可能。</p></div>':''}</article></div>`;
+  const l=lessons[current], era=eras[l.chapter], isEnd=current===era.end-1;
+  return `<div class="reader-layout era-theme-${l.chapter}">${sidebar()}<article class="reader-content"><div class="reader-topline"><span>${era.year} <i></i> ${era.machine}</span><span>第 ${current-era.start+1} / ${era.end-era.start} 节</span></div><div class="reading-spread"><div class="story-column"><span class="eyebrow">${l.kicker||`CHAPTER 0${l.chapter+1} / 亲手试一试`}</span><h1>${l.title.replace('\n','<br>')}</h1><p class="story-intro">${l.intro}</p><div class="mission"><span class="mission-star">✳</span><div><span class="eyebrow">你的挑战</span><p>${l.task}</p></div></div><details class="deeper"><summary>为什么会这样？ <span>+</span></summary>${l.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}<p>${l.deeper}</p></details><details class="source-details"><summary>年代与资料 ↗</summary><div class="sources">${l.source.map(s=>`<a href="${sources[s].url}" target="_blank" rel="noopener noreferrer">${sources[s].label} ↗</a>`).join('')}</div></details></div><section class="lab ${l.lab?'world-lab':''}" aria-label="${l.short}互动实验">${l.lab?labHeader('年代实验室',era.machine)+`<div id="world-content">${renderLab(l.lab,replayLab(l.lab,state.labs[l.lab]))}</div>`:current===3?bitsLab():current===4?pixelLab():terminalLab()}</section></div><div class="lesson-footer"><div><span id="lesson-status"></span><p>${l.takeaway}</p></div><div class="lesson-pagination">${current>0?`<a class="previous" href="#read/${current-1}" aria-label="上一节">←</a>`:''}<a class="button primary" href="${current<totalLessons-1?`#read/${current+1}`:'#ending'}">${current===totalLessons-1?'翻到最后一页':isEnd?'进入下一个时代':'下一小节'} →</a></div></div>${isEnd?`<div class="chapter-ending"><span class="eyebrow">这一站，你带走了什么？</span><h2>${['你开始告诉电脑，<br>可以怎么玩。','机器能做更多事。<br>你也能问更多问题。','打开的源码，<br>让好奇心继续传递。','房间很小，<br>网络把世界接了进来。','外形一直变，<br>每一个 bit 都有迹可循。'][l.chapter]}</h2></div>`:''}</article></div>`;
 }
+function ending() {
+  const next=lessons.findIndex((_,i)=>!state.completed.includes(i));
+  return `<section class="ending-page"><span class="eyebrow">THE END / 也是新的开始</span><h1>好奇心，<br>是最好的开机键。</h1><div class="ending-bit">0 <span>→</span> 1</div><p>从外祖父的电脑，到口袋里的世界。<br>你已经亲手留下 ${state.completed.length} / ${totalLessons} 个发现。</p><div class="ending-path">${eras.map((e,i)=>`<a href="#read/${e.start}"><span>${e.icon}</span><b>0${i+1}</b><small>${state.completed.filter(n=>n>=e.start&&n<e.end).length}/${e.end-e.start}</small></a>`).join('')}</div><p>电脑的故事还在继续。<br>下一次，你想让它做什么？</p><div class="world-controls">${next>=0?`<a class="button primary" href="#read/${next}">继续一个还没完成的发现 ↗</a>`:'<button class="button primary" id="ending-notebook">翻开我的探索手记 ↗</button>'}<a class="plain-link" href="#journey">重新走一遍时光目录</a></div></section>`;
+}
+function refreshWorld(focus) {
+  const key=lessons[current]?.lab;if(!key)return;
+  const model=replayLab(key,state.labs[key]);
+  $('#world-content').innerHTML=renderLab(key,model);
+  if(model.done)complete(current);
+  if(focus){const target=[...document.querySelectorAll('[data-world]')].find(el=>el.dataset.world===focus.type&&el.dataset.value===focus.value);target?.focus({preventScroll:true});}
+}
+function actWorld(type,value,focus,render=true) {
+  const key=lessons[current]?.lab;if(!key)return;
+  if(['pause','address','value','select','paint','depth','flip','speed','deliver','drop','tap','byte','sample'].includes(type))value=Number(value);
+  const event=cleanLabAction(key,{type,value});if(!event){toast('请输入这个实验允许的值。');return false;}
+  const log=state.labs[key]||[];
+  if(log.length>=LAB_ACTION_LIMIT){toast('这个实验已经操作 256 次。重置后可以继续，手记里的发现会保留。');return;}
+  state.labs[key]=[...log,event];save();if(render)refreshWorld(focus);return true;
+}
+
 function route() {
   if (machine.running) {halt(false); toast('离开这一页时，程序已暂停。回到电脑前可再次 RUN。');}
   const hash = location.hash || '#cover';
-  const match = hash.match(/^#read\/([0-5])$/);
-  current = match ? +match[1] : -1;
+  const match = hash.match(/^#read\/(\d{1,2})$/);
+  current = match && +match[1]<totalLessons ? +match[1] : -1;
   if (current >= 0) {state.lastLesson = current; save();}
-  $('#main').innerHTML = current>=0?reader():hash==='#journey'?journey():cover();
+  $('#main').innerHTML = current>=0?reader():hash==='#journey'?journey():hash==='#ending'?ending():cover();
   document.body.classList.toggle('reading',current>=0);
   document.body.classList.toggle('large-type',state.largeType);
   document.title = current>=0?`${lessons[current].short} · Every Bit`:'Every Bit · 可以玩的计算机小史';
@@ -182,13 +208,23 @@ function updatePixels() {
 }
 function notebook() {
   lastFocused=document.activeElement;
-  $('#notebook-content').innerHTML=`<p class="notebook-summary">${state.completed.length===6?'这一章的 6 个发现，你都亲手试过了！':`已经收集 ${state.completed.length} / 6 个小发现。`}</p><div class="notebook-list">${lessons.map((l,i)=>`<a href="#read/${i}" data-notebook-link><span class="note-check ${state.completed.includes(i)?'done':''}">${state.completed.includes(i)?'✓':'○'}</span><div><b>${l.short}</b><p>${state.completed.includes(i)?l.takeaway:'去这一页，亲手试一试。'}</p></div><span>↗</span></a>`).join('')}</div>`;
+  $('#notebook-content').innerHTML=`<p class="notebook-summary">${state.completed.length===totalLessons?'整本书的 23 个发现，你都亲手试过了！':`已经收集 ${state.completed.length} / ${totalLessons} 个小发现。`}</p><div class="notebook-list">${lessons.map((l,i)=>`<a href="#read/${i}" data-notebook-link><span class="note-check ${state.completed.includes(i)?'done':''}">${state.completed.includes(i)?'✓':'○'}</span><div><b>${l.short}</b><p>${state.completed.includes(i)?l.takeaway:'去这一页，亲手试一试。'}</p></div><span>↗</span></a>`).join('')}</div>`;
   save();$('#notebook').showModal();
 }
 document.addEventListener('click',e=>{
   const t=e.target.closest('button,a');if(!t)return;
   if(t.classList.contains('skip-link')) {e.preventDefault();$('#main').focus();$('#main').scrollIntoView();return;}
-  if(t.id==='notebook-button')notebook();
+  if(t.id==='notebook-button'||t.id==='ending-notebook')notebook();
+  if(t.hasAttribute('data-world')){
+    if(t.dataset.world==='write'&&lessons[current]?.lab==='memory'){
+      const input=$('.byte-input'), value=Number(input.value);
+      if(input.value===''||!Number.isInteger(value)||value<0||value>255){toast('字节请输入 0 到 255 之间的整数。');input.focus();return;}
+      const model=replayLab('memory',state.labs.memory);
+      if(model.value!==value&&!actWorld('value',value,null,false))return;
+    }
+    actWorld(t.dataset.world,t.dataset.value,{type:t.dataset.world,value:t.dataset.value});return;
+  }
+  if(t.hasAttribute('data-world-reset')){const key=lessons[current]?.lab;if(key){state.labs[key]=[];save();refreshWorld();}return;}
   if(t.matches('[data-close-dialog],[data-notebook-link]'))$('#notebook').close();
   if(t.id==='font-toggle') {state.largeType=!state.largeType;document.body.classList.toggle('large-type',state.largeType);t.setAttribute('aria-pressed',String(state.largeType));save();}
   if(t.dataset.command) {if(!state.powered) {feedback('先按开机键，就可以输入指令了。');return;}const input=$('#command');input.value=t.dataset.command;input.focus();}
@@ -215,7 +251,12 @@ document.addEventListener('click',e=>{
     case 'load-tape':command(`LOAD "${state.tape?.name||'HELLO'}"`);break;
   }
 });
-document.addEventListener('submit',e=>{if(e.target.id==='command-form'){e.preventDefault();const input=$('#command');command(input.value);input.value='';}});
+document.addEventListener('change',e=>{if(e.target.hasAttribute('data-world-input')){
+  const value=Number(e.target.value);
+  if(e.target.value!==''&&actWorld(e.target.dataset.worldInput,value,null,false)){const code=$('.big-code');if(code)code.textContent=`${toBits(value)} = ${value}${value===65?' = A':''}`;}
+  else {e.target.value=replayLab(lessons[current].lab,state.labs[lessons[current].lab]).value;toast('字节请输入 0 到 255 之间的整数。');}
+}});
+document.addEventListener('submit',e=>{if(e.target.hasAttribute('data-world-form')){e.preventDefault();actWorld(e.target.dataset.worldForm,new FormData(e.target).get('value'));return;}if(e.target.id==='command-form'){e.preventDefault();const input=$('#command');command(input.value);input.value='';}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&machine.running){e.preventDefault();halt();}});
 $('#notebook').addEventListener('close',()=>lastFocused?.isConnected&&lastFocused.focus());
 $('#notebook').addEventListener('click',e=>{if(e.target===$('#notebook')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});

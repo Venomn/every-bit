@@ -19,6 +19,13 @@
 .reader-sidebar{min-width:0}
 @media(max-width:980px){.reader-layout{grid-template-columns:minmax(0,1fr)}}
 @media print{.topbar,.reader-sidebar,.lab,.lesson-pagination,.site-footer,.toast,.sources a:after{display:none}.reader-layout,.reading-spread{display:block}.reader-content{padding:0}.story-column{max-width:680px;margin:auto}.story-body,.story-intro{color:#111}body{background:#fff}.deeper{display:block}.mission{background:#f3f3f3}.lesson-footer{display:block}a{text-decoration:underline}}
+/* The rest of the journey: one small workshop per spread. */
+.era-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.era-card{background:#e8ebdc;padding:24px 18px;border-radius:5px;display:flex;flex-direction:column;gap:12px;transition:transform .15s}.era-card:hover{transform:translateY(-4px)}.era-card-icon{font-size:48px;line-height:1.2;color:var(--orange)}.era-card h3{font-family:var(--serif);font-size:22px;line-height:1.4}.era-card p{font-size:11px;min-height:35px}.era-card b{font-size:11px;margin-top:auto}.era-lessons{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.era-lessons a{font-size:12px;border:1px solid #cbd2c1;padding:9px 13px;border-radius:4px;background:var(--paper-light)}.era-lessons a:hover{background:var(--lime)}.era-lessons span{margin-right:8px}.era-dots{display:flex;gap:7px;margin-top:20px}.era-dots a{font-family:var(--mono);font-size:11px;border:1px solid var(--line);padding:7px!important;display:block!important;margin:0!important}.era-dots [aria-current]{background:var(--ink);color:var(--paper)}.source-details{font-size:11px;margin-top:20px;color:var(--muted)}summary{cursor:pointer}.source-details .sources{margin-top:12px}.deeper p+p{margin-top:12px}.story-intro{font-size:15px!important}.reading-spread{grid-template-columns:minmax(220px,.78fr) minmax(0,1.5fr)!important;gap:38px!important}.story-column h1{font-size:clamp(29px,3vw,45px)!important}.world-lab{min-width:0}.world-world{padding-top:10px}.world-lab .lab-heading b{max-width:58%;text-align:right;line-height:1.4}.world-controls{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:18px 0}.world-controls>span,.world-controls>label{font-size:12px}.world-button{border:1px solid #b9c3ad;border-radius:4px;background:var(--paper-light);padding:10px 13px;min-height:44px;font-size:12px;line-height:1.5;transition:background .15s}.world-button:hover:not(:disabled){background:#e8edda}.world-button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper-light)}.world-button code{font-size:11px}.world-feedback{padding:14px 16px;background:#e8ebdc;border-left:3px solid #a4b483;margin-top:20px;font-size:13px;line-height:1.75;min-height:62px;overflow-wrap:anywhere}.world-feedback.success{border-color:var(--orange);background:#f2e8d6}.world-bottom{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:12px;font-size:10px;color:var(--muted)}.world-bottom button{font-size:11px;white-space:nowrap}.world-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.world-card{background:var(--paper-light);border:1px solid var(--line);padding:15px;min-width:0;border-radius:4px}.world-card>.eyebrow{display:block;margin-bottom:12px;font-size:9px}.world-card>strong{font-size:30px;font-family:var(--mono)}.world-card code{font-family:var(--mono);font-size:12px;overflow-wrap:anywhere}.world-hint{font-size:11px;color:var(--muted);margin-top:14px}.world-details{margin-top:20px;font-size:12px}.world-details pre{padding:14px;background:#e9ecdf;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.world-form{display:flex;gap:9px;align-items:flex-end;margin:15px 0}.world-form label{display:flex;flex-direction:column;font-size:11px;gap:8px;flex:1;min-width:0}.world-form input{min-width:0;width:100%;border:1px solid #bcc5b2;border-radius:4px;background:var(--paper-light);padding:11px;color:var(--ink);font-size:15px;height:45px}.world-form button{flex-shrink:0}.world-meter{display:flex;gap:4px;margin:14px 0}.world-meter i{height:9px;background:#dce1d2;flex:1}.world-meter .filled{background:var(--orange)}.ql-machine{background:#303532;border:7px solid #222723;border-radius:7px;padding:14px;box-shadow:0 7px 0 #101812}.ql-brand{color:#efefe5;font-family:var(--mono);font-size:15px;margin:0 0 20px}.ql-brand b{font-size:24px}.ql-brand span{float:right;color:#cb603f;letter-spacing:-5px}.ql-machine .world-card{border:0;padding:12px;background:#e7eadd}.ql-machine .world-button{padding:7px 10px;min-height:38px}.task-display{font-family:var(--mono);height:60px;font-size:20px;letter-spacing:2px;overflow-wrap:anywhere;line-height:1.5}.task-display span{color:#ce603e}.cpu-bus{display:flex;align-items:center;gap:20px;color:#cbdcc0;margin-top:20px;font-size:12px}.cpu-bus b{background:#101812;border:1px dashed #8b9e7c;padding:8px;font-family:var(--mono);letter-spacing:2px}.address-display{text-align:center;margin:12px 0 20px}.address-display span{display:block;font-size:11px}.address-display strong{display:block;font-family:var(--mono);font-size:45px;letter-spacing:12px}.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.memory-grid button{background:#eceee2;border:1px solid #cbd3be;padding:10px 5px;border-radius:4px}.memory-grid small{display:block;font-family:var(--mono);font-size:10px;color:#727c68}.memory-grid b{font-family:var(--mono);font-size:22px}.memory-grid [aria-pressed=true]{background:var(--ink);color:#f4f6ed}.memory-grid [aria-pressed=true] small{color:var(--lime)}.byte-input{width:70px;padding:8px;border:1px solid #b9c3ad;border-radius:4px;background:white}.big-code{display:block;text-align:center;background:#e8ebdc;padding:16px;font-family:var(--mono);font-size:21px}.robot-path{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));margin:40px 0 25px;gap:4px}.robot-path>div{border-bottom:6px solid #879675;text-align:center;min-width:0}.robot-path span{font-size:28px;height:50px;display:flex;align-items:center;justify-content:center}.robot-path small{font-size:9px}.robot-here{background:#e5ebd0}.code-strip{font-family:var(--mono);font-size:15px;padding:20px;background:#e8ebdc;min-height:105px;line-height:1.9}.color-studio{display:flex;gap:24px;align-items:center;justify-content:center;margin:28px 0}.color-grid{display:grid;grid-template-columns:repeat(4,1fr);width:min(240px,70%);aspect-ratio:1;border:6px solid #889477;gap:2px;background:#889477}.color-grid button{min-width:0;min-height:35px;padding:0}.swatches{display:flex;flex-direction:column;gap:8px}.swatches .world-button{display:flex;align-items:center;gap:9px;padding:7px}.swatches i{display:inline-block;width:23px;height:23px;border:1px solid #bbb}.byte-ribbon{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0}.byte-ribbon>code{background:#e8ebdc;padding:4px 8px;font-family:var(--mono);font-size:13px}.byte-ribbon .world-button{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:43px;padding:8px}.byte-ribbon small{font-size:9px;opacity:.65}.byte-ribbon code{font-size:18px}.pc-case{padding:20px;background:#d9d9ca;border:2px solid #aeb5a0;border-radius:8px;box-shadow:0 6px 0 #aeb5a0}.pc-label{font-family:var(--mono);font-size:9px;display:flex;gap:8px;align-items:center;margin-bottom:20px;letter-spacing:1px}.pc-label i,.modem-lights i{width:6px;height:6px;background:#94b35e;border-radius:50%;box-shadow:0 0 6px #a5c26e}.cpu-layout{display:grid;grid-template-columns:1fr 1fr;gap:12px}.instruction-list{background:#253e32;color:#b8cd9b;border-radius:3px;padding:8px}.instruction-list>div{display:flex;align-items:center;gap:9px;padding:12px 5px;font-size:13px}.instruction-list span{color:#90a67e;font-size:10px}.instruction-list .active{background:#b8cd9b;color:#263d33}.registers{display:flex;flex-direction:column;gap:7px}.registers .world-card{padding:9px 12px}.registers .eyebrow{margin:0}.registers strong{font-size:25px}.phase-strip{display:flex;margin-top:18px;gap:6px}.phase-strip span{flex:1;font-size:11px;text-align:center;padding:10px 0;background:#c4cbb7;border-radius:3px}.phase-strip .active{background:var(--orange);color:white}.device-map{max-width:430px;margin:auto}.device-map>.world-card{text-align:center}.device-value{font-family:var(--mono);font-size:36px;line-height:1.4;min-height:55px}.os-bridge{background:#dce6a0;text-align:center;border:1px solid #b6c48c;padding:16px;margin-top:20px}.driver-path{text-align:center;min-width:0}.driver-path .wire{border-left:3px dashed #c7caba;height:38px;width:0;margin:auto}.driver-path.connected .wire{border-style:solid;border-color:#648350}.driver-path .world-button{font-size:11px}.driver-path small{display:block;font-size:10px;margin-top:8px}.file-browser{display:grid;grid-template-columns:minmax(90px,.6fr) minmax(0,1.4fr);border:1px solid #adb7a0;background:#e6eadd;border-radius:4px;overflow:hidden}.file-tree{font-family:var(--mono);font-size:10px;line-height:2.4;padding:14px 9px;overflow-wrap:anywhere}.unix-terminal{background:#21392c;color:#c6dda8;padding:15px;min-height:270px;font-family:var(--mono);font-size:11px;overflow-wrap:anywhere}.unix-terminal>span{font-size:8px;color:#96b17b}.unix-terminal pre{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;font-family:inherit;min-height:170px}.unix-terminal>b{font-weight:400}.command-presets .world-button{font-size:10px;padding:8px}.source-code{white-space:pre-wrap;font-size:12px;font-family:var(--mono);line-height:2;overflow-wrap:anywhere}.source-code mark{padding:2px 7px;background:var(--lime);color:var(--ink)}.big-result{font:22px var(--mono);margin-top:20px}.test-cases{margin:25px 0}.test-cases>div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 15px;background:#e9eddf;font-size:13px}.modem-box{padding:20px;background:#dfdfd0;border:1px solid #b5bea7;border-radius:12px;box-shadow:0 6px 0 #b5bea7}.modem-lights{display:flex;gap:6px;align-items:center;margin-bottom:20px}.modem-lights span{font:8px var(--mono);margin-left:auto}.signal-bits{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}.signal-bits .world-button{padding:8px 0;font:19px var(--mono);min-width:0}.signal-wave{display:block;width:100%;color:var(--orange);margin:20px 0;background:#f2f2e6;border-radius:4px}.receiver{padding:18px 16px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #a4b48e}.receiver span,.receiver b{font-size:11px}.receiver code{font-size:22px;letter-spacing:2px}.packet-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:20px}.packet{background:#ede9d9;border:1px solid #d3cbb3;border-radius:4px;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:12px}.packet>b{font:11px var(--mono);color:var(--muted)}.packet strong{font-size:16px;white-space:nowrap}.packet .world-button{font-size:10px;padding:7px 5px;width:100%}.packet.lost{border:2px dashed var(--orange);background:#f5e5d9}.packet-arrivals{font-size:11px;margin:24px 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.packet-arrivals b{border:1px solid #adbaa0;width:25px;height:25px;text-align:center;padding:3px}.message-rebuild{display:flex;flex-wrap:wrap;gap:4px;padding:18px;background:#e6ebd9;min-height:70px;align-items:center;justify-content:center}.message-rebuild span{font-size:19px;color:#9aa58c}.message-rebuild .received{color:var(--ink)}.address-book{border:1px solid #c5ccb9;border-radius:5px;overflow:hidden;margin-bottom:22px}.address-book>.world-controls{padding:0 13px}.browser-bar{background:#e1e5d7;border-bottom:1px solid #c5ccb9;padding:12px;font-size:12px;display:flex;align-items:center;gap:15px;overflow-wrap:anywhere}.dns-flow{display:flex;gap:8px;align-items:center;margin:20px 12px}.dns-flow>.world-card{flex:1;padding:12px 8px}.dns-flow>span{font-size:9px;white-space:nowrap}.dns-flow b{font:12px var(--mono);overflow-wrap:anywhere}.mini-browser{border:1px solid #aab69b;border-radius:5px;overflow:hidden;box-shadow:3px 5px 0 #d6dccb}.web-page{padding:28px;background:#fffef9;min-height:200px}.web-page h2{font-family:var(--serif);font-size:26px;overflow-wrap:anywhere}.web-page p{margin:18px 0;font-size:13px}.web-page .world-button{background:transparent;color:#355f99;border:0;text-decoration:underline;padding:0}.moon-art{font-size:65px;line-height:1;color:#d09c50}.phone-stage{display:flex;gap:30px;align-items:center;justify-content:center;padding:20px 0}.phone{width:210px;background:#273e33;border-radius:30px;padding:12px 10px;box-shadow:5px 7px 0 #b1baa3;flex-shrink:0;border:3px solid #17291f}.phone-notch{width:54px;height:6px;background:#17291f;border-radius:10px;margin:3px auto 17px}.touch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}.touch-app{padding:10px 0;background:#d9e4ba;min-height:55px;display:flex;flex-direction:column;align-items:center;justify-content:center}.touch-app span{font-size:23px;line-height:1.2}.touch-app small{font:8px var(--mono);margin-top:7px}.app-1{background:#e6ba8d}.app-2{background:#b6d1c0}.app-3{background:#f1e3ab}.touch-app.touched{box-shadow:inset 0 0 0 3px #d45634}.phone-home{width:32px;height:32px;border-radius:50%;border:2px solid #607759;margin:16px auto 0}.touch-readout{flex:1;min-width:0}.touch-readout strong{display:block;font:28px var(--mono);margin:20px 0}.touch-readout p{font-size:11px}.app-badge{display:block;font-size:12px;margin:12px 0}.unicode-stats{padding:20px;background:#e8ebdc;display:flex;align-items:center;justify-content:space-between;gap:15px}.unicode-stats strong{font-size:36px;font-weight:400;overflow-wrap:anywhere;min-width:0}.unicode-stats span{font:11px/1.8 var(--mono);flex-shrink:0}.bit-inspector{display:flex;gap:6px;min-height:70px}.bit-inspector>div{flex:1;text-align:center;background:#e1e5d8;padding:8px 0}.bit-inspector small{display:block;font:9px var(--mono);color:#747e68}.bit-inspector b{font:25px var(--mono)}.bit-inspector .on{background:#dce6a0}.cloud-server{background:#e6ebd7;border:1px solid #bbca9d;padding:20px;text-align:center;border-radius:40px 40px 5px 5px}.cloud-server span{display:block;font-size:11px;margin-bottom:10px}.cloud-server strong{font-size:18px}.network-switch{text-align:center;margin:15px}.cloud-note{font-family:var(--serif);font-size:20px;min-height:100px}.cloud-note small{font:10px sans-serif;color:var(--muted);display:block;margin:10px 0}.cloud-note~.world-button{margin:4px 4px 0 0;font-size:10px;padding:8px}.conflict-box{margin-top:20px;border:1px solid #ce603e;background:#faecd9;padding:18px}.conflict-box strong{font-size:16px}.conflict-box p{font-size:11px;margin-top:8px}.fruit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.fruit-grid button{background:#e9eddd;border:1px solid #cbd5ba;border-radius:4px;min-width:0;padding:17px 5px;display:flex;align-items:center;flex-direction:column;gap:10px}.fruit-grid i{height:30px;background:#bb6a41;display:block;border:2px solid #995b36;box-shadow:inset 5px 5px #d18f5a}.fruit-grid small{font-size:9px}.fruit-grid b{font-size:11px}.new-fruit{display:flex;gap:25px;align-items:center;padding:22px;background:#f2e9d1;margin:20px 0}.new-fruit i{width:49px;height:30px;border-radius:29%;background:#ba9d4b;flex-shrink:0}.new-fruit span{display:block;font-size:11px}.new-fruit strong{font-size:20px}.message-pipeline{display:flex;gap:5px;margin:22px 0}.message-pipeline span{flex:1;background:#e2e5d8;padding:10px 2px;text-align:center;font-size:11px;position:relative}.message-pipeline span.active{background:#dce6a0}.message-pipeline span+span:before{content:'→';position:absolute;left:-6px;color:#536449;z-index:1}.final-packets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.final-packets .world-button{display:flex;flex-direction:column;gap:10px;align-items:center;padding:12px 5px;min-width:0}.final-packets b{font-size:11px}.final-packets code{font:12px/1.8 var(--mono)}.message-destination{padding:30px;background:#263d33;color:#e2ebbd;border:6px solid #b8c0a9;border-radius:12px;min-height:135px}.message-destination span{display:block;font:9px var(--mono);color:#b5c39c}.message-destination strong{display:block;font-size:28px;font-weight:400;margin-top:15px;overflow-wrap:anywhere}.final-discovery{font-family:var(--serif);font-size:20px;margin:25px 0;color:var(--orange)}.ending-page{max-width:850px;margin:70px auto 90px;padding:0 30px;text-align:center}.ending-page h1{font-family:var(--serif);font-size:clamp(35px,5vw,65px);line-height:1.5;margin:25px 0}.ending-page p{color:var(--muted);line-height:2;font-size:15px}.ending-bit{font:100px var(--mono);color:var(--ink);margin:40px}.ending-bit span{font-size:40px;color:var(--orange);vertical-align:middle}.ending-path{display:flex;gap:15px;justify-content:center;margin:40px auto}.ending-path a{flex:1;max-width:100px;padding:15px 10px;background:#e5e9d8;display:flex;flex-direction:column}.ending-path span{font-size:35px;color:var(--orange)}.ending-path b{font:12px var(--mono)}.ending-path small{font-size:10px;margin-top:7px}.ending-page .world-controls{justify-content:center;margin-top:30px}
+@media(min-width:1100px){.reader-sidebar{position:sticky;top:0;align-self:start}.world-lab{padding-left:24px;padding-right:24px}.story-column .mission{margin-top:22px}}
+@media(max-width:1100px){.reading-spread{gap:24px!important;grid-template-columns:minmax(200px,.8fr) minmax(0,1.3fr)!important}.era-cards{grid-template-columns:repeat(3,1fr)}.phone-stage{gap:18px}.phone{width:185px}.world-card{padding:12px}.task-display{font-size:17px}.packet-grid{gap:5px}.packet{padding:10px 5px}.packet strong{font-size:13px}.file-browser{grid-template-columns:1fr}.file-tree{display:flex;flex-wrap:wrap;gap:4px 15px;padding:9px}.unix-terminal{min-height:230px}.unix-terminal pre{min-height:130px}}
+@media(max-width:760px){.reading-spread{grid-template-columns:minmax(0,1fr)!important;gap:24px!important}.era-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.era-card{padding:18px 14px}.era-card h3{font-size:20px}.story-column h1{font-size:35px!important;margin:12px 0 15px}.story-intro{font-size:14px!important;line-height:1.8!important}.mission{margin-top:16px!important;padding:15px!important}.mission p{font-size:13px!important}.deeper{margin-top:12px!important}.source-details{margin-top:12px}.world-world{padding-top:5px}.world-lab{max-width:600px}.world-controls{gap:8px}.world-button{min-height:44px}.era-dots{display:none}.reader-sidebar nav{overflow-x:auto}.world-bottom{font-size:9px}.phone{width:195px}.touch-readout strong{font-size:23px}.final-packets code{font-size:11px}.ending-page{margin:45px auto}.ending-bit{font-size:80px}.ending-path{gap:8px}.era-lessons a{font-size:11px;padding:8px 10px}.packet-sender>.eyebrow{font-size:9px}}
+@media(max-width:390px){.world-card{padding:10px}.ql-machine{padding:10px;border-width:5px}.ql-machine .world-duo{gap:8px}.task-display{font-size:14px}.packet-grid{grid-template-columns:repeat(2,1fr)}.phone-stage{gap:15px}.phone{width:170px;padding:10px 7px}.touch-app{min-height:48px}.touch-app span{font-size:20px}.touch-readout>.eyebrow{font-size:8px}.touch-readout strong{font-size:20px}.world-button{padding:10px;font-size:11px}.world-form button{padding:10px 8px}.cpu-layout{grid-template-columns:1fr 1fr}.pc-case{padding:13px}.instruction-list>div{font-size:11px;gap:5px;padding:12px 2px}.dns-flow{margin:15px 8px}.dns-flow b{font-size:10px}.byte-ribbon{gap:4px}.final-packets{grid-template-columns:repeat(2,1fr)}}
+.swatches .world-button{flex-wrap:wrap;max-width:88px}.swatches small{font-size:9px;width:100%}.large-type .story-intro{font-size:18px!important}.large-type .mission p,.large-type .deeper p,.large-type .world-feedback{font-size:16px!important}.large-type .world-button{font-size:14px}.large-type .source-details{font-size:14px}
 </style>
 </head>
 <body>
@@ -26,21 +33,194 @@
   <header class="topbar">
     <a class="brand" href="#cover" aria-label="Every Bit 首页"><span class="brand-icon" aria-hidden="true">e<span>↗</span></span><span>every bit<span class="brand-dot">.</span></span></a>
     <span class="brand-description">一本可以玩的计算机小史</span>
-    <nav aria-label="主导航"><a href="#journey">时光目录 <span aria-hidden="true">↗</span></a><button id="font-toggle" class="text-button" aria-label="切换大字阅读" aria-pressed="false">Aa</button><button id="notebook-button" class="notebook-button">探索手记 <span id="header-progress">0/6</span></button></nav>
+    <nav aria-label="主导航"><a href="#journey">时光目录 <span aria-hidden="true">↗</span></a><button id="font-toggle" class="text-button" aria-label="切换大字阅读" aria-pressed="false">Aa</button><button id="notebook-button" class="notebook-button">探索手记 <span id="header-progress">0/23</span></button></nav>
   </header>
   <main id="main" tabindex="-1"></main>
-  <footer class="site-footer"><a class="footer-brand" href="#cover">EVERY BIT.</a><span>好奇心，是最好的开机键。</span><span>互动样章 · 第 01 章</span></footer>
+  <footer class="site-footer"><a class="footer-brand" href="#cover">EVERY BIT.</a><span>好奇心，是最好的开机键。</span><span>5 个时代 · 23 个互动实验</span></footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="notebook" aria-labelledby="notebook-title"><div class="dialog-header"><span class="eyebrow">FIELD NOTES / 探索手记</span><button data-close-dialog aria-label="关闭手记" class="close-button">×</button></div><h2 id="notebook-title">每一个小发现，<br>都值得记下来。</h2><div id="notebook-content"></div><p class="small muted" id="storage-note">手记和磁带保存在当前浏览器中，不会跨设备同步。</p></dialog>
 <script>
 (()=>{
+// Small, deterministic teaching worlds. No network, shell, or downloaded code.
+const LAB_KEYS = ['schedule','memory','branch','color','cpu','drivers','files','patch','modem','packets','dns','web','touch','unicode','cloud','learn','message'];
+const LAB_ACTION_LIMIT = 256;
+const labRules = {
+  schedule: {tick: true, pause: [0,1]}, memory: {address:[0,15], value:[0,255], write:true, read:true},
+  branch:{step:true,rule:true}, color:{select:[0,3],paint:[0,15],depth:[1,2]},
+  cpu:{step:true}, drivers:{toggle:['keyboard','disk'],key:true,save:true},
+  files:{command:'text'}, patch:{fix:true,test:true,share:true},
+  modem:{flip:[0,7],send:true,speed:[1,4]}, packets:{deliver:[0,3],drop:[0,3]},
+  dns:{name:['book.test','moon.test','missing.test'],lookup:true,move:true,expire:true,visit:true},
+  web:{title:'text',path:['/','/moon','/missing'],request:true,follow:true},
+  touch:{tap:[0,15]}, unicode:{text:'text',byte:[0,127]},
+  cloud:{online:true,edit:['A','B'],sync:['A','B'],resolve:['A','B']},
+  learn:{label:['round','long'],sample:[0,5],test:true},
+  message:{text:'text',encode:true,send:true,deliver:[0,31],store:true,open:true}
+};
+function cleanLabAction(key, event) {
+  if (!LAB_KEYS.includes(key) || !event || typeof event !== 'object' || !Object.hasOwn(labRules[key],event.type)) return null;
+  const rule=labRules[key][event.type];
+  if(rule===true) return {type:event.type};
+  if(rule==='text') return typeof event.value==='string'?{type:event.type,value:[...event.value].slice(0,key==='files'?80:24).join('')}:null;
+  if(typeof rule[0]==='number') return Number.isInteger(event.value)&&event.value>=rule[0]&&event.value<=rule[1]?{type:event.type,value:event.value}:null;
+  return rule.includes(event.value)?{type:event.type,value:event.value}:null;
+}
+function cleanLabLogs(raw) {
+  const result={};
+  if(!raw||typeof raw!=='object'||Array.isArray(raw))return result;
+  for(const key of LAB_KEYS) if(Array.isArray(raw[key])) result[key]=raw[key].slice(0,LAB_ACTION_LIMIT).map(e=>cleanLabAction(key,e)).filter(Boolean);
+  return result;
+}
+const utfBytes = text => [...new TextEncoder().encode(text)];
+const byteChunks = text => {const bytes=utfBytes(text);return Array.from({length:Math.ceil(bytes.length/3)},(_,i)=>bytes.slice(i*3,i*3+3));};
+const fruitSamples = [{shape:0,label:'round'},{shape:1,label:'round'},{shape:2,label:'round'},{shape:8,label:'long'},{shape:9,label:'long'},{shape:10,label:'long'}];
+function predictFruit(samples, shape=7) {
+  if(!samples.length)return null;
+  return [...samples].sort((a,b)=>Math.abs(a.shape-shape)-Math.abs(b.shape-shape)||a.shape-b.shape)[0].label;
+}
+function initialLab(key) {
+  const common={done:false,feedback:'动手试一试。'};
+  const data={
+    schedule:{counts:[0,0],paused:[false,false],turn:0,last:-1,ticks:0},
+    memory:{cells:Array(16).fill(0),address:0,value:65,written:false,read:false},
+    branch:{position:0,rule:false,crashed:false},
+    color:{pixels:Array(16).fill(0),selected:1,depth:1,painted:false},
+    cpu:{pc:0,phase:0,acc:0,output:null,ir:null,cycles:0},
+    drivers:{keyboard:false,disk:false,buffer:'',file:'',blocked:false},
+    files:{cwd:'/',dirs:['/','/notes'],files:{'/hello.txt':'HELLO, LINUX!'},output:['输入 help 看命令。'],created:false},
+    patch:{fixed:false,tests:null,shared:false,friendFixed:false},
+    modem:{bits:[0,1,0,0,0,0,0,1],speed:1,received:null,sentSeconds:null,sentSlow:false,sentFast:false},
+    packets:{received:[],dropped:[],arrivals:[],duplicates:0},
+    dns:{name:'book.test',cache:{},servers:{'book.test':'192.0.2.1','moon.test':'192.0.2.2'},address:null,moved:false,stale:false},
+    web:{title:'我的第一张网页',path:'/',loaded:null,requested:false,followed:false},
+    touch:{cell:null,apps:[]}, unicode:{text:'A',selected:0,seen:[]},
+    cloud:{online:false,server:{text:'一颗星',rev:1},A:{text:'一颗星',base:1,dirty:false},B:{text:'一颗星',base:1,dirty:false},conflict:null,hadConflict:false,resolved:false,edits:0},
+    learn:{label:'round',samples:[],prediction:null,tested:false},
+    message:{text:'你好🌱',encoded:false,chunks:[],sent:false,received:[],stored:null,opened:false}
+  };
+  return {...common,...structuredClone(data[key])};
+}
+function labPath(cwd,name) {
+  if(name==='..')return cwd==='/'?'/':cwd.slice(0,cwd.lastIndexOf('/'))||'/';
+  if(name==='/')return '/';
+  if(!/^[a-zA-Z0-9_.-]{1,20}$/.test(name)||name==='.'||name==='..')return null;
+  return `${cwd==='/'?'':cwd}/${name}`;
+}
+function stepLab(key, previous, raw) {
+  const action=cleanLabAction(key,raw);if(!action)return previous;
+  const s=structuredClone(previous), {type:t,value:v}=action;
+  switch(key) {
+    case 'schedule':
+      if(t==='pause'){s.paused[v]=!s.paused[v];s.feedback=`任务 ${v?'B':'A'} ${s.paused[v]?'暂停':'恢复'}。`;}
+      else {let next=s.turn;if(s.paused[next]||s.counts[next]>=8)next=1-next;
+        if(s.paused[next]||s.counts[next]>=8){s.last=-1;s.feedback='CPU 空闲：恢复一个未完成的任务吧。';break;}
+        s.counts[next]++;s.last=next;s.turn=1-next;s.ticks++;s.feedback=`第 ${s.ticks} 拍：CPU 只帮 ${next?'B':'A'} 做了 1 步。`;
+        s.done=s.counts.every(n=>n>=6);}
+      break;
+    case 'memory':
+      if(t==='address')s.address=v;
+      if(t==='value')s.value=v;
+      if(t==='write'){s.cells[s.address]=s.value;s.written ||= s.address===9&&s.value===65;s.feedback=`已把 ${s.value} 写入地址 ${s.address}。`;}
+      if(t==='read'){s.value=s.cells[s.address];s.read=true;s.feedback=`地址 ${s.address} → ${s.value}${s.value===65?' → A':''}`;s.done ||= s.written&&s.address===9&&s.value===65;}
+      break;
+    case 'branch':
+      if(t==='rule'){s.rule=!s.rule;s.feedback=s.rule?'装上规则：前面有石头，就跳过去。':'卸下规则：每次都向前走。';}
+      if(t==='step'&&s.position<6){if(s.position===2&&!s.rule){s.crashed=true;s.feedback='撞到石头！现在改变规则，再试一次。';}else{s.position+=s.position===2?2:1;s.feedback=s.position===4?'条件成立 → 跳过石头。':'向前走一步。';s.done=s.position===6;}}
+      break;
+    case 'color':
+      if(t==='select')s.selected=v;
+      if(t==='depth')s.depth=v;
+      if(t==='paint'){s.pixels[v]=s.selected;s.painted=true;}
+      s.feedback=`${s.depth} bit / 像素 → ${2**s.depth} 种颜色。16 个像素需要 ${16*s.depth/8} byte。`;
+      s.done ||= s.depth===2&&s.pixels.includes(2)&&s.pixels.includes(3);break;
+    case 'cpu': {
+      if(s.pc>=4){s.feedback='程序结束。重置可以再看一次。';break;}
+      const program=[['LOAD',2],['ADD',3],['OUT',0],['HALT',0]];
+      if(s.phase===0){s.ir=program[s.pc];s.feedback=`取指：把地址 ${s.pc} 的 ${s.ir[0]} 放进指令寄存器。`;}
+      if(s.phase===1)s.feedback=`译码：${{LOAD:'把 2 放进小盒子',ADD:'给小盒子加 3',OUT:'把小盒子的值送到屏幕',HALT:'停止取下一条'}[s.ir[0]]}。`;
+      if(s.phase===2){const [op,arg]=s.ir;if(op==='LOAD')s.acc=arg;if(op==='ADD')s.acc+=arg;if(op==='OUT')s.output=s.acc;s.pc++;s.feedback=`执行 ${op} 完成。`;s.done=s.pc===4&&s.output===5;}
+      s.phase=(s.phase+1)%3;s.cycles++;break;
+    }
+    case 'drivers':
+      if(t==='toggle'){s[v]=!s[v];s.feedback=`${v==='disk'?'磁盘':'键盘'}驱动${s[v]?'已接通':'已断开'}。`;}
+      if(t==='key'){if(s.keyboard){s.buffer='A';s.feedback='键盘 → 驱动 → 操作系统 → 程序：A';}else{s.blocked=true;s.feedback='键盘有输入，但缺少驱动来读懂它。';}}
+      if(t==='save'){if(s.disk&&s.buffer){s.file=s.buffer;s.done=true;s.feedback='程序 → 操作系统 → 磁盘驱动 → 磁盘：A 已保存。';}else{s.blocked=true;s.feedback=s.disk?'先让键盘送来一个 A。':'缺少磁盘驱动，暂时写不进去。';}}
+      break;
+    case 'files': {
+      const text=v.trim(), parts=text.split(/\s+/),cmd=parts.shift(),name=parts.shift();const path=labPath(s.cwd,name||'');
+      let out='不认识这条命令。输入 help 看看。';
+      if(cmd==='help')out='ls · pwd · cd notes · cd .. · mkdir 名字 · write 名字 内容 · cat 名字';
+      if(cmd==='pwd')out=s.cwd;
+      if(cmd==='ls'){const prefix=s.cwd==='/'?'/':s.cwd+'/';out=[...s.dirs.filter(p=>p!==s.cwd).map(p=>p+'/'),...Object.keys(s.files)].filter(p=>p.startsWith(prefix)&&!p.slice(prefix.length).replace(/\/$/,'').includes('/')).map(p=>p.slice(prefix.length)).join('   ')||'（空文件夹）';}
+      if(cmd==='cd'){if(path&&s.dirs.includes(path)){s.cwd=path;out=path;}else out='找不到这个文件夹。';}
+      if(cmd==='mkdir'){if(!path)out='名字请用 1–20 个英文字母、数字、点、横线。';else if(s.dirs.includes(path)||Object.hasOwn(s.files,path))out='这个名字已经存在。';else if(s.dirs.length>=12)out='小磁盘最多放 12 个文件夹。';else{s.dirs.push(path);out='已创建 '+path;}}
+      if(cmd==='write'){if(!path||s.dirs.includes(path))out='请选择有效的文件名。';else if(Object.keys(s.files).length>=16&&!Object.hasOwn(s.files,path))out='小磁盘最多放 16 个文件。';else{s.files[path]=parts.join(' ');s.created=true;out='已保存 '+path;}}
+      if(cmd==='cat'){if(path&&Object.hasOwn(s.files,path)){out=s.files[path];s.done ||= s.created&&path!=='/hello.txt';}else out='找不到这个文件。';}
+      s.output=[...s.output,`${s.cwd} > ${text}`,out].slice(-10);s.feedback=out;break;
+    }
+    case 'patch':
+      if(t==='fix'){s.fixed=!s.fixed;s.tests=null;s.shared=false;s.feedback='修改后，记得重新测试。';}
+      if(t==='test'){s.tests=s.fixed;s.feedback=s.fixed?'3 个例子都通过了！可以分享这个修正。':'2+3 得到 -1，测试没通过。';}
+      if(t==='share'){if(s.tests===true){s.shared=true;s.friendFixed=s.fixed;s.done=true;s.feedback='你的改动到了朋友的副本里。朋友的 2+3 也等于 5。';}else s.feedback='先让测试通过，再分享。';}break;
+    case 'modem':
+      if(t==='flip'){s.bits[v]=1-s.bits[v];s.received=null;}
+      if(t==='speed')s.speed=v;
+      if(t==='send'){s.received=[...s.bits];s.sentSeconds=8/s.speed;if(s.speed===1)s.sentSlow=true;else s.sentFast=true;s.done=s.sentSlow&&s.sentFast;s.feedback=`8 bit ÷ ${s.speed} bit/秒 = ${8/s.speed} 秒（教学慢速）。`;}break;
+    case 'packets':
+      if(t==='drop'){if(!s.received.includes(v)&&!s.dropped.includes(v))s.dropped.push(v);s.feedback=`包 ${v+1} 丢在路上了，可以重新送。`;}
+      if(t==='deliver'){if(s.received.includes(v)){s.duplicates++;s.feedback=`包 ${v+1} 重复了，只保留一份。`;}else{s.received.push(v);s.arrivals.push(v);s.dropped=s.dropped.filter(n=>n!==v);s.feedback=`包 ${v+1} 到达；接收方按编号放回位置。`;}s.done=s.received.length===4;}break;
+    case 'dns':
+      if(t==='name'){s.name=v;s.address=null;}
+      if(t==='lookup'){s.address=s.cache[s.name]||s.servers[s.name]||null;if(s.address)s.cache[s.name]=s.address;s.feedback=s.address?`${s.name} → ${s.address}`:'查无此名；不能连接。';}
+      if(t==='move'){s.servers['book.test']='192.0.2.9';s.moved=true;s.feedback='book.test 搬到 192.0.2.9，旧缓存还没过期。';}
+      if(t==='expire'){s.cache={};s.address=null;s.feedback='缓存过期。再查一次地址。';}
+      if(t==='visit'){if(s.address&&s.address===s.servers[s.name]){s.feedback='找到服务器，连接成功。';s.done ||= s.moved&&s.name==='book.test';}else{s.stale ||= !!s.address;s.feedback=s.address?'地址已经过时。让缓存过期，再查询。':'先查询名字对应的地址。';}}break;
+    case 'web':
+      if(t==='title'){s.title=v;s.loaded=null;}
+      if(t==='path'){s.path=v;s.loaded=null;}
+      if(t==='request'){s.loaded=s.path;s.requested=true;s.feedback=s.path==='/missing'?'HTTP 404 · 没找到这一页。':'HTTP 200 · 收到 HTML，可以显示了。';}
+      if(t==='follow'&&s.loaded==='/'){s.path='/moon';s.loaded='/moon';s.followed=true;s.done=true;s.feedback='点击链接 → 再发一个请求 → 月球页面。';}break;
+    case 'touch':
+      s.cell=v;{const app=v<4?'相机':v<8?'音乐':v<12?'地图':'便笺';if(!s.apps.includes(app))s.apps.push(app);s.feedback=`触点 (${v%4}, ${Math.floor(v/4)}) → ${app} 区域 → 打开${app}。`;s.done=s.apps.length===4;}break;
+    case 'unicode':
+      if(t==='text'){s.text=v;s.selected=0;const length=utfBytes(v).length;if(!s.seen.includes(length)&&length)s.seen.push(length);s.feedback=`${[...v].length} 个 Unicode 码点 → ${length} 个 UTF-8 字节。`;s.done=s.seen.includes(1)&&s.seen.includes(3)&&s.seen.includes(4);}
+      if(t==='byte')s.selected=Math.min(v,Math.max(0,utfBytes(s.text).length-1));break;
+    case 'cloud':
+      if(t==='online'){s.online=!s.online;s.feedback=s.online?'网络接通。可以尝试同步。':'网络断开。本地仍能编辑。';}
+      if(t==='edit'){s.edits++;s[v].text=`${v==='A'?'两':'三'}颗星 · 修改 ${s.edits}`;s[v].dirty=true;s.feedback=`设备 ${v} 留下了自己的修改。`;}
+      if(t==='sync'){
+        if(!s.online){s.feedback='离线：改动留在这台设备，还没送到云端。';break;}
+        if(s.conflict){s.feedback='先处理两个版本的冲突。';break;}
+        const d=s[v];if(d.dirty&&d.base!==s.server.rev){s.conflict=v;s.hadConflict=true;s.feedback='两个版本都变了！请选择保留哪一份。';}
+        else {if(d.dirty){s.server={text:d.text,rev:s.server.rev+1};}s[v]={text:s.server.text,base:s.server.rev,dirty:false};s.feedback=`设备 ${v} 与云端已同步。`;}
+      }
+      if(t==='resolve'&&s.conflict&&s.online){s.server={text:s[v].text,rev:s.server.rev+1};s.A={text:s.server.text,base:s.server.rev,dirty:false};s.B={...s.A};s.conflict=null;s.resolved=true;s.feedback=`保留设备 ${v} 的版本，三处现在相同。`;}
+      s.done=s.hadConflict&&s.resolved&&s.A.text===s.B.text&&s.A.text===s.server.text;break;
+    case 'learn':
+      if(t==='label')s.label=v;
+      if(t==='sample'){const f=fruitSamples[v];s.samples=s.samples.filter(x=>x.shape!==f.shape);s.samples.push({shape:f.shape,label:s.label});s.prediction=null;}
+      if(t==='test'){s.prediction=predictFruit(s.samples);s.tested=true;s.feedback=s.prediction?`这个形状最接近你标注为“${s.prediction==='round'?'圆果':'长果'}”的例子。`:'先给至少一个例子贴标签。';s.done ||= s.samples.some(x=>x.label==='round')&&s.samples.some(x=>x.label==='long')&&!!s.prediction;}break;
+    case 'message':
+      if(t==='text'){s.text=v;s.encoded=false;s.chunks=[];s.sent=false;s.received=[];s.stored=null;s.opened=false;}
+      if(t==='encode'){s.chunks=byteChunks(s.text);s.encoded=true;s.sent=false;s.received=[];s.stored=null;s.opened=false;s.feedback=s.chunks.length?'文字变成字节，再分成小包。':'先写一点内容。';}
+      if(t==='send'&&s.encoded&&s.chunks.length){s.sent=true;s.feedback='包出发了。随意选择到达顺序，也可以重复送。';}
+      if(t==='deliver'&&s.sent&&v<s.chunks.length){if(!s.received.includes(v))s.received.push(v);s.feedback=`收到 ${s.received.length}/${s.chunks.length} 个不同的包。`;}
+      if(t==='store'){if(s.sent&&s.chunks.length&&s.received.length===s.chunks.length){s.stored=s.chunks.flat();s.feedback='按编号拼好，字节已写入远方磁盘。';}else s.feedback='还有包没收到，暂时不能保存完整消息。';}
+      if(t==='open'){if(s.stored){s.opened=true;s.done=true;s.feedback='字节 → 解码 → 字形 → 屏幕。你好，又见面了！';}else s.feedback='先把完整消息保存下来。';}break;
+  }
+  return s;
+}
+function replayLab(key, events=[]) {
+  return events.reduce((s,event)=>stepLab(key,s,event),initialLab(key));
+}
+
 // Deliberately small BASIC teaching interpreter. No eval, ROMs, or CPU emulation.
 const STORAGE_KEY = 'every-bit.v1';
-const LESSON_COUNT = 6;
+const LESSON_COUNT = 23;
 const toBits = value => (value & 255).toString(2).padStart(8, '0');
 const fromBits = bits => bits.reduce((n, bit) => n * 2 + Number(Boolean(bit)), 0);
 const glyphRows = pixels => Array.from({length: 8}, (_, y) => fromBits(pixels.slice(y * 8, y * 8 + 8)));
-const initialState = () => ({version: 1, completed: [], lastLesson: 0, bits: 0, pixels: Array(64).fill(0), tape: null, tapePowerCycle: false, program: {}, powered: false, largeType: false});
+const initialState = () => ({version: 2, labs: {}, completed: [], lastLesson: 0, bits: 0, pixels: Array(64).fill(0), tape: null, tapePowerCycle: false, program: {}, powered: false, largeType: false});
 function cleanProgram(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
   const result = {};
@@ -53,9 +233,11 @@ function restoreState(raw) {
   const base = initialState();
   try {
     const s = JSON.parse(raw);
-    if (!s || s.version !== 1) return base;
-    base.completed = Array.isArray(s.completed) ? [...new Set(s.completed.filter(n => Number.isInteger(n) && n >= 0 && n < LESSON_COUNT))] : [];
-    if (Number.isInteger(s.lastLesson) && s.lastLesson >= 0 && s.lastLesson < LESSON_COUNT) base.lastLesson = s.lastLesson;
+    if (!s || ![1,2].includes(s.version)) return base;
+    const count = s.version === 1 ? 6 : LESSON_COUNT;
+    if(s.version === 2) base.labs = cleanLabLogs(s.labs);
+    base.completed = Array.isArray(s.completed) ? [...new Set(s.completed.filter(n => Number.isInteger(n) && n >= 0 && n < count))] : [];
+    if (Number.isInteger(s.lastLesson) && s.lastLesson >= 0 && s.lastLesson < count) base.lastLesson = s.lastLesson;
     if (Number.isInteger(s.bits) && s.bits >= 0 && s.bits <= 255) base.bits = s.bits;
     if (Array.isArray(s.pixels) && s.pixels.length === 64 && s.pixels.every(n => n === 0 || n === 1)) base.pixels = s.pixels;
     base.program = cleanProgram(s.program);
@@ -234,14 +416,89 @@ const lessons = [
     source: ['manual']
   }
 ];
-const eras = [
-  {year: '1980s · 初', title: '外祖父的电脑', machine: 'Commodore VIC-20', text: '接上电视，敲下第一行 BASIC。发现命令、循环、比特、像素与磁带。', state: '样章已可体验', now: true},
-  {year: '1980s · 后', title: '一台电脑，做几件事', machine: 'Sinclair QL 与更大的世界', text: '跟着 Linus 后来使用过的 QL，探索更丰富的程序、内存，以及“同时运行”背后的轮流工作。'},
-  {year: '1991', title: '我也想写一个系统', machine: '386 PC · Linux 的起点', text: '从屏幕、键盘和磁盘出发，发现操作系统怎样管理一台机器。把一次小实验慢慢变成自己的系统。'},
-  {year: '1990s', title: '电脑走出房间', machine: '调制解调器 · 互联网 · Web', text: '拨号连接远方，分享程序，再沿着一个超链接探索另一页。分清互联网与万维网。'},
-  {year: '2000s → 今天', title: '电脑变得无处不在', machine: '口袋里的电脑与云端', text: '从触摸屏到远处的服务器，追踪一张图片、一条消息走过的路，再回头找到熟悉的每一个 bit。'}
-];
 
+// The first six IDs stay stable so the published sample's bookmarks still work.
+const more = [
+  ['schedule',1,'一颗 CPU，两件事','看起来同时，\n其实轮流。','Linus 后来用上了 Sinclair QL。我们也离开单一的提示符，打开两个小窗口。','拨动时钟，让两个任务都前进至少 6 格。再试试暂停其中一个。','快速轮流执行，让一颗 CPU 也能照顾多个任务。','这个调度器每拍最多执行一个任务的一步。真实 QDOS 的调度更复杂；现代多核还可以真正并行。这里不是 QL 仿真器。',['later','ql','qlmanual']],
+  ['memory',1,'给每个字节一个门牌','你的 A，\n住在哪一格？','程序变大了。电脑需要地址，才能找回某个字节。','选地址 9，写入 65，再读出来。也可以到别的地址转一圈。','地址告诉电脑去哪里；那里的字节告诉电脑读到了什么。','此处只有 16 个字节，4 个地址位就能选中一格。真实 QL 有 128 KB RAM。地址宽度与每格的数据宽度是不同的概念。',['ql','qlmanual']],
+  ['branch',1,'教小机器人绕路','有石头，\n就换个走法。','长长的程序里，不是每一步都要执行。有时要先问一个问题。','先让机器人走到石头前，再装上“有石头就跳”的规则，走到旗子旁。','条件决定下一步；程序可以根据眼前的情况走不同的路。','这是本书原创的条件分支游戏，不是 Linus 当年的游戏。BASIC、汇编等语言都能表达条件，但写法和机器指令不同。',['manual']],
+  ['color',1,'给像素添点颜色','多一个 bit，\n多几种颜色？','黑白朋友想换衣服。原来的一个开关，只够选两种颜色。','切到 2 bit，选橙色和绿色，各涂一个格子。再切回 1 bit 看看。','每增加一个 bit，可表示的状态数翻倍。','这是 4 色索引图像模型，并非 QL 显存格式。切到 1 bit 时只显示每个索引的最低位；保留原画，方便对比。真实 QL 有不同分辨率和颜色模式。',['ql','qlmanual']],
+  ['cpu',2,'把机器放慢','一条指令，\n分三步看。','1991 年，Linus 换上了 386 PC，并开始探索怎样自己控制机器。先把 CPU 放慢。','反复拨动时钟，看它取指、译码、执行，最后输出 5。','CPU 从内存取出指令，解释它，再改变机器的状态。','LOAD 2、ADD 3、OUT、HALT 是本书虚构的教学指令，不是 x86 汇编。现代处理器还有流水线、缓存等机制。这里的一拍不是实际 CPU 时钟周期。',['later']],
+  ['drivers',2,'让硬件听懂','谁来翻译\n键盘和磁盘？','Linus 的小实验逐渐需要键盘、屏幕和磁盘。操作系统与驱动，让程序能使用这些设备。','接通键盘驱动，送来 A；接通磁盘驱动，把 A 保存下来。','驱动连接系统与设备；程序可以通过系统请求硬件服务。','教学连线图省略了中断、缓冲区和权限。Linux 是内核；日常所说的 Linux 系统还包括命令行工具、图形桌面和其他软件。',['later','kernel']],
+  ['files',2,'在磁盘里散步','文件，也有\n自己的住址。','程序、故事、图片越来越多。文件夹让磁盘不再像一堆没有标签的磁带。','进入 notes，写一个 dream.txt，再用 cat 读出来。按钮可以帮你填命令。','路径把名字连起来，让电脑找到文件。','这是隔离的玩具文件系统，只保存在本书的浏览器状态中。命令不会操作你的真实磁盘。可用 ls、pwd、cd、mkdir、write、cat；write 是教学命令，不是 Unix 标准命令。',['posix']],
+  ['patch',2,'把一个修正传下去','我修好了，\n你也试试。','1991 年，Linus 把正在做的系统告诉了网上的其他人。可以读、改、分享的源码，让更多人参与进来。','把减号改成加号，跑过测试，再把修正送到朋友的副本。','源码能让人理解和改进软件；测试帮我们发现改错的地方。','这里没有真的发布或联系任何人。例子是原创的加法程序；分享和使用真实软件需要遵守其许可证。Linux 的许可历史不等于所有软件都可以随意复制。',['later','kernel']],
+  ['modem',3,'让比特穿过电话线','看不见的 bit，\n变成起伏的信号。','1990 年代，许多家庭通过调制解调器拨号上网。电脑把数据转换成适合线路的信号。','用两种速度各发送一次。也可以翻转一个 bit，看看另一端收到什么。','相同数量的数据，传输速率越高，所需时间越短。','波形只示意用两种频率表示 0/1，不发出声音，也不仿真某种商用调制解调器。1 和 4 bit/秒是方便观察的虚构慢速；忽略线路开销。',['modem']],
+  ['packets',3,'把消息拆成小包','先到的，\n不一定排在前面。','网络上有许多条路。我们把一句话拆开，给每个小包写上编号。','乱序送达四个包。试着丢掉一个再补送，也可以重复送。','接收方需要发现缺失、去掉重复，再按顺序还原数据。','本页借用可靠传输的思想。真实 TCP 面向字节流，按字节编号，并不是这里的四张词语卡；IP 本身不保证可靠、按序到达。',['tcp']],
+  ['dns',3,'先问地址再出发','名字好记，\n地址好找。','网络早于万维网。1987 年的 DNS 规范，描述了把名字与信息联系起来的系统。','查询 book.test 并访问；让服务器搬家，清除旧缓存，再查询并访问。','名字和地址可以分开；缓存省时间，也可能暂时过时。','使用 .test 保留域名和文档专用 IP，不发出真实请求。DNS 不只存 IP；本例省略层级查询、TTL 计时、多地址等机制。',['dns']],
+  ['web',3,'自己的第一张网页','一条链接，\n推开另一扇门。','1989 年，Tim Berners-Lee 在 CERN 提出万维网。网页和超链接，给已有的互联网带来新的浏览方式。','写一个标题，请求首页，然后点击页面里的月球链接。也试试不存在的地址。','浏览器请求页面、解释 HTML；超链接可以引导下一次请求。','这里展示安全的固定 HTML 模板，不执行用户脚本、不访问远端。互联网是网络基础设施；Web 是建立在其上的应用之一。1993 年 CERN 将 Web 软件放入公有领域。',['web']],
+  ['touch',4,'电脑装进口袋','手指，也能\n发号施令。','2007 年推出的 iPhone 是触摸手机的重要节点之一。电脑的入口，从键盘扩展到手指。','点遍四个应用的区域，观察每次触点的坐标。','触摸位置变成坐标；程序再决定这个位置意味着什么。','这是 4×4 离散触摸区域模型，按钮也可用键盘操作。真实触摸屏采样更精细，常支持多个触点；智能手机的历史早于 iPhone。',['phone']],
+  ['unicode',4,'让世界的文字相遇','A、你、🌱，\n各占几个字节？','互联网连接不同语言的人。早期机器的字符表装不下所有文字；Unicode 与 UTF-8 提供了更广的约定。','依次试 A、你、🌱，再点一个字节，拆开它的 8 个 bit。','同样是一个符号，UTF-8 可能需要不同数量的字节。','一个 Unicode 码点的 UTF-8 编码占 1–4 字节；人眼看到的一个字形可能由多个码点组成，例如组合重音和家庭表情。此处直接使用浏览器 TextEncoder。',['unicode']],
+  ['cloud',4,'云端在什么地方','两台设备，\n同一份星星？','“云”仍然需要远处的计算机和网络。断网时，两台设备可能各自留下一份不同的修改。','离线修改 A 和 B；联网后依次同步 A、B。处理冲突，让三处内容相同。','同步需要传送数据，也需要决定不同版本怎样相处。','两台设备和服务器都只是本页内的模型，实际没有联网或跨设备同步。这里用版本号检测冲突，再由你选一份；真实服务可用不同策略，并非都会这样询问。',['cloud']],
+  ['learn',4,'让机器从例子里猜','这次，\n先给它一些例子。','走到今天，有些程序从标注好的例子中寻找规律，而不是由人写出每一种情况。','给圆果和长果各贴几个标签，再让机器猜一个新形状。故意贴错一个，结果会怎样？','机器的猜测受训练例子与方法影响；它也会猜错。','这是只有一个形状特征的 1-近邻分类器，不是大型语言模型。它选择形状数值距离最近的标注，距离相同则选较小数值；不理解水果，也不代表所有 AI 的工作方式。',['ml']],
+  ['message',4,'再说一次你好','穿过整本书，\n把你好送到另一端。','还记得旧电视上的 HELLO 吗？现在，你已经能一路追踪它背后的 bit。','写一句话 → 编码 → 发包 → 让所有包到达 → 保存 → 打开。','输入、编码、计算、网络、存储与显示，接起了一条消息的旅程。','消息只在本页模拟的两端之间移动，不会发给真实的人。每包最多 3 字节，故意允许一个 UTF-8 字符跨包；必须先完整重组，再解码。没有模拟加密、路由或完整协议。',['unicode','tcp']]
+];
+for(const [lab,chapter,short,title,intro,task,takeaway,deeper,source] of more) lessons.push({lab,chapter,short,title,intro,task,takeaway,deeper,source,duration:'3–6 分钟',paragraphs:[],kicker:''});
+lessons.slice(0,6).forEach(l=>l.chapter=0);
+const eras = [
+  {year:'1980s · 初',title:'外祖父的电脑',machine:'Commodore VIC-20',start:0,end:6,icon:'▤',text:'开机、敲命令、拆开字节。把第一段程序存进磁带。'},
+  {year:'1980s · 后',title:'一台电脑，做几件事',machine:'Sinclair QL 的时代',start:6,end:10,icon:'▥',text:'让任务轮流跑，寻找内存地址，教机器人绕路，给像素添颜色。'},
+  {year:'1991',title:'我也想写一个系统',machine:'386 PC · Linux 的起点',start:10,end:14,icon:'▣',text:'拨动 CPU 时钟，接通驱动，在文件夹里散步，分享一个修正。'},
+  {year:'1990s',title:'电脑走出房间',machine:'调制解调器 · 互联网 · Web',start:14,end:18,icon:'⌁',text:'比特变成信号。小包穿过网络，超链接打开新页面。'},
+  {year:'2000s → 今天',title:'电脑变得无处不在',machine:'口袋里的电脑与云端',start:18,end:23,icon:'▯',text:'用手指点，用不同语言说话，解决同步冲突，教机器猜一猜。'}
+];
+Object.assign(sources,{
+ ql:{label:'Sinclair QL 馆藏 · 计算机历史博物馆',url:'https://www.computerhistory.org/revolution/personal-computers/17/298/1180'},
+ kernel:{label:'Linux 内核档案',url:'https://www.kernel.org/'},
+ posix:{label:'文件与目录命令 · GNU Coreutils',url:'https://www.gnu.org/software/coreutils/manual/html_node/Directory-listing.html'},
+ qlmanual:{label:'Sinclair QL 原版手册 · Concepts',url:'https://www.sinclairql.net/djw/docs/ebooks/olqlug/QL%20Manual%20-%20Concepts.htm'},
+ modem:{label:'微型计算机数据通信资料（1982）· 博物馆档案',url:'https://archive.computerhistory.org/resources/access/text/2019/12/102796715-05-01-acc.pdf'},
+ tcp:{label:'TCP 可靠传输规范 · RFC 9293',url:'https://www.rfc-editor.org/rfc/rfc9293'},
+ dns:{label:'DNS 概念与设施 · RFC 1034（1987）',url:'https://www.rfc-editor.org/rfc/rfc1034'},
+ phone:{label:'iPhone 发布资料 · Apple（2007）',url:'https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/'},
+ unicode:{label:'UTF 编码问答 · Unicode 联盟',url:'https://www.unicode.org/faq/utf_bom.html'},
+ cloud:{label:'云计算的定义 · NIST（2011）',url:'https://www.nist.gov/publications/nist-definition-cloud-computing'},
+ ml:{label:'近邻分类的工作方式 · scikit-learn',url:'https://scikit-learn.org/stable/modules/neighbors.html'}
+});
+
+const wEsc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const wBits = n => n.toString(2).padStart(8,'0');
+function wb(type,label,value,disabled=false,pressed=null) {
+  return `<button type="button" class="world-button" data-world="${type}"${value!==undefined?` data-value="${wEsc(value)}"`:''}${disabled?' disabled':''}${pressed!==null?` aria-pressed="${pressed}"`:''}>${label}</button>`;
+}
+const wForm=(type,label,value,placeholder='')=>`<form data-world-form="${type}" class="world-form"><label>${label}<input name="value" value="${wEsc(value)}" maxlength="${type==='command'?80:48}" placeholder="${wEsc(placeholder)}" autocomplete="off" spellcheck="false"></label><button class="world-button" type="submit">${type==='command'?'执行 ↵':'应用 ↵'}</button></form>`;
+const wMeter=(n,max)=>`<div class="world-meter" role="img" aria-label="${n}/${max}">${Array.from({length:max},(_,i)=>`<i class="${i<n?'filled':''}"></i>`).join('')}</div>`;
+const wCard=(label,body)=>`<div class="world-card"><span class="eyebrow">${label}</span>${body}</div>`;
+const palette=['#f9f7e9','#263d33','#ce603e','#9baa55'];
+function renderLab(key,s) {
+  let body='';
+  switch(key) {
+    case 'schedule': body=`<div class="ql-machine"><div class="ql-brand">sinclair <b>QL</b><span>◢ ◢ ◢</span></div><div class="world-duo">${s.counts.map((n,i)=>wCard(`任务 ${i?'B · 画画':'A · 写字'}`,`<div class="task-display">${i?Array.from({length:n},()=>'<span>▧</span>').join(''):'HELLO QL'.slice(0,n)||'▏'}</div>${wMeter(n,8)}${wb('pause',s.paused[i]?'▶ 恢复':'Ⅱ 暂停',i,false,s.paused[i])}`)).join('')}</div><div class="cpu-bus"><b>CPU</b><span>${s.last<0?'等待时钟':`这一拍 → 任务 ${s.last?'B':'A'}`}</span></div></div><div class="world-controls">${wb('tick','↻ 拨动时钟 · 一拍')}</div>`;break;
+    case 'memory':body=`<div class="address-display"><span>地址 ADDRESS</span><strong>${s.address.toString(2).padStart(4,'0')}</strong><span>二进制 → ${s.address}</span></div><div class="memory-grid">${s.cells.map((n,i)=>`<button data-world="address" data-value="${i}" aria-pressed="${i===s.address}" aria-label="地址 ${i}，值 ${n}"><small>${i.toString(2).padStart(4,'0')}</small><b>${n}</b></button>`).join('')}</div><div class="world-controls"><label>要写的字节 <input class="byte-input" data-world-input="value" type="number" min="0" max="255" value="${s.value}"></label>${wb('write','写入 ↓')}${wb('read','读出 ↑')}</div><code class="big-code">${wBits(s.value)} = ${s.value}${s.value===65?' = A':''}</code>`;break;
+    case 'branch':body=`<div class="robot-path" role="img" aria-label="机器人在第 ${s.position+1} 格，石头在第 4 格">${Array.from({length:7},(_,i)=>`<div class="${i===s.position?'robot-here':''}"><span>${i===s.position?'🤖':i===3?'◆':i===6?'⚑':'·'}</span><small>${i}</small></div>`).join('')}</div><div class="code-strip">${s.rule?'IF 前方是石头 → 跳跃<br>ELSE → 向前走':'向前走<br>向前走<br>向前走……'}</div><div class="world-controls">${wb('step','走一步 →',undefined,s.position===6)}${wb('rule',s.rule?'✓ 有石头就跳':'＋ 装上绕路规则',undefined,false,s.rule)}</div>`;break;
+    case 'color':body=`<div class="world-controls">${wb('depth','1 bit · 黑白',1,false,s.depth===1)}${wb('depth','2 bit · 四色',2,false,s.depth===2)}</div><div class="color-studio"><div class="color-grid">${s.pixels.map((n,i)=>`<button style="background:${palette[n%(2**s.depth)]}" data-world="paint" data-value="${i}" aria-label="像素 ${i+1}，编码 ${n.toString(2).padStart(2,'0')}"></button>`).join('')}</div><div class="swatches">${palette.map((color,i)=>wb('select',`<i style="background:${color}"></i><code>${i.toString(2).padStart(2,'0')}</code><small>${['纸白','墨绿','橙色','叶绿'][i]}</small>`,i,false,s.selected===i)).join('')}</div></div><div class="byte-ribbon">${s.pixels.map(n=>`<code>${(n%(2**s.depth)).toString(2).padStart(s.depth,'0')}</code>`).join('')}</div><p class="world-hint">当前画笔：${['纸白','墨绿','橙色','叶绿'][s.selected]}。1 bit 模式只显示最低一位。</p>`;break;
+    case 'cpu':body=`<div class="pc-case"><div class="pc-label">386 ERA <i></i> SLOW COMPUTER</div><div class="cpu-layout"><div class="instruction-list">${['LOAD 2','ADD 3','OUT','HALT'].map((line,i)=>`<div class="${s.pc===i?'active':''}"><span>${i}</span><code>${line}</code>${s.pc===i?'←':''}</div>`).join('')}</div><div class="registers">${wCard('程序计数器 PC',`<strong>${s.pc}</strong>`)}${wCard('小盒子 ACC',`<strong>${s.acc}</strong>`)}${wCard('屏幕 OUTPUT',`<strong>${s.output??'▏'}</strong>`)}</div></div><div class="phase-strip">${['① 取指','② 译码','③ 执行'].map((p,i)=>`<span class="${s.phase===i&&s.pc<4?'active':''}">${p}</span>`).join('')}</div></div><div class="world-controls">${wb('step',s.pc>=4?'✓ 程序结束':'↻ 拨动时钟',undefined,s.pc>=4)}</div>`;break;
+    case 'drivers':body=`<div class="device-map">${wCard('程序',`<div class="device-value">${s.buffer||'等待输入'}</div>`)}<div class="os-bridge">操作系统</div><div class="world-duo">${['keyboard','disk'].map((k,i)=>`<div class="driver-path ${s[k]?'connected':''}"><div class="wire"></div>${wb('toggle',`${s[k]?'●':'○'} ${i?'磁盘':'键盘'}驱动`,k,false,s[k])}<div class="device-value">${i?'▣':'▤'}</div>${wb(i?'save':'key',i?'保存到磁盘':'按下 A')}<small>${i?`磁盘内容：${s.file||'空'}`:'KEYBOARD'}</small></div>`).join('')}</div></div>`;break;
+    case 'files':body=`<div class="file-browser"><div class="file-tree">${s.dirs.map(d=>`<div>▱ ${wEsc(d)}</div>`).join('')}${Object.keys(s.files).map(f=>`<div>▤ ${wEsc(f)}</div>`).join('')}</div><div class="unix-terminal"><span>LINUX ERA · 小磁盘</span><pre>${wEsc(s.output.join('\n'))}</pre><b>${wEsc(s.cwd)} $ ▏</b></div></div>${wForm('command','输入文件命令','','write dream.txt HELLO')}<div class="world-controls command-presets">${['ls','cd notes','write dream.txt HELLO','cat dream.txt','cd ..'].map(c=>wb('command',`<code>${c}</code>`,c)).join('')}</div>`;break;
+    case 'patch':body=`<div class="world-duo">${wCard('你的源码',`<pre class="source-code">function add(a, b) {<br>  return a <mark>${s.fixed?'+':'−'}</mark> b;<br>}</pre>${wb('fix',s.fixed?'换回减号':'把 − 改成 +')}`)}${wCard('朋友的副本',`<pre class="source-code">return a ${s.friendFixed?'+':'−'} b;</pre><div class="big-result">2 + 3 = ${s.friendFixed?5:-1}</div>`)}</div><div class="test-cases">${[[2,3],[0,1],[4,4]].map(([a,b])=>`<div><code>${a} + ${b} = ${s.tests===null?'?':s.fixed?a+b:a-b}</code><span>${s.tests===null?'待测试':s.fixed?'✓':'×'}</span></div>`).join('')}</div><div class="world-controls">${wb('test','▷ 跑 3 个测试')}${wb('share','分享这个修正 →',undefined,s.tests!==true)}</div>`;break;
+    case 'modem': {
+      const wave=s.bits.map((bit,i)=>{const count=bit?4:2;return Array.from({length:count*2+1},(_,j)=>`${i*50+j*50/(count*2)},${40+(j%2?20:-20)}`).join(' ');}).join(' ');
+      body=`<div class="modem-box"><div class="modem-lights"><i></i><i></i><i></i><span>DATA / TELEPHONE LINE</span></div><div class="signal-bits">${s.bits.map((b,i)=>wb('flip',String(b),i,false,!!b)).join('')}</div><svg class="signal-wave" viewBox="0 0 400 80" role="img" aria-label="用两种频率表示 0 和 1 的教学波形"><polyline points="${wave}" fill="none" stroke="currentColor" stroke-width="2"/></svg><div class="world-controls">${wb('speed','1 bit/秒',1,false,s.speed===1)}${wb('speed','4 bit/秒',4,false,s.speed===4)}</div></div><div class="world-controls">${wb('send','发送这 8 个 bit →')}</div><div class="receiver"><span>另一端</span><code>${s.received?s.received.join(''):'????????'}</code><b>${s.received?s.sentSeconds+' 秒':'等待信号'}</b></div>`;break;
+    }
+    case 'packets':body=`<div class="packet-sender"><span class="eyebrow">发送端 · 一句话拆成四个包</span><div class="packet-grid">${['你好，','来自','过去的','电脑！'].map((word,i)=>`<div class="packet ${s.dropped.includes(i)?'lost':''}"><b>包 ${i+1}</b><strong>${word}</strong>${wb('deliver',s.received.includes(i)?'再送一次':'送达 ↓',i)}${wb('drop','丢在路上',i,s.received.includes(i))}</div>`).join('')}</div></div><div class="packet-arrivals">到达顺序：${s.arrivals.map(i=>`<b>${i+1}</b>`).join('')||'等待中'}${s.duplicates?` · 忽略 ${s.duplicates} 个重复包`:''}</div><div class="message-rebuild">${['你好，','来自','过去的','电脑！'].map((w,i)=>`<span class="${s.received.includes(i)?'received':''}">${s.received.includes(i)?w:'□'}</span>`).join('')}</div>`;break;
+    case 'dns':body=`<div class="address-book"><div class="browser-bar">◎ <strong>${s.name}</strong></div><div class="world-controls">${['book.test','moon.test','missing.test'].map(n=>wb('name',n,n,false,s.name===n)).join('')}</div><div class="dns-flow">${wCard('名字',`<b>${s.name}</b>`)}<span>→ DNS →</span>${wCard('查到的地址',`<b>${s.address||'?'}</b>`)}</div><div class="world-controls">${wb('lookup','① 查询地址')}${wb('visit','② 访问服务器')}</div></div><div class="world-duo">${wCard('DNS 记录',`<code>book.test<br>${s.servers['book.test']}</code>`)}${wCard('你的缓存',`<code>${s.cache['book.test']||'空'}</code>`)}</div><div class="world-controls">${wb('move','让服务器搬家',undefined,s.moved)}${wb('expire','让缓存过期')}</div>`;break;
+    case 'web':body=`${wForm('title','网页标题',s.title)}<div class="world-controls">${['/','/missing'].map(p=>wb('path',p==='/'?'首页 /':'试试不存在的地址',p,false,s.path===p))}${wb('request','请求页面 ↓')}</div><div class="mini-browser"><div class="browser-bar">← → <code>book.test${s.path}</code></div><div class="web-page">${s.loaded===null?'<p>浏览器还没收到页面。</p>':s.loaded==='/missing'?'<h2>404</h2><p>这扇门后面没有网页。</p>':s.loaded==='/moon'?'<span class="moon-art">☾</span><h2>欢迎来到月球</h2><p>这是另一张网页。</p>':`<h2>${wEsc(s.title)}</h2><p>你好，世界。</p>${wb('follow','去月球看看 →')}`}</div></div><details class="world-details"><summary>看看浏览器收到的 HTML</summary><pre>${wEsc(s.loaded==='/'?`<h1>${s.title}</h1>\n<p>你好，世界。</p>\n<a href="/moon">去月球看看</a>`:s.loaded==='/moon'?'<h1>欢迎来到月球</h1>':s.loaded?'<h1>404</h1>':'等待请求')}</pre></details>`;break;
+    case 'touch':body=`<div class="phone-stage"><div class="phone"><div class="phone-notch"></div><div class="touch-grid">${Array.from({length:16},(_,i)=>`<button data-world="tap" data-value="${i}" class="touch-app app-${Math.floor(i/4)} ${s.cell===i?'touched':''}" aria-label="${['相机','音乐','地图','便笺'][Math.floor(i/4)]}坐标 ${i%4},${Math.floor(i/4)}"><span>${['◉','♫','⌖','▤'][Math.floor(i/4)]}</span><small>${i%4},${Math.floor(i/4)}</small></button>`).join('')}</div><div class="phone-home"></div></div><div class="touch-readout"><span class="eyebrow">INPUT → EVENT → APP</span><strong>${s.cell===null?'(?, ?)':`(${s.cell%4}, ${Math.floor(s.cell/4)})`}</strong><p>${s.apps.length}/4 个应用已打开</p>${s.apps.map(a=>`<span class="app-badge">✓ ${a}</span>`).join('')}</div></div>`;break;
+    case 'unicode': {
+      const bytes=utfBytes(s.text);body=`${wForm('text','输入一个字，或一句话',s.text)}<div class="world-controls">${['A','你','🌱','é','👨‍👩‍👧'].map(t=>wb('text',t,t)).join('')}</div><div class="unicode-stats"><strong>${wEsc(s.text)||'空'}</strong><span>${[...s.text].length} 个码点<br>${bytes.length} 个字节 · ${bytes.length*8} bit</span></div><div class="byte-ribbon">${bytes.map((b,i)=>wb('byte',`<small>${i+1}</small><code>${b.toString(16).toUpperCase().padStart(2,'0')}</code>`,i,false,s.selected===i)).join('')}</div><div class="bit-inspector">${bytes.length?[...wBits(bytes[s.selected])].map((b,i)=>`<div class="${b==='1'?'on':''}"><small>${128>>i}</small><b>${b}</b></div>`).join(''):'输入文字，字节就会出现在这里。'}</div><p class="world-hint">${bytes.length?`选中的第 ${s.selected+1} 个字节 = ${bytes[s.selected]}。`:''}上面以十六进制显示字节。</p>`;break;
+    }
+    case 'cloud':body=`<div class="cloud-server"><span>☁ 远处的服务器 · v${s.server.rev}</span><strong>${wEsc(s.server.text)}</strong></div><div class="network-switch">${wb('online',s.online?'● 已联网 · 点此断开':'○ 已离线 · 点此连接',undefined,false,s.online)}</div><div class="world-duo">${['A','B'].map(d=>wCard(`设备 ${d} · 基于 v${s[d].base}`,`<div class="cloud-note">${wEsc(s[d].text)}<small>${s[d].dirty?'有本地修改':'已同步'}</small></div>${wb('edit','修改这份星星',d)}${wb('sync','同步 ↕',d)}`)).join('')}</div>${s.conflict?`<div class="conflict-box"><strong>两个版本冲突了</strong><p>选一份保留，另一份会被这份替换。</p><div class="world-controls">${wb('resolve','保留 A 的版本','A',!s.online)}${wb('resolve','保留 B 的版本','B',!s.online)}</div></div>`:''}`;break;
+    case 'learn':body=`<div class="world-controls"><span>先拿一个标签：</span>${wb('label','● 圆果','round',false,s.label==='round')}${wb('label','▰ 长果','long',false,s.label==='long')}</div><div class="fruit-grid">${fruitSamples.map((f,i)=>{const tagged=s.samples.find(x=>x.shape===f.shape);return `<button data-world="sample" data-value="${i}" aria-label="形状 ${f.shape}，${tagged?(tagged.label==='round'?'圆果':'长果'):'未标注'}"><i style="width:${28+f.shape*3}px;border-radius:${50-f.shape*3}%"></i><small>形状值 ${f.shape}</small><b>${tagged?(tagged.label==='round'?'● 圆果':'▰ 长果'):'＋ 贴标签'}</b></button>`;}).join('')}</div><div class="new-fruit"><i></i><div><span>新形状 · 形状值 7</span><strong>${s.prediction?(s.prediction==='round'?'猜：圆果':'猜：长果'):'它会猜什么？'}</strong></div></div><div class="world-controls">${wb('test','让机器猜一猜',undefined,!s.samples.length)}</div>`;break;
+    case 'message':body=`${wForm('text','你的最后一条消息',s.text)}<div class="message-pipeline">${['输入','编码','网络','磁盘','显示'].map((n,i)=>`<span class="${[true,s.encoded,s.sent,!!s.stored,s.opened][i]?'active':''}">${n}</span>`).join('')}</div><div class="world-controls">${wb('encode','① 编成字节',undefined,!s.text)}${wb('send','② 发出小包',undefined,!s.encoded||!s.chunks.length)}</div><div class="final-packets">${s.chunks.map((bytes,i)=>wb('deliver',`<b>包 ${i+1} ${s.received.includes(i)?'✓':'↓'}</b><code>${bytes.map(wBits).join('<br>')}</code>`,i,!s.sent,s.received.includes(i))).join('')}</div><div class="world-controls">${wb('store','③ 按序保存到磁盘',undefined,!s.sent)}${wb('open','④ 打开消息',undefined,!s.stored)}</div><div class="message-destination"><span>另一端的屏幕</span><strong>${s.opened?wEsc(new TextDecoder().decode(new Uint8Array(s.stored))):'▏'}</strong></div>${s.opened?'<div class="final-discovery">✳ 从 READY. 到这里，每一步都是你亲手完成的。</div>':''}`;break;
+  }
+  return `<div class="world-world" data-world-key="${key}">${body}<p class="world-feedback ${s.done?'success':''}" role="status">${s.done?'✓ ':''}${wEsc(s.feedback)}</p><div class="world-bottom"><span>${s.done?'这一个发现，已收入手记。':'可以慢慢试，也可以重新来。'}</span><button class="text-button" data-world-reset>↺ 重置本实验</button></div></div>`;
+}
+
+const totalLessons = lessons.length;
 
 const $ = (s, root = document) => root.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -271,14 +528,14 @@ function toast(message) {
 function complete(index) {
   if (state.completed.includes(index)) return;
   state.completed.push(index); save(); updateProgress();
-  toast(`发现 ${index + 1}/6：${lessons[index].takeaway}`);
+  toast(`发现 ${index + 1}/${totalLessons}：${lessons[index].takeaway}`);
 }
 function updateProgress() {
-  $('#header-progress').textContent = `${state.completed.length}/6`;
+  $('#header-progress').textContent = `${state.completed.length}/${totalLessons}`;
   document.querySelectorAll('[data-lesson-marker]').forEach(el => {const i = +el.dataset.lessonMarker; el.textContent = state.completed.includes(i) ? '✓' : String(i+1).padStart(2,'0'); el.classList.toggle('done',state.completed.includes(i));});
   const foot = $('#lesson-status');
   if (foot && current >= 0) foot.textContent = state.completed.includes(current) ? '✓ 这个发现，已收入手记' : '慢慢试，发现就在你的指尖。';
-  const fill = $('#progress-fill'); if(fill) fill.style.width = `${state.completed.length/6*100}%`;
+  const fill = $('#progress-fill'); if(fill) fill.style.width = `${state.completed.length/totalLessons*100}%`;
 }
 
 function keyboard(interactive = false) {
@@ -289,14 +546,17 @@ function computer({interactive = false, cover = false} = {}) {
   return `<div class="computer-scene ${cover?'cover-computer':''}"><div class="monitor"><div class="monitor-bezel"><div class="crt-border ${cover||state.powered?'is-on':''}"><div class="crt-screen"><pre ${interactive?'id="screen-output"':''} aria-label="模拟电脑屏幕">${esc((cover?boot:screen).join('\n'))}</pre><span class="cursor" aria-hidden="true">▊</span><div class="off-message">等你开机</div></div></div><div class="monitor-side" aria-hidden="true"><div class="tv-dial"></div><div class="tv-dial small-dial"></div><div class="speaker-grille"></div><span>COLOUR<br>TELEVISION</span></div></div><div class="monitor-label"><span>一台家用电视</span><span>●</span></div></div><div class="monitor-stand"></div>${keyboard(interactive)}${cover?'<span class="scene-note">一切，从一个闪烁的光标开始。</span>':''}</div>`;
 }
 function cover() {
-  return `<div class="cover-page"><section class="cover-hero"><div class="cover-copy"><div class="edition"><span class="mini-star">✳</span> TIME TRAVEL, ONE BIT AT A TIME</div><h1>回到电脑<br>等你<span class="marked">发号施令</span><br>的年代<span class="orange-dot">。</span></h1><p class="hero-description">坐到小时候的 Linus 接触过的电脑前。<br>敲下第一行程序，让好奇心带你出发。</p><div class="cover-actions"><a class="button primary" href="#read/${state.completed.length?state.lastLesson:0}">${state.completed.length?'继续我的探索':'翻开第一章'} <span>↗</span></a><a class="plain-link" href="#journey">看看时光目录 <span>↓</span></a></div><div class="cover-meta"><span>给好奇的孩子，也给曾经的孩子</span><span>阅读 + 亲手试一试</span></div></div><div class="hero-art"><div class="orbit-label">HELLO,<br><strong>1980s.</strong></div><span class="art-cross cross-one">✳</span><span class="art-cross cross-two">+</span>${computer({cover:true})}<div class="machine-caption"><span>第一站 / 芬兰 · 赫尔辛基</span><b>COMMODORE VIC-20</b></div></div></section><section class="invitation"><div class="invitation-number">01<span>THE BEGINNING</span></div><div><span class="eyebrow">第一章 · 外祖父的电脑</span><h2>那时，“玩电脑”也可以是<br>亲手写出一个可以玩的东西。</h2><p>读说明书，把程序敲进去，改掉一个数字，看看会发生什么。<br>我们也从这里开始，一点一点理解屏幕背后的世界。</p></div><a href="#read/0" class="round-link" aria-label="进入第一章">↗</a></section><section class="chapter-preview"><div class="section-heading"><h2>这一章，你会亲手发现</h2><span>6 个小实验 / 随时可以停下来</span></div><div class="lesson-grid">${lessons.map((l,i)=>`<a class="lesson-card" href="#read/${i}"><span data-lesson-marker="${i}" class="lesson-number">${String(i+1).padStart(2,'0')}</span><h3>${l.short}</h3><span>${['开机 · READY.','BASIC · PRINT','程序 · GOTO','比特 · 01000001','像素 · 8 × 8','存储 · SAVE'][i]}</span><b aria-hidden="true">↗</b></a>`).join('')}</div></section><section class="next-teaser"><span class="eyebrow">一本跟着时代长大的书</span><h2>下一台电脑，会带来什么新可能？</h2><p>从 VIC-20 到 QL，再到 386、Linux 与网络。每走进一个时代，就动手理解那个时代的新问题。</p><a class="plain-link" href="#journey">展开全书的写作路线 ↗</a></section></div>`;
+  return `<div class="cover-page"><section class="cover-hero"><div class="cover-copy"><div class="edition"><span class="mini-star">✳</span> TIME TRAVEL, ONE BIT AT A TIME</div><h1>回到电脑<br>等你<span class="marked">发号施令</span><br>的年代<span class="orange-dot">。</span></h1><p class="hero-description">坐到小时候的 Linus 接触过的电脑前。<br>敲下第一行程序，让好奇心带你出发。</p><div class="cover-actions"><a class="button primary" href="#read/${state.completed.length?state.lastLesson:0}">${state.completed.length?'继续我的探索':'翻开第一章'} <span>↗</span></a><a class="plain-link" href="#journey">看看时光目录 <span>↓</span></a></div><div class="cover-meta"><span>给好奇的孩子，也给曾经的孩子</span><span>阅读 + 亲手试一试</span></div></div><div class="hero-art"><div class="orbit-label">HELLO,<br><strong>1980s.</strong></div><span class="art-cross cross-one">✳</span><span class="art-cross cross-two">+</span>${computer({cover:true})}<div class="machine-caption"><span>第一站 / 芬兰 · 赫尔辛基</span><b>COMMODORE VIC-20</b></div></div></section><section class="invitation"><div class="invitation-number">01<span>THE BEGINNING</span></div><div><span class="eyebrow">第一章 · 外祖父的电脑</span><h2>那时，“玩电脑”也可以是<br>亲手写出一个可以玩的东西。</h2><p>读说明书，把程序敲进去，改掉一个数字，看看会发生什么。<br>我们也从这里开始，一点一点理解屏幕背后的世界。</p></div><a href="#read/0" class="round-link" aria-label="进入第一章">↗</a></section><section class="chapter-preview"><div class="section-heading"><h2>五个时代，23 次亲手发现</h2><span>不用先读懂。点一下，就开始。</span></div><div class="era-cards">${eras.map((e,i)=>`<a class="era-card" href="#read/${e.start}"><span class="era-card-icon">${e.icon}</span><span class="eyebrow">0${i+1} / ${e.year}</span><h3>${e.title}</h3><p>${e.machine}</p><b>${state.completed.filter(n=>n>=e.start&&n<e.end).length}/${e.end-e.start} 个发现 ↗</b></a>`).join('')}</div></section><section class="next-teaser"><span class="eyebrow">从 HELLO 到你好</span><h2>机器变了。好奇心一直在。</h2><p>拨时钟、接线路、送数据包。走到今天，再回头认出熟悉的每一个 bit。</p><a class="plain-link" href="#journey">展开全书时光目录 ↗</a></section></div>`;
 }
 function journey() {
-  return `<section class="journey-page"><a class="back-link" href="#cover">← 回到封面</a><div class="journey-title"><span class="eyebrow">THE JOURNEY / 时光目录</span><h1>和电脑一起，<br>慢慢长大。</h1><p>沿着真实机器和人的好奇心前进。每一站，住进一个年代，<br>弄懂一个新问题，再带着自己的作品出发。</p></div><div class="timeline">${eras.map((e,i)=>`<article class="era ${e.now?'current-era':''}"><div class="era-date">${e.year}<span class="timeline-dot"></span></div><div class="era-content"><span class="era-state">${e.now?'● 样章已可体验':'后续章节 · 写作规划'}</span><h2>${e.title}</h2><span class="era-machine">${e.machine}</span><p>${e.text}</p>${e.now?'<a class="button primary" href="#read/0">坐到这台电脑前 ↗</a>':''}</div><span class="era-index" aria-hidden="true">0${i+1}</span></article>`).join('')}</div><div class="editor-note"><span class="eyebrow">写给同行的大人</span><p>这本书从 Linus 的童年电脑切入，也会在遇到具体问题时回望更早的历史：数数为什么需要机器、打孔卡怎样保存指令、晶体管怎样让电脑变小。历史、故事和实验会相互照应。</p><p>当前完成的是第一章的互动样章。后续章节按这条路线展开；年代场景与教学模型会明确区分，人物经历保留资料出处。</p><div class="sources"><span>这条路线的史料依据</span>${["linus","later","web"].map(key=>`<a href="${sources[key].url}" target="_blank" rel="noopener noreferrer">${sources[key].label} ↗</a>`).join('')}</div></div></section>`;
+  return `<section class="journey-page"><a class="back-link" href="#cover">← 回到封面</a><div class="journey-title"><span class="eyebrow">THE JOURNEY / 时光目录</span><h1>和电脑一起，<br>慢慢长大。</h1><p>5 个时代 · 23 个实验。每次玩一小节，也可以随时跳到好奇的地方。</p></div><div class="timeline">${eras.map((e,i)=>`<article class="era current-era"><div class="era-date">${e.year}<span class="timeline-dot"></span></div><div class="era-content"><span class="era-state">已发现 ${state.completed.filter(n=>n>=e.start&&n<e.end).length} / ${e.end-e.start}</span><h2>${e.title}</h2><span class="era-machine">${e.machine}</span><p>${e.text}</p><div class="era-lessons">${lessons.slice(e.start,e.end).map((l,j)=>`<a href="#read/${e.start+j}"><span>${state.completed.includes(e.start+j)?'✓':'○'}</span>${l.short} ↗</a>`).join('')}</div></div><span class="era-index" aria-hidden="true">0${i+1}</span></article>`).join('')}</div><div class="editor-note"><details><summary>给同行的大人 · 历史、故事与模型</summary><p>前几站以 Linus 本人的机器经历为线索；从互联网到今天，镜头转向更广的计算机世界。年代是叙事背景，不表示各个概念都在那时首次发明。每页展开项说明史料出处与模型边界。</p><p>情境插画、练习程序与小游戏均为本书创作，不声称复原人物原话或家中布置。所有实验在当前浏览器内运行；“分享”“联网”“云端”都是教学模拟。</p><div class="sources">${Object.values(sources).map(s=>`<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.label} ↗</a>`).join('')}</div></details></div><a href="#ending" class="plain-link">去最后一页 · 看看我的旅程 ↗</a></section>`;
 }
+
 function sidebar() {
-  return `<aside class="reader-sidebar"><a class="back-link" href="#cover">← 回到封面</a><div class="sidebar-chapter"><span class="eyebrow">CHAPTER 01</span><h2>外祖父的电脑</h2><span>1980 年代初 / VIC-20</span></div><nav aria-label="本章小节">${lessons.map((l,i)=>`<a href="#read/${i}" ${current===i?'aria-current="step"':''}><span data-lesson-marker="${i}">${String(i+1).padStart(2,'0')}</span>${l.short}${current===i?'<b>→</b>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><span>一点一点，认识每一个 bit。</span><div class="progress-track"><i id="progress-fill"></i></div><a href="#journey">后面的时代 <span>↗</span></a></div></aside>`;
+  const chapter=lessons[current].chapter, era=eras[chapter];
+  return `<aside class="reader-sidebar"><a class="back-link" href="#journey">← 时光目录</a><div class="sidebar-chapter"><span class="eyebrow">CHAPTER 0${chapter+1}</span><h2>${era.title}</h2><span>${era.year} / ${era.machine}</span></div><nav aria-label="本章小节">${lessons.slice(era.start,era.end).map((l,j)=>{const i=era.start+j;return `<a href="#read/${i}" ${current===i?'aria-current="step"':''}><span data-lesson-marker="${i}">${String(i+1).padStart(2,'0')}</span>${l.short}${current===i?'<b>→</b>':''}</a>`;}).join('')}</nav><div class="sidebar-bottom"><span>一点一点，认识每一个 bit。</span><div class="progress-track"><i id="progress-fill"></i></div><div class="era-dots">${eras.map((e,i)=>`<a href="#read/${e.start}" aria-label="第 ${i+1} 章 ${e.title}" ${chapter===i?'aria-current="true"':''}>0${i+1}</a>`).join('')}</div></div></aside>`;
 }
+
 function labHeader(label, name) {return `<div class="lab-heading"><span><i></i> ${label}</span><b>${name}</b></div>`;}
 function terminalLab() {
   return `${labHeader('年代实验室','COMMODORE VIC-20')}<div class="lab-computer">${computer({interactive:true})}</div><div class="machine-toolbar"><button class="button small-button ${state.powered?'secondary':'primary'}" id="power-button" data-action="power">${state.powered?'关机（清空内存）':'● 按下开机键'}</button><button class="button small-button secondary" data-action="stop" id="stop-button" ${machine.running?'':'disabled'}>■ RUN/STOP</button><span class="machine-status" id="machine-status">${state.powered?'READY · 等待指令':'POWER OFF'}</span></div><form id="command-form"><label for="command">输入 BASIC 指令 <span>按 Enter / RETURN 执行</span></label><div class="command-line"><span aria-hidden="true">›</span><input id="command" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" maxlength="80" placeholder='PRINT "HELLO"' ${state.powered?'':'disabled'} aria-describedby="command-feedback"><button type="submit" ${state.powered?'':'disabled'}>RETURN ↵</button></div></form><p id="command-feedback" class="command-feedback" role="status">${state.powered?'光标准备好了，试着和它说句话。':'先开机，再敲下第一行命令。'}</p>${current===2?'<div class="sample-program"><div><span class="eyebrow">把这段程序送进电脑</span><code>10 PRINT "HELLO"<br>20 GOTO 10</code></div><button class="button small-button secondary" data-action="insert-loop">填入两行程序 ↗</button></div>':''}${current===5?tapeLab():''}<div class="command-chips"><span>试一试</span><button data-command='PRINT "HELLO"'>PRINT "HELLO"</button><button data-command="PRINT 2+3">PRINT 2+3</button><button data-command="LIST">LIST</button><button data-command="RUN">RUN</button></div><details class="lab-help"><summary>可以输入哪些命令？</summary><p>支持 PRINT "文字"、PRINT 2+3*4、PRINT CHR$(65)、LET A=5、PRINT A、带行号的指令、GOTO、RUN、STOP、LIST、NEW、SAVE "HELLO"、LOAD "HELLO"。输入行号本身会删除那一行。</p><p>这是放慢速度的 BASIC 教学模拟。请用英文字符；暂不支持完整 BASIC、游戏载入、硬件 POKE 或中文显示。</p></details><p class="simulation-note">情境插画与 BASIC 教学模拟 · 非完整硬件仿真</p>`;
@@ -311,16 +571,36 @@ function pixelLab() {
   return `${labHeader('拆开看看','8 × 8 PIXEL STUDIO')}<div class="bits-intro"><span class="eyebrow">画一个属于你的像素朋友</span><h3>每个小方格，都算数。</h3><p>点亮或熄灭一个点，再选一行看看它的数字。</p></div><div class="pixel-studio"><div class="pixel-grid" role="group" aria-label="8乘8像素画布">${state.pixels.map((v,i)=>`<button data-pixel="${i}" aria-label="第 ${Math.floor(i/8)+1} 行第 ${i%8+1} 列" aria-pressed="${!!v}" class="pixel ${v?'lit':''}"></button>`).join('')}</div><div class="pixel-data"><span class="eyebrow">每一行 = 1 BYTE</span>${glyphRows(state.pixels).map((n,i)=>`<button data-row="${i}" class="pixel-row ${selectedRow===i?'selected':''}" aria-pressed="${selectedRow===i}"><span>${i+1}</span><code>${toBits(n)}</code><b>${n}</b></button>`).join('')}</div></div><div id="pixel-explanation" class="pixel-explanation" role="status"></div><div class="lab-bottom-actions"><button class="button small-button secondary" data-action="clear-pixels">清空画布</button><span>64 个点 = 64 bit = 8 byte</span></div><p class="simulation-note">单色字形教学模型 · 不包含颜色或文件头的空间</p>`;
 }
 function reader() {
-  const l = lessons[current];
-  return `<div class="reader-layout">${sidebar()}<article class="reader-content"><div class="reader-topline"><span>1980s <i></i> 芬兰 · 赫尔辛基</span><span>第 ${current+1} / 6 节 <b>·</b> 约 ${l.duration}</span></div><div class="reading-spread"><div class="story-column"><span class="eyebrow">${l.kicker}</span><h1>${l.title.replace('\n','<br>')}</h1><p class="story-intro">${l.intro}</p><div class="story-body">${l.paragraphs.map(p=>`<p>${esc(p).replace(/(PRINT &quot;HELLO&quot;|PRINT 2\+3|10 PRINT &quot;HELLO&quot;|20 GOTO 10|GOTO 10|SAVE &quot;HELLO&quot;|LOAD &quot;HELLO&quot;|RUN\/STOP|SYNTAX ERROR|READY\.|RETURN|PRINT|RUN|LIST)/g,'<code>$1</code>')}</p>`).join('')}</div><div class="mission"><span class="mission-star">✳</span><div><span class="eyebrow">轮到你了</span><p>${l.task}</p></div></div><details class="deeper"><summary>再往里面看一点 <span>+</span></summary><p>${l.deeper}</p></details><div class="sources"><span>史料与延伸阅读</span>${l.source.map(s=>`<a href="${sources[s].url}" target="_blank" rel="noopener noreferrer">${sources[s].label} ↗</a>`).join('')}</div></div><section class="lab" aria-label="${l.short}互动实验">${current===3?bitsLab():current===4?pixelLab():terminalLab()}</section></div><div class="lesson-footer"><div><span id="lesson-status"></span><p>${l.takeaway}</p></div><div class="lesson-pagination">${current>0?`<a class="previous" href="#read/${current-1}" aria-label="上一节">←</a>`:''}<a class="button primary" href="${current<5?`#read/${current+1}`:'#journey'}">${current<5?'下一小节':'看看下一个时代'} →</a></div></div>${current===5?'<div class="chapter-ending"><span class="eyebrow">这一站的最后一句</span><h2>你没有等电脑告诉你怎么玩。<br>你开始告诉电脑，可以怎么玩。</h2><p>下一站，我们将遇到 Linus 后来用过的 Sinclair QL，继续探索机器里面的新可能。</p></div>':''}</article></div>`;
+  const l=lessons[current], era=eras[l.chapter], isEnd=current===era.end-1;
+  return `<div class="reader-layout era-theme-${l.chapter}">${sidebar()}<article class="reader-content"><div class="reader-topline"><span>${era.year} <i></i> ${era.machine}</span><span>第 ${current-era.start+1} / ${era.end-era.start} 节</span></div><div class="reading-spread"><div class="story-column"><span class="eyebrow">${l.kicker||`CHAPTER 0${l.chapter+1} / 亲手试一试`}</span><h1>${l.title.replace('\n','<br>')}</h1><p class="story-intro">${l.intro}</p><div class="mission"><span class="mission-star">✳</span><div><span class="eyebrow">你的挑战</span><p>${l.task}</p></div></div><details class="deeper"><summary>为什么会这样？ <span>+</span></summary>${l.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}<p>${l.deeper}</p></details><details class="source-details"><summary>年代与资料 ↗</summary><div class="sources">${l.source.map(s=>`<a href="${sources[s].url}" target="_blank" rel="noopener noreferrer">${sources[s].label} ↗</a>`).join('')}</div></details></div><section class="lab ${l.lab?'world-lab':''}" aria-label="${l.short}互动实验">${l.lab?labHeader('年代实验室',era.machine)+`<div id="world-content">${renderLab(l.lab,replayLab(l.lab,state.labs[l.lab]))}</div>`:current===3?bitsLab():current===4?pixelLab():terminalLab()}</section></div><div class="lesson-footer"><div><span id="lesson-status"></span><p>${l.takeaway}</p></div><div class="lesson-pagination">${current>0?`<a class="previous" href="#read/${current-1}" aria-label="上一节">←</a>`:''}<a class="button primary" href="${current<totalLessons-1?`#read/${current+1}`:'#ending'}">${current===totalLessons-1?'翻到最后一页':isEnd?'进入下一个时代':'下一小节'} →</a></div></div>${isEnd?`<div class="chapter-ending"><span class="eyebrow">这一站，你带走了什么？</span><h2>${['你开始告诉电脑，<br>可以怎么玩。','机器能做更多事。<br>你也能问更多问题。','打开的源码，<br>让好奇心继续传递。','房间很小，<br>网络把世界接了进来。','外形一直变，<br>每一个 bit 都有迹可循。'][l.chapter]}</h2></div>`:''}</article></div>`;
 }
+function ending() {
+  const next=lessons.findIndex((_,i)=>!state.completed.includes(i));
+  return `<section class="ending-page"><span class="eyebrow">THE END / 也是新的开始</span><h1>好奇心，<br>是最好的开机键。</h1><div class="ending-bit">0 <span>→</span> 1</div><p>从外祖父的电脑，到口袋里的世界。<br>你已经亲手留下 ${state.completed.length} / ${totalLessons} 个发现。</p><div class="ending-path">${eras.map((e,i)=>`<a href="#read/${e.start}"><span>${e.icon}</span><b>0${i+1}</b><small>${state.completed.filter(n=>n>=e.start&&n<e.end).length}/${e.end-e.start}</small></a>`).join('')}</div><p>电脑的故事还在继续。<br>下一次，你想让它做什么？</p><div class="world-controls">${next>=0?`<a class="button primary" href="#read/${next}">继续一个还没完成的发现 ↗</a>`:'<button class="button primary" id="ending-notebook">翻开我的探索手记 ↗</button>'}<a class="plain-link" href="#journey">重新走一遍时光目录</a></div></section>`;
+}
+function refreshWorld(focus) {
+  const key=lessons[current]?.lab;if(!key)return;
+  const model=replayLab(key,state.labs[key]);
+  $('#world-content').innerHTML=renderLab(key,model);
+  if(model.done)complete(current);
+  if(focus){const target=[...document.querySelectorAll('[data-world]')].find(el=>el.dataset.world===focus.type&&el.dataset.value===focus.value);target?.focus({preventScroll:true});}
+}
+function actWorld(type,value,focus,render=true) {
+  const key=lessons[current]?.lab;if(!key)return;
+  if(['pause','address','value','select','paint','depth','flip','speed','deliver','drop','tap','byte','sample'].includes(type))value=Number(value);
+  const event=cleanLabAction(key,{type,value});if(!event){toast('请输入这个实验允许的值。');return false;}
+  const log=state.labs[key]||[];
+  if(log.length>=LAB_ACTION_LIMIT){toast('这个实验已经操作 256 次。重置后可以继续，手记里的发现会保留。');return;}
+  state.labs[key]=[...log,event];save();if(render)refreshWorld(focus);return true;
+}
+
 function route() {
   if (machine.running) {halt(false); toast('离开这一页时，程序已暂停。回到电脑前可再次 RUN。');}
   const hash = location.hash || '#cover';
-  const match = hash.match(/^#read\/([0-5])$/);
-  current = match ? +match[1] : -1;
+  const match = hash.match(/^#read\/(\d{1,2})$/);
+  current = match && +match[1]<totalLessons ? +match[1] : -1;
   if (current >= 0) {state.lastLesson = current; save();}
-  $('#main').innerHTML = current>=0?reader():hash==='#journey'?journey():cover();
+  $('#main').innerHTML = current>=0?reader():hash==='#journey'?journey():hash==='#ending'?ending():cover();
   document.body.classList.toggle('reading',current>=0);
   document.body.classList.toggle('large-type',state.largeType);
   document.title = current>=0?`${lessons[current].short} · Every Bit`:'Every Bit · 可以玩的计算机小史';
@@ -424,13 +704,23 @@ function updatePixels() {
 }
 function notebook() {
   lastFocused=document.activeElement;
-  $('#notebook-content').innerHTML=`<p class="notebook-summary">${state.completed.length===6?'这一章的 6 个发现，你都亲手试过了！':`已经收集 ${state.completed.length} / 6 个小发现。`}</p><div class="notebook-list">${lessons.map((l,i)=>`<a href="#read/${i}" data-notebook-link><span class="note-check ${state.completed.includes(i)?'done':''}">${state.completed.includes(i)?'✓':'○'}</span><div><b>${l.short}</b><p>${state.completed.includes(i)?l.takeaway:'去这一页，亲手试一试。'}</p></div><span>↗</span></a>`).join('')}</div>`;
+  $('#notebook-content').innerHTML=`<p class="notebook-summary">${state.completed.length===totalLessons?'整本书的 23 个发现，你都亲手试过了！':`已经收集 ${state.completed.length} / ${totalLessons} 个小发现。`}</p><div class="notebook-list">${lessons.map((l,i)=>`<a href="#read/${i}" data-notebook-link><span class="note-check ${state.completed.includes(i)?'done':''}">${state.completed.includes(i)?'✓':'○'}</span><div><b>${l.short}</b><p>${state.completed.includes(i)?l.takeaway:'去这一页，亲手试一试。'}</p></div><span>↗</span></a>`).join('')}</div>`;
   save();$('#notebook').showModal();
 }
 document.addEventListener('click',e=>{
   const t=e.target.closest('button,a');if(!t)return;
   if(t.classList.contains('skip-link')) {e.preventDefault();$('#main').focus();$('#main').scrollIntoView();return;}
-  if(t.id==='notebook-button')notebook();
+  if(t.id==='notebook-button'||t.id==='ending-notebook')notebook();
+  if(t.hasAttribute('data-world')){
+    if(t.dataset.world==='write'&&lessons[current]?.lab==='memory'){
+      const input=$('.byte-input'), value=Number(input.value);
+      if(input.value===''||!Number.isInteger(value)||value<0||value>255){toast('字节请输入 0 到 255 之间的整数。');input.focus();return;}
+      const model=replayLab('memory',state.labs.memory);
+      if(model.value!==value&&!actWorld('value',value,null,false))return;
+    }
+    actWorld(t.dataset.world,t.dataset.value,{type:t.dataset.world,value:t.dataset.value});return;
+  }
+  if(t.hasAttribute('data-world-reset')){const key=lessons[current]?.lab;if(key){state.labs[key]=[];save();refreshWorld();}return;}
   if(t.matches('[data-close-dialog],[data-notebook-link]'))$('#notebook').close();
   if(t.id==='font-toggle') {state.largeType=!state.largeType;document.body.classList.toggle('large-type',state.largeType);t.setAttribute('aria-pressed',String(state.largeType));save();}
   if(t.dataset.command) {if(!state.powered) {feedback('先按开机键，就可以输入指令了。');return;}const input=$('#command');input.value=t.dataset.command;input.focus();}
@@ -457,7 +747,12 @@ document.addEventListener('click',e=>{
     case 'load-tape':command(`LOAD "${state.tape?.name||'HELLO'}"`);break;
   }
 });
-document.addEventListener('submit',e=>{if(e.target.id==='command-form'){e.preventDefault();const input=$('#command');command(input.value);input.value='';}});
+document.addEventListener('change',e=>{if(e.target.hasAttribute('data-world-input')){
+  const value=Number(e.target.value);
+  if(e.target.value!==''&&actWorld(e.target.dataset.worldInput,value,null,false)){const code=$('.big-code');if(code)code.textContent=`${toBits(value)} = ${value}${value===65?' = A':''}`;}
+  else {e.target.value=replayLab(lessons[current].lab,state.labs[lessons[current].lab]).value;toast('字节请输入 0 到 255 之间的整数。');}
+}});
+document.addEventListener('submit',e=>{if(e.target.hasAttribute('data-world-form')){e.preventDefault();actWorld(e.target.dataset.worldForm,new FormData(e.target).get('value'));return;}if(e.target.id==='command-form'){e.preventDefault();const input=$('#command');command(input.value);input.value='';}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&machine.running){e.preventDefault();halt();}});
 $('#notebook').addEventListener('close',()=>lastFocused?.isConnected&&lastFocused.focus());
 $('#notebook').addEventListener('click',e=>{if(e.target===$('#notebook')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});
