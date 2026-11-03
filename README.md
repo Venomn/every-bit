@@ -1,59 +1,57 @@
 # Every Bit · 可以玩的计算机小史
 
-给约 8–12 岁孩子和陪伴阅读的大人的浏览器互动书。以 Linus 童年接触的 Commodore VIC-20 为第一站，沿着机器与使用方式的变化推进叙事。
+一本给约 8–12 岁孩子和陪伴阅读的大人的浏览器互动书。以 Linus 童年接触的 VIC-20 为入口，沿着 QL、386/Linux、互联网、手机与云端的路线，完成五章、23 个实验和全书结尾。每页以操作为主，详细解释与资料折叠收纳。
 
-当前交付是**第一章互动样章**，不是完成的整本书。封面、六个可操作的小节、探索手记、全书写作路线已经实现；QL、386/Linux、联网和现代计算机章节仍为写作规划。
+[在线阅读](https://venomn.github.io/every-bit/) · [时光目录](https://venomn.github.io/every-bit/#journey)
 
-[在线阅读](https://venomn.github.io/every-bit/) · [公有源码仓库](https://github.com/Venomn/every-bit)
+## 这本书怎么玩
+
+| 时代 | 亲手做的事 |
+| --- | --- |
+| 1980 年代初 · 外祖父的电脑 | 开机；PRINT；GOTO 循环；8 个 bit；像素朋友；磁带保存与关机 |
+| 1980 年代后期 · QL | 调度两个任务；读写内存地址；机器人条件分支；1-bit / 2-bit 颜色 |
+| 1991 · 386 / Linux | CPU 取指、译码、执行；连接驱动；文件命令；修改、测试、分享源码 |
+| 1990 年代 · 互联网与 Web | 信号与速率；乱序、丢包、重复；DNS 与缓存；请求网页与超链接 |
+| 2000 年代至今 | 触摸坐标；Unicode / UTF-8；离线同步冲突；从例子分类；完整消息旅程 |
+
+可按顺序阅读，也可自由跳章节。没有答错惩罚。实验可以重置，已发现的手记不会被重置。全书保存阅读进度；单个新实验最多记录 256 次操作，达到上限时可重置该实验继续。
 
 ## 本地运行
 
-无需安装依赖或构建。Node.js 用于测试；Python 仅用于本地 HTTP 服务。
+运行不依赖外部库、字体、图片、账号或在线模型。Node.js 用于生成与测试，Python 用于预览。
 
 ```sh
+npm run build:standalone
 npm test
 npm run dev
 ```
 
-打开 `http://127.0.0.1:4173`。网站静态资源全部位于 `dist/`，运行不依赖外部字体、CDN、账户或在线模型。历史资料链接会打开外部网站。
+模块入口位于 `dist/`，预览地址为 `http://127.0.0.1:4173`。生成的根目录 `index.html` 是包含全部代码与样式的独立 HTML；GitHub Pages 从 `main` 根目录发布它。下载该文件也可离线阅读。外部史料链接需要联网。
 
-运行 `npm run build:standalone` 会生成仓库根目录的 `index.html`。该文件包含全部运行所需的代码和样式，可下载后在浏览器打开。`npm test` 同时核对这个生成文件与模块源码是否一致。
+## 内容边界
 
-## 六个小节
+- 这是一条从个人电脑切入的精选历史路线，概念出现在哪一章，不代表它就在哪个年代首次发明。前几站以 Linus 的本人回忆为线索，后面转向更广的计算机世界。
+- 房间与机器图形、练习程序和游戏是原创教学场景，不声称复原 Linus 的原话或具体房间。人物年代与史实附有来源。
+- BASIC 是不用 `eval` 的有限解释器：PRINT、四则运算、数字变量、CHR$(32–90)、行号、GOTO、RUN、STOP/END、LIST、NEW、虚拟 SAVE/LOAD。没有 ROM、6502、POKE、完整 BASIC 或真实磁带格式。180 ms 一步，80 步自动暂停；导航、后台和关机都会停止。
+- QL、CPU、驱动、文件、调制、网络、Web、云同步与分类器均是明确标注的简化模型。玩具 CPU 指令不是 x86；网络包不是完整 TCP；分类实验是 1-近邻，不是大语言模型。
+- 网页输入只作为文字插入安全模板。文件命令不会碰真实磁盘。所有“发送”“分享”“云端”均在浏览器内部模拟，不向真实收件人或服务器发送任何内容。
+- 手机实验的 iPhone 是 2007 年的一个历史节点，不是“第一部智能手机”的说法。
 
-1. 坐到电脑前：开机、READY、键盘主机与电视。
-2. 让它说声你好：直接输入 PRINT，尝试文字与算式。
-3. 两行代码的魔法：行号、LIST、RUN、GOTO、停止与修改。
-4. 拆开一个字节：8 个开关、位权、PETSCII 的大写字母。
-5. 画一个像素朋友：单色 8×8 图案，逐行查看二进制和字节值。
-6. 把程序装进磁带：SAVE → 关机丢失 RAM → 开机 → LOAD。
+## 保存与兼容
 
-## 教学与史实边界
+版本化的 localStorage 保存进度、草稿、画布、磁带和实验操作。没有跨设备同步；浏览器清理数据会删除这些内容，存储不可用时会显示提示。
 
-- 书桌、电视和键盘是原创 CSS 情境插画；不声称复原 Linus 家里的具体布置。
-- 根据本人不同时期访谈，使用“1980 年代初”，避免把回忆中的约 10–12 岁写成确定日期。
-- BASIC 是安全的有限子集解释器，不使用 `eval`，不加载 ROM，不模拟 6502、VIC 芯片、真实磁带格式或完整 PETSCII。完整 BASIC（FOR/NEXT、IF、POKE、屏幕编辑等）暂不支持。
-- 支持 PRINT 字符串 / 算式 / CHR$(32–90)、数字变量、四则运算、行号、GOTO、END/STOP、LIST、RUN、NEW、虚拟 SAVE/LOAD。
-- 运行按 180 ms 一步放慢，80 步后自动暂停；离开小节、进入后台和关机也会停止。运行中不允许编辑程序。
-- 启动画面的 3583 BYTES FREE 是真机启动文字的教学再现，不是浏览器解释器实时可用内存。教学解释器限制为 100 行、每行 80 字符。
-- 8×8 编辑器表示 1-bit 单色图案，不写入模拟主机内存。PETSCII 字符码与屏幕码明确区分。
-- 手记、草稿程序、画布、虚拟磁带、关机后的练习状态和字号保存在版本化的浏览器 localStorage；无跨设备同步。刷新恢复阅读状态，明确关机才清空模拟程序。存储不可用时在手记中提示。
+存储键沿用 `every-bit.v1`，记录内部的 `version` 为 2。读取真实 v1 形状时保留原来六节进度、磁带、关机状态、像素和字号，新实验从空状态开始。原来的 `#read/0` 至 `#read/5` 链接保持不变。新实验的持久化操作经过白名单、类型与长度检查，再确定性重放；每个实验的重置只清除自己的操作。
 
-## 资料
+## 结构与验证
 
-- [Linus 本人访谈，Computing，2012](https://www.computing.co.uk/interview/2230892/linus-torvalds-interview-from-vic20-to-raspberry-pi)：外祖父、VIC-20、输入和修改程序。
-- [Linus 本人访谈，Linux Journal，1999](https://www.linuxjournal.com/article/3655)：童年回忆与学习过程。
-- [Commodore VIC-20 原版用户手册](https://museo.inf.uva.es/img/Computadores/VIC-20/Mas/ManualUsuario.pdf)：硬件外形、开机、BASIC、字符、存储。
-- [VIC-20 Programmer's Reference Manual，字符表](https://www.manualslib.com/manual/950679/Commodore-Vic-20.html?page=290)：字符编码与屏幕码。
-- [Glyn Moody 对 Linus 的访谈，Ars Technica](https://arstechnica.com/information-technology/2015/08/how-linux-was-born-as-told-by-linus-torvalds-himself/)：QL → 386 PC → Linux 的叙事路线。
-- [CERN：万维网的诞生](https://home.cern/science/computing/the-birth-of-the-web)：后续网络章节依据。
+- `dist/book.mjs`：章节、挑战、解释与史料链接。
+- `dist/engine.mjs`：BASIC 解释器、字节工具、存档迁移。
+- `dist/worlds.mjs`：17 个新增实验的纯状态转换与输入约束。
+- `dist/labs.mjs`：实验视图；`dist/app.js`：路由、输入、手记与保存。
+- `scripts/standalone.mjs`：生成独立 HTML，并检查生成文件与源码一致。
+- `tests/`：23 项测试，含 BASIC、所有 256 个字节、旧存档迁移、每个新模型、异常流程和独立 HTML 语法检查。
 
-## 验证
+实际浏览器验收记录见 [QA.md](QA.md)。已验证桌面与窄屏布局、键盘输入、刷新恢复及全部新增实验的完成路径；实际儿童试读、iOS Safari 和 Android 真机尚未验证。
 
-`tests/engine.test.mjs` 验证所有 256 个字节的往返、像素行编码、运算优先级、非法语法、行号覆盖与删除、循环与停止、运行错误、资源上限、损坏/旧版本持久化数据和磁带副本隔离。
-
-浏览器验收覆盖真实输入/Enter、语法错误恢复、循环/停止、位开关（含 Space 键）、画布与逐行编码、SAVE → 关机 → 空 LIST → LOAD → 恢复 LIST、刷新恢复，以及 390/768/1024/1440 像素宽度。实际儿童试读、iOS Safari 与 Android 真机仍待验证。
-
-## 部署
-
-GitHub Pages 从 `main` 分支根目录发布 `index.html`。修改 `dist/` 后先运行 `npm run build:standalone` 与 `npm test`，把源码和生成文件一起提交。仓库不需要访问令牌、服务端、数据库或构建依赖。
+史料链接在各节“年代与资料”和全书目录的成人说明中，包括 Linus 本人访谈、原版 Commodore / Sinclair 手册、计算机历史博物馆、CERN、IETF RFC、Unicode 联盟、Apple 2007 年资料、NIST 和算法官方文档。
